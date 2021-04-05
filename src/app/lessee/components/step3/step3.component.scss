@@ -16,6 +16,26 @@ h4{
         height: 107px;
         width: 22%;
         margin: 0 auto;
-        max-width: 120px;        
+        max-width: 120px;
+        box-shadow: 1px 1px 7px 0px #d2cfcf;
+        border-radius: 10px;
+        border: solid 1px #dedede;
+        font-size: 50px;
+        text-align: center;
+        font-weight: bold;
+        color: #bd0f14;  
     }
+}
+.text-link {
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 59px;
+    a{
+        color: #bd0f14;
+    }
+}
+.red-cel{
+    font-weight: bold;
+    color: #bd0f14; 
 }

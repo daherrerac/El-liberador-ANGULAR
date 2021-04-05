@@ -32,3 +32,23 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
 @import "themes/light";
 
+.fs-25{
+  font-size: 25px;
+}
+.d-block {
+  background-color: #43598eba;
+}
+.img-modal{
+  width: 137px;
+}
+.close-modal{
+  width: 41px;
+  position: absolute;
+  right: 10px;
+  z-index: 9;
+  span{
+    font-size: 49px;
+    font-weight: 100;
+    color: #bd0f14;
+  }
+}

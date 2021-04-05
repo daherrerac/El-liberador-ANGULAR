@@ -1,34 +1,57 @@
 <form>
   <h4 class="my-4">
-    <small
-      >Para validar su identidad enviamos un código al número de celular
-      <span class="red">311********09.</span></small
-    >
+    Para validar su identidad enviamos un código al número de celular
+      <span class="red-cel">311********09.</span>
   </h4>
 
   <div class="container">
     <div class="box-code my">
-      <div class="row mx-5 my-auto">
-        <input type="phone" name="code1" id="code1" class="code col-3" />
+      <div class="row mx-5 pt-5 my-auto">
+        <input type="phone" name="code1" id="code1" class="code col-3" value="1" />
 
-        <input type="phone" name="code1" id="code1" class="code col-3" />
+        <input type="phone" name="code1" id="code1" class="code col-3" value="1"/>
 
-        <input type="phone" name="code1" id="code1" class="code col-3" />
+        <input type="phone" name="code1" id="code1" class="code col-3" value="1"/>
 
-        <input type="phone" name="code1" id="code1" class="code col-3" />
+        <input type="phone" name="code1" id="code1" class="code col-3" value="1"/>
       </div>
 
-      <div class="row">
+      <div class="mt-5 fs-25">
         <p class="text-center">El código vence en: <strong>15 MINUTOS</strong></p>
       </div>
     </div>
+
+    <div class="text-link">
+      ¿No recibó el código?<a href="#"> Enviar de nuevo</a><br>
+      Intentar con <a href="#">otro método.</a>
+    </div>
+
   </div>
 
   <div class="buttonContainer my-5">
     <button class="button" matStepperPrevious>Volver</button>
-    <button class="button button-primary" (click)="onSubmit($event)">
+    <button class="button button-primary" (click)="open(content)" >
       Continuar
     </button>
   </div>
-  
+
 </form>
+
+<ng-template #content let-modal>
+  <button type="button" class="close close-modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="modal-body text-center">
+    <img src="../../../../assets/iconos/card-people.svg" class="img-modal" alt="" /> 
+    <h4 class="my-4">
+        Hemos validado su identidad
+    </h4>
+    <p>Presiona <b>Continuar</b> para registrar tu solicitud.</p>
+
+    <button class="button button-primary mt-4 mb-4" (click)="modal.close('Save click')" >
+      Continuar
+    </button>
+
+  </div>
+</ng-template>
+
