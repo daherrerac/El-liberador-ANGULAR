@@ -1,0 +1,160 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+::ng-deep .mat-radio-group {
+  display: flex;
+  .mat-radio-button {
+    box-shadow: 0px 2px 6px #11111112;
+    border-radius: 8px;
+    margin-right: 5px;
+    background-color: $gray-color2;
+    border-radius: 8px;
+    margin-right: 8px;
+    padding: 10px 30px;
+    width: 100%;
+    border: 0.20000000298023224px solid #cccccc;
+
+    .mat-radio-label {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.select select {
+  font-family: "Arial";
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  border: none;
+  box-shadow: 0px 1px 11px #cccccc66;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #706f6f;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:focus,
+  &:hover {
+    border: 1px solid $red-color;
+  }
+}
+.select select::-ms-expand {
+  display: none;
+}
+.select select:hover,
+.select select:focus {
+  color: #706f6f;
+  background: #ffffff;
+}
+.select select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.select_arrow {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 11px;
+  height: 11px;
+  border: solid #bd0f14;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+  border-color: #d7151a;
+}
+.select select:disabled ~ .select_arrow {
+  border-top-color: #cccccc;
+}
+
+.group {
+  width: 50%;
+}
+.red {
+  color: $red-color;
+}
+
+.form-control {
+  box-shadow: 0px 1px 11px #cccccc66;
+  border: none;
+  border-radius: 12px;
+
+  &:focus,
+  &:hover {
+    border: 1px solid $red-color;
+  }
+}
+
+:host {
+  ::ng-deep.mat-slide-toggle-bar {
+    position: relative;
+    width: 45px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: $red-color;
+  }
+  ::ng-deep.mat-slide-toggle {
+    margin-left: 3rem;
+
+    &-thumb {
+      background-color: white;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      position: relative;
+      top: 5px;
+      left: 2px;
+    }
+    &.mat-checked {
+      ::ng-deep.mat-slide-toggle-bar {
+        background-color: $red-color;
+        &::after {
+          content: "SI";
+          font-size: 77%;
+          font-weight: bold;
+          font-family: "Gotham-Bold";
+          color: white;
+          position: absolute;
+          left: 8px;
+          top: -1px;
+        }
+      }
+      .mat-slide-toggle-thumb {
+        background-color: white;
+        left: 10px;
+      }
+    }
+    &:not(.mat-checked) {
+      ::ng-deep.mat-slide-toggle-bar::after {
+        font-family: "Gotham-Bold";
+        content: "NO";
+        font-size: 77%;
+        font-weight: 700;
+        color: white;
+        position: absolute;
+        left: 21px;
+        top: -1px;
+      }
+    }
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  margin: 0 auto;
+}

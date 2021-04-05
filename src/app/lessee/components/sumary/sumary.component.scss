@@ -1,0 +1,24 @@
+@import "abstracts/variables";
+
+.centerImg {
+  margin: 0 auto;
+  display: block;
+}
+
+p {
+  margin: 0;
+}
+
+.title {
+  color: $gray-color;
+}
+.data {
+  color: $red-color;
+}
+
+.editar {
+  background: $blue-color;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+}

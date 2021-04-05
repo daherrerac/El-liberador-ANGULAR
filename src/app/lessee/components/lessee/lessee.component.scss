@@ -1,0 +1,48 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/forms";
+
+.ch-bg{background-color: red;height: 100%;}
+
+.formMobile {
+  @include media(mobile) {
+    padding-top: 3rem;
+    margin-top: -6rem;
+    background: $gray-color2;
+    z-index: 10000;
+    position: relative;
+    border-radius: 50px 50px 0 0;
+
+    ::ng-deep .mat-stepper-horizontal,
+    .mat-stepper-vertical {
+      background-color: $gray-color2;
+    }
+  }
+}
+
+::ng-deep .mat-step-header {
+  flex-direction: column;
+  .mat-step-icon {
+    background-color: $blue-color;
+  }
+
+  .mat-step-icon-selected {
+    background-color: $red-color;
+  }
+
+  .mat-step-label {
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1;
+    font-size: 0.8rem;
+  }
+}
+::ng-deep  .mat-radio-group{
+  height: 60px;
+}
+::ng-deep .mat-radio-label-content{
+  margin-top: 0.5rem;
+}
+::ng-deep .mat-radio-container{
+  margin-top: 0.5rem;
+}

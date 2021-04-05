@@ -1,0 +1,376 @@
+<form [formGroup]="firstFormGroup">
+  <div class="container mt-4">
+    <div class="text-center">
+      <h4>Para iniciar necesitamos tus datos</h4>
+      <p>Los campos marcados con <span class="red">*</span> son obligatorios</p>
+    </div>
+
+    <label class="w-100">Tipo de documento <span class="red">*</span> </label>
+    <mat-radio-group class="desktop d-flex" formControlName="typeId">
+      <mat-radio-button value="cc">Cédula de ciudadanía</mat-radio-button>
+      <mat-radio-button value="ce">Cédula de extranjería</mat-radio-button>
+    </mat-radio-group>
+    <mat-error
+      class="desktop"
+      *ngIf="
+        firstFormGroup.controls['typeId'].invalid &&
+        (firstFormGroup.controls['typeId'].dirty ||
+          firstFormGroup.controls['typeId'].touched)
+      "
+    >
+      <mat-error *ngIf="firstFormGroup.controls['typeId'].hasError('required')">
+        Campo requerido
+      </mat-error>
+    </mat-error>
+
+    <div class="select mobile">
+      <select formControlName="typeId">
+        <option value="" [disabled]="true">--Seleccione una opción--</option>
+        <option value="cc">Cédula de ciudadanía</option>
+        <option value="ce">Cédula de extranjería</option>
+      </select>
+      <div class="select_arrow"></div>
+    </div>
+
+    <mat-error
+      class="mobile"
+      *ngIf="
+        firstFormGroup.controls['typeId'].invalid &&
+        (firstFormGroup.controls['typeId'].dirty ||
+          firstFormGroup.controls['typeId'].touched)
+      "
+    >
+      <mat-error *ngIf="firstFormGroup.controls['typeId'].hasError('required')">
+        Campo requerido
+      </mat-error>
+    </mat-error>
+
+    <div class="form-group my-3">
+      <label for="">Número de documento <span class="red">*</span> </label>
+      <input
+        [class.is-valid]
+        type="phone"
+        name="numberDocument"
+        id="numberDocument"
+        formControlName="numberDocument"
+        class="form-control"
+        placeholder="Ej: 1132329843"
+      />
+
+      <mat-error
+        *ngIf="
+          firstFormGroup.controls['numberDocument'].invalid &&
+          (firstFormGroup.controls['numberDocument'].dirty ||
+            firstFormGroup.controls['numberDocument'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="firstFormGroup.controls['numberDocument'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+    <div class="form-group my-3">
+      <label for="">Primer nombre <span class="red">*</span> </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        formControlName="name"
+        class="form-control"
+        placeholder="Ej: Mariana"
+        required
+      />
+      <mat-error
+        *ngIf="
+          firstFormGroup.controls['name'].invalid &&
+          (firstFormGroup.controls['name'].dirty ||
+            firstFormGroup.controls['name'].touched)
+        "
+      >
+        <mat-error *ngIf="firstFormGroup.controls['name'].hasError('required')">
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+    <div class="form-group my-3">
+      <label for="">Segundo nombre </label>
+      <input
+        type="text"
+        name="secondName"
+        id="secondName"
+        formControlName="secondName"
+        class="form-control"
+        placeholder="Ej: Andrea"
+      />
+    </div>
+    <div class="form-group my-3">
+      <label for="">Primer apellido <span class="red">*</span> </label>
+      <input
+        type="text"
+        name="lastName"
+        id="lastName"
+        formControlName="lastName"
+        class="form-control"
+        placeholder="Ej: Rodriguez"
+      />
+      <mat-error
+        *ngIf="
+          firstFormGroup.controls['lastName'].invalid &&
+          (firstFormGroup.controls['lastName'].dirty ||
+            firstFormGroup.controls['lastName'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="firstFormGroup.controls['lastName'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+    <div class="form-group my-3">
+      <label for="">Segundo apellido </label>
+      <input
+        type="text"
+        name="lastName2"
+        id="lastName2"
+        formControlName="lastName2"
+        class="form-control"
+        placeholder="Ej: Pérez"
+      />
+    </div>
+
+    <label class="w-100">Sexo <span class="red">*</span> </label>
+    <mat-radio-group class="desktop" formControlName="gender">
+      <mat-radio-button value="Femenino">Femenino</mat-radio-button>
+      <mat-radio-button value="Masculino">Masculino</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-error
+      class="desktop"
+      *ngIf="
+        firstFormGroup.controls['gender'].invalid &&
+        (firstFormGroup.controls['gender'].dirty ||
+          firstFormGroup.controls['gender'].touched)
+      "
+    >
+      <mat-error *ngIf="firstFormGroup.controls['gender'].hasError('required')">
+        Campo requerido
+      </mat-error>
+    </mat-error>
+
+    <div class="select mobile">
+      <select formControlName="gender">
+        <option value="" [disabled]="true">--Seleccione una opción--</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Masculino">Masculino</option>
+      </select>
+      <div class="select_arrow"></div>
+    </div>
+  </div>
+
+  <mat-error
+    class="mobile"
+    *ngIf="
+      firstFormGroup.controls['gender'].invalid &&
+      (firstFormGroup.controls['gender'].dirty ||
+        firstFormGroup.controls['gender'].touched)
+    "
+  >
+    <mat-error *ngIf="firstFormGroup.controls['gender'].hasError('required')">
+      Campo requerido
+    </mat-error>
+  </mat-error>
+
+  <div class="container">
+    <div class="form-group my-3 d-flex desktop">
+      <div class="group">
+        <label for=""
+          >Dirección de residencia <span class="red">*</span>
+        </label>
+        <input
+          type="add"
+          name="address"
+          id="address"
+          formControlName="address"
+          class="form-control"
+          placeholder="Ej: Calle 25#49-01"
+        />
+        <mat-error
+          *ngIf="
+            firstFormGroup.controls['address'].invalid &&
+            (firstFormGroup.controls['address'].dirty ||
+              firstFormGroup.controls['address'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="firstFormGroup.controls['address'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+      <div class="group ml-4">
+        <label for="">Ciudad <span class="red">*</span> </label>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          formControlName="city"
+          class="form-control"
+          placeholder="Buscar..."
+        />
+
+        <mat-error
+          *ngIf="
+            firstFormGroup.controls['city'].invalid &&
+            (firstFormGroup.controls['city'].dirty ||
+              firstFormGroup.controls['city'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="firstFormGroup.controls['city'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+    </div>
+    <div class="form-group my-3 mobile">
+      <label for="">Dirección de residencia <span class="red">*</span> </label>
+      <input
+        type="add"
+        name="address"
+        id="address"
+        formControlName="address"
+        class="form-control"
+        placeholder="Ej: Calle 25#49-01"
+      />
+
+      <mat-error
+        *ngIf="
+          firstFormGroup.controls['address'].invalid &&
+          (firstFormGroup.controls['address'].dirty ||
+            firstFormGroup.controls['address'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="firstFormGroup.controls['address'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+    <div class="form-group my-3">
+      <label for="">Ciudad <span class="red">*</span> </label>
+      <input
+        type="text"
+        name="city"
+        id="city"
+        formControlName="city"
+        class="form-control"
+        placeholder="Buscar..."
+      />
+
+      <mat-error
+        *ngIf="
+          firstFormGroup.controls['city'].invalid &&
+          (firstFormGroup.controls['city'].dirty ||
+            firstFormGroup.controls['city'].touched)
+        "
+      >
+        <mat-error *ngIf="firstFormGroup.controls['city'].hasError('required')">
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+
+    <div class="form-group my-3">
+      <label for="">Correo electrónico <span class="red">*</span> </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        formControlName="email"
+        class="form-control"
+        placeholder="Ej: mrodriguez@gmail.com"
+      />
+
+      <mat-error
+        *ngIf="
+          firstFormGroup.controls['email'].invalid &&
+          (firstFormGroup.controls['email'].dirty ||
+            firstFormGroup.controls['email'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="firstFormGroup.controls['email'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+    <div class="form-group my-3">
+      <label for="">Celular <span class="red">*</span> </label>
+      <input
+        type="phone"
+        name="phone"
+        id="phone"
+        formControlName="phone"
+        class="form-control"
+        placeholder="Ej: 3007895436"
+      />
+
+      <mat-error
+        *ngIf="
+          firstFormGroup.controls['phone'].invalid &&
+          (firstFormGroup.controls['phone'].dirty ||
+            firstFormGroup.controls['phone'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="firstFormGroup.controls['phone'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+
+    <label class="w-100">Ocupación<span class="red">*</span> </label>
+    <div class="select">
+      <select formControlName="occupation">
+        <option value="" [disabled]="true">--Seleccione una opción--</option>
+        <option>Opción 1</option>
+        <option>Opción 2</option>
+        <option>Opción 3</option>
+        <option>Opción 4</option>
+      </select>
+      <div class="select_arrow"></div>
+      <mat-error
+        *ngIf="
+          firstFormGroup.controls['occupation'].invalid &&
+          (firstFormGroup.controls['occupation'].dirty ||
+            firstFormGroup.controls['occupation'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="firstFormGroup.controls['occupation'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+  </div>
+</form>
+
+<div class="buttonContainer my-5">  
+  <button
+    class="button button-primary mx-auto"
+    (click)="onSubmit($event)"
+    matStepperNext
+  >
+    Continuar
+  </button>
+</div>

@@ -1,0 +1,55 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.column-center {
+  flex-direction: column;
+  flex-wrap: nowrap !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.gray-text {
+  color: $gray-color;
+}
+
+.blue-text {
+  color: $blue-color;
+}
+
+.blue-bg {
+  background-color: $blue-color;
+}
+
+.white-bg {
+  background-color: $white-color;
+}
+
+.text-white {
+  color: $white-color;
+}
+
+mat-error {
+  font-size: 0.8rem;
+}
+
+.red-text {
+  color: $red-color;
+}
+
+.lh-12 {
+  line-height: 1.2;
+}

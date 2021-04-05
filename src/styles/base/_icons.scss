@@ -1,0 +1,47 @@
+.arrow {
+  &::before {
+    content: url(../../assets/iconos/arrow.png);
+  }
+}
+
+.hand {
+  &::before {
+    content: url(../../assets/iconos/hand.png);
+  }
+}
+
+.icon001 {
+  &::before {
+    content: url(../../assets/iconos/calc.png);
+  }
+}
+.icon002 {
+  &::before {
+    content: url(../../assets/iconos/handsUp.png);
+  }
+}
+.icon003 {
+  &::before {
+    content: url(../../assets/iconos/judicial.svg);
+  }
+}
+.icon004 {
+  &::before {
+    content: url(../../assets/iconos/consulta.svg);
+  }
+}
+.icon005 {
+  &::before {
+    content: url(../../assets/iconos/doc.svg);
+  }
+}
+.icon006 {
+  &::before {
+    content: url(../../assets/iconos/huella.svg);
+  }
+}
+.icon007 {
+  &::before {
+    content: url(../../assets/iconos/chat-phone.svg);
+  }
+}

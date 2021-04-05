@@ -1,0 +1,21 @@
+h4{
+    font-family: "Gotham-Bold";
+    small{
+        font-size: 30px;
+    }
+}
+.box-code{
+    width: 100%;
+    max-width: 675px;
+    background: #ffffff;
+    height: 290px;
+    box-shadow: 1px 1px 7px 0px #bbb;
+    margin: 0 auto;
+    border-radius: 10px;
+    input{    
+        height: 107px;
+        width: 22%;
+        margin: 0 auto;
+        max-width: 120px;        
+    }
+}

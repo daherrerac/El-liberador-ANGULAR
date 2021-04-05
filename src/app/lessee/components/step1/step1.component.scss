@@ -1,0 +1,27 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/forms";
+
+.mobile {
+  display: none;
+  @include media(mobile) {
+    display: block;
+  }
+}
+
+.desktop {
+  display: flex;
+  @include media(mobile) {
+    display: none !important;
+  }
+}
+
+.buttonContainer {
+  .button-primary {
+    margin-left: 3rem;
+
+    @include media(mobile) {
+      margin-left: 0;
+    }
+  }
+}

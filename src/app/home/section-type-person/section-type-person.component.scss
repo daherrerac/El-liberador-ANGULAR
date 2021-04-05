@@ -1,0 +1,154 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+.mobile {
+  display: none;
+  @include media(mobile) {
+    display: flex;
+  }
+}
+
+.card-lib {
+  min-height: 48px;
+  padding: 0;
+
+  .br {
+    border-radius: 0 10px 10px 0;
+  }
+  .red-text{
+    small{
+        font-family: "Gotham-Light";
+        font-size: 16px;        
+      }
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  grid-template-areas:
+    "collections insurance"
+    "judicial insurance";
+
+  .collections {
+    grid-area: collections;
+  }
+  .judicial {
+    grid-area: judicial;
+  }
+  .insurance {
+    grid-area: insurance;
+  }
+}
+
+.desktop {
+  margin-top: 5rem;
+
+  .card-lib {
+    min-height: 70px;
+
+    &:nth-last-child(11),
+    &:nth-last-child(6) {
+      height: auto;
+    }
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 320px 1fr;    
+    gap: 14px;
+    grid-template-areas:
+      "form natural"
+      "form judicial"
+      "consult cities"
+      "payments cities"
+      "sios cities"
+      "reports cities"
+      "judicial2 judicial2"
+      "personalData personalData"
+      "contact contact"
+      "footer footer";
+  }
+
+  .form {
+    grid-area: form;
+    height: 156px;  
+  }
+
+  .natural {
+    grid-area: natural;
+  }
+
+  .judicial {
+    grid-area: judicial;
+  }
+
+  .consult {
+    grid-area: consult;
+  }
+
+  .payments {
+    grid-area: payments;
+  }
+
+  .sios {
+    grid-area: sios;
+  }
+
+  .reports {
+    grid-area: reports;
+  }
+
+  .cities {
+    grid-area: cities;
+    height: 372px;
+  }
+
+  .judicial2 {
+    grid-area: judicial2;
+  }
+
+  .personalData {
+    grid-area: personalData;
+  }
+
+  .contact {
+    grid-area: contact;
+  }
+
+  .footer {
+    grid-area: footer;
+
+    &-box {
+      background-color: $gray-color2;
+      border-radius: 10px;
+      text-align: center;
+      min-height: 78px;
+
+      .col-4 {
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+          transition: all 0.2s ease-in;
+        }
+        &:nth-child(2) {
+          border-right: 1px solid $gray-color1;
+          border-left: 1px solid $gray-color1;
+        }
+      }
+    }
+  }
+}
+
+.bg-gray2.bg-image {
+	background: url(/assets/images/edificios.png) #F8F8F8;
+	background-size: contain;
+	background-position: 0px bottom;
+	background-repeat: no-repeat;
+}
+.separador-100{
+  height: 100px;
+  display: block;
+}

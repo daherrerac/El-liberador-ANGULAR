@@ -1,0 +1,70 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/reset";
+
+.card {
+  border: none;
+  margin-top: -60px;
+  border-radius: 10px;
+  box-shadow: 0px -1px 6px #00000029;
+
+  &-body {
+    padding: 1rem;
+    padding-bottom: 0;
+  }
+
+  h3 {
+    font-family: "Gotham-Medium";
+    font-size: 24px;
+    color: $blue-color;
+  }
+  .card-body{
+      p{
+          max-width: 580px;
+          font-size: 18px;
+      }
+  }
+  
+  .bg-gray {
+    background-color: $gray-color2;
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    
+
+    .col-4 {
+      height: 78px;
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.5;
+        transition: all 0.2s ease-in;
+      }
+      &:nth-child(2) {
+        border-right: 1px solid $gray-color1;
+        border-left: 1px solid $gray-color1;
+      }   
+      a{     
+          display: block;       
+          position: absolute;
+          top: 50%;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          width: 100%;
+      }     
+    }
+  }
+
+  .linksHome {
+    line-height: 1.1;
+    color: $blue-color;
+  }
+}
+
+.card-icon{
+  img{
+    width: 92px;
+  }
+  p{
+    font-size: 18px;      
+  }
+}

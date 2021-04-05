@@ -1,0 +1,376 @@
+<ng-container *ngIf="!showSumary">
+  <form [formGroup]="secondFormGroup">
+    <div class="container mt-4">
+      <div class="text-center">
+        <h4>Ingrese los datos del inmueble que le interesa arrendar</h4>
+        <p>Los campos marcados con * son obligatorios</p>
+      </div>
+
+      <div class="form-group my-3 desktop dflex">
+        <div class="group">
+          <label for=""
+            >Dirección del inmueble que va a arrendar
+            <span class="red">*</span>
+          </label>
+          <input
+            type="add"
+            name="address"
+            id="address"
+            formControlName="addressRent"
+            class="form-control"
+            placeholder="Ej: Calle 25#49-01"
+          />
+
+          <mat-error
+            class="desktop"
+            *ngIf="
+              secondFormGroup.controls['addressRent'].invalid &&
+              (secondFormGroup.controls['addressRent'].dirty ||
+                secondFormGroup.controls['addressRent'].touched)
+            "
+          >
+            <mat-error
+              *ngIf="
+                secondFormGroup.controls['addressRent'].hasError('required')
+              "
+            >
+              Campo requerido
+            </mat-error>
+          </mat-error>
+        </div>
+
+        <div class="group ml-4">
+          <label for="">Ciudad <span class="red">*</span> </label>
+          <input
+            type="text"
+            name="city"
+            formControlName="cityRent"
+            id="city"
+            class="form-control"
+            placeholder="Buscar..."
+          />
+
+          <mat-error
+            class="desktop"
+            *ngIf="
+              secondFormGroup.controls['cityRent'].invalid &&
+              (secondFormGroup.controls['cityRent'].dirty ||
+                secondFormGroup.controls['cityRent'].touched)
+            "
+          >
+            <mat-error
+              *ngIf="secondFormGroup.controls['cityRent'].hasError('required')"
+            >
+              Campo requerido
+            </mat-error>
+          </mat-error>
+        </div>
+      </div>
+
+      <div class="mobile my-3">
+        <label for=""
+          >Dirección del inmueble que va a arrendar
+          <span class="red">*</span>
+        </label>
+        <input
+          type="add"
+          name="address"
+          id="address"
+          formControlName="addressRent"
+          class="form-control"
+          placeholder="Ej: Calle 25#49-01"
+        />
+
+        <mat-error
+          class="mobile"
+          *ngIf="
+            secondFormGroup.controls['addressRent'].invalid &&
+            (secondFormGroup.controls['addressRent'].dirty ||
+              secondFormGroup.controls['addressRent'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="secondFormGroup.controls['addressRent'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+      <div class="mobile my-3">
+        <label for="">Ciudad <span class="red">*</span> </label>
+        <input
+          type="text"
+          name="city"
+          formControlName="cityRent"
+          id="city"
+          class="form-control"
+          placeholder="Buscar..."
+        />
+
+        <mat-error
+          class="mobile"
+          *ngIf="
+            secondFormGroup.controls['cityRent'].invalid &&
+            (secondFormGroup.controls['cityRent'].dirty ||
+              secondFormGroup.controls['cityRent'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="secondFormGroup.controls['cityRent'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+      <label class="w-100">Destino <span class="red">*</span> </label>
+      <mat-radio-group formControlName="useProperty">
+        <mat-radio-button value="vivienda">Vivienda</mat-radio-button>
+        <mat-radio-button value="comercio">Comercio</mat-radio-button>
+      </mat-radio-group>
+      <mat-error
+        *ngIf="
+          secondFormGroup.controls['useProperty'].invalid &&
+          (secondFormGroup.controls['useProperty'].dirty ||
+            secondFormGroup.controls['useProperty'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="secondFormGroup.controls['useProperty'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+      <label class="w-100 my-3"
+        >Tipo de inmueble <span class="red">*</span>
+      </label>
+      <div class="select">
+        <select formControlName="typeProperty">
+          <option value="" [disabled]="true">--Seleccione una opción--</option>
+          <option>Opción 1</option>
+          <option>Opción 2</option>
+          <option>Opción 3</option>
+          <option>Opción 4</option>
+        </select>
+        <div class="select_arrow"></div>
+
+        <mat-error
+          *ngIf="
+            secondFormGroup.controls['typeProperty'].invalid &&
+            (secondFormGroup.controls['typeProperty'].dirty ||
+              secondFormGroup.controls['typeProperty'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="
+              secondFormGroup.controls['typeProperty'].hasError('required')
+            "
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+      <div class="form-group my-3">
+        <label for="">Valor arriendo <span class="red">*</span> </label>
+        <input
+          type="phone"
+          name="priceRent"
+          name="priceRent"
+          id="priceRent"
+          class="form-control"
+          formControlName="priceRent"
+          placeholder="Ej: 850000"
+        />
+
+        <mat-error
+          *ngIf="
+            secondFormGroup.controls['priceRent'].invalid &&
+            (secondFormGroup.controls['priceRent'].dirty ||
+              secondFormGroup.controls['priceRent'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="secondFormGroup.controls['priceRent'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+
+      <section class="mt-5">
+        <div class="d-flex my-3">
+          <label for="">
+            ¿Incluye administración?<span class="red"
+              >*</span
+            ></label
+          >
+          <mat-slide-toggle formControlName="administracion2"></mat-slide-toggle>
+        </div>
+
+        <div
+          [ngClass]="getValueSwitchAdmon() ? 'visible' : 'hide'"
+          *ngIf="getValueSwitchAdmon()"
+        >          
+
+          <div class="form-group my-3">
+            
+            <label for="">Valor administración<span class="red">*</span> </label>
+            <input
+              type="add"
+              name="administracion"
+              id="administracion"
+              formControlName="administracion"
+              class="form-control"
+              placeholder="Ej: 850000"
+            />
+                      
+          </div>
+        </div>
+      </section>
+
+
+      <section class="mt-5">
+        <div class="d-flex my-3">
+          <label for="">
+            ¿Está arrendado con una Inmobiliaria?<span class="red"
+              >*</span
+            ></label
+          >
+          <mat-slide-toggle formControlName="inmobiliaria2"></mat-slide-toggle>
+        </div>
+
+        <div
+          [ngClass]="getValueSwitch() ? 'visible' : 'hide'"
+          *ngIf="getValueSwitch()"
+        >
+          <p>
+            Si está realizando su proceso con una inmobiliaria cuéntenos cuál y
+            nosotros le notificaremos el resultado.
+          </p>
+
+          <div class="form-group my-3 d-flex">
+            <div class="group ">
+              <label for="">Ciudad <span class="red">*</span> </label>
+              <input
+                type="text"
+                name="cityInmobiliaria"
+                id="cityInmobiliaria"
+                formControlName="cityInmobiliaria"
+                class="form-control"
+                placeholder="Buscar..."
+              />
+            </div>
+            <div class="group ml-4">
+              <label for="">Inmobiliaria <span class="red">*</span> </label>
+              <input
+                type="add"
+                name="inmobiliaria"
+                id="inmobiliaria"
+                formControlName="inmobiliaria"
+                class="form-control"
+                placeholder="Buscar..."
+              />
+            </div>
+
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="example-section my-5 terminos">
+        <div class="row  no-gutters mb-3">
+          <div class="col-1">
+            <mat-checkbox formControlName="dataPolices" class="example-margin"></mat-checkbox>
+          </div>
+          <div class="col-11">   
+            <div class="text-dislcaimer">
+              Acepto los <a href="#"> Términos y Condiciones</a>, y la <a href="#">Política de Privacidad.</a> y el <a href="#">Tratamiento de Mis datos Personales</a>
+            </div>
+          </div>
+        </div>
+        <mat-error
+          *ngIf="
+            secondFormGroup.controls['dataPolices'].invalid &&
+            (secondFormGroup.controls['dataPolices'].dirty ||
+              secondFormGroup.controls['dataPolices'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="secondFormGroup.controls['dataPolices'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+          
+                  
+          
+          <div class="row no-gutters mb-3">
+            <div class="col-1">
+              <mat-checkbox formControlName="useData" class="example-margin"></mat-checkbox>
+            </div>
+            <div class="col-11">
+              <div class="text-dislcaimer">
+                Autorizo el uso de mi información para consultas y reportes en centrales de riesgo,
+                operadores de información de seguridad para finalidades de gestión de riesgo crediticio.
+              </div>
+            </div>
+          </div>                              
+          <mat-error
+            *ngIf="
+              secondFormGroup.controls['useData'].invalid &&
+              (secondFormGroup.controls['useData'].dirty ||
+                secondFormGroup.controls['useData'].touched)
+            "
+          >
+          <mat-error
+            *ngIf="secondFormGroup.controls['useData'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+
+        <div class="row no-gutters mb-3">
+          <div class="col-1">
+            <mat-checkbox formControlName="sendData" class="example-margin"></mat-checkbox></div>
+          <div class="col-11">
+            <div class="text-dislcaimer">
+              Autorizo de manera expresa la utilización de mis datos personales para el envío de información y 
+              ofertas comerciales de Seguros Bolívar y de las compañías que hacen parte del Grupo Bolívar
+            </div>
+          </div>
+        </div>
+                            
+        <mat-error
+          *ngIf="
+            secondFormGroup.controls['sendData'].invalid &&
+            (secondFormGroup.controls['sendData'].dirty ||
+              secondFormGroup.controls['sendData'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="secondFormGroup.controls['sendData'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </section>
+    </div>
+
+    <div class="buttonContainer my-5">
+      <button class="button" matStepperPrevious>Volver</button>
+      <button class="button button-primary" (click)="onSubmit($event)">
+        Continuar
+      </button>
+    </div>
+  </form>
+</ng-container>
+
+<div *ngIf="showSumary" class="summary">
+  <app-sumary></app-sumary>
+
+  <div style="justify-content: center" class="buttonContainer center my-5">
+    <button class="button button-primary" matStepperNext>Confirmar</button>
+  </div>
+</div>

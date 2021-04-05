@@ -1,0 +1,115 @@
+<div class="container my-3">
+  <img class="centerImg" src="../../../../assets/images/check.svg" alt="" />
+  <h4 class="text-center">Resumen de la información</h4>
+  <p class="text-center">
+    Presiona <strong>Confirmar</strong> si los datos son correctos
+  </p>
+  <hr class="w-50" />
+
+  <div class="dataLessee my-4">
+    <div class="row my-3">
+      <div class="col-6">
+        <p>Información del arrendatario</p>
+      </div>
+      <div class="col-6 end">
+        <p class="editar">
+          <img src="../../../../assets/iconos/editar.svg" alt="" /> Editar
+        </p>
+      </div>
+    </div>
+    <hr />
+
+    <div class="row my-3">
+      <div class="col-6">
+        <p class="title">Identificación</p>
+        <p class="data">{{ getDataForm1.numberDocument }}</p>
+      </div>
+
+      <div class="col-6">
+        <p class="title">Nombres</p>
+        <p class="data">{{ getDataForm1.name }}</p>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-6">
+        <p class="title">Apellidos</p>
+        <p class="data">{{ getDataForm1.lastName }}</p>
+      </div>
+
+      <div class="col-6">
+        <p class="title">Correo electrónico</p>
+        <p class="data">{{ getDataForm1.email }}</p>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-6">
+        <p class="title">Ocupación</p>
+        <p class="data">{{ getDataForm1.occupation }}</p>
+      </div>
+
+      <div class="col-6">
+        <p class="title">Celular</p>
+        <p class="data">{{ getDataForm1.phone }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dataRent">
+    <div class="row my-3">
+      <div class="col-6">
+        <p>Información del Inmueble</p>
+      </div>
+      <div class="col-6 end">
+        <p class="editar">
+          <img src="../../../../assets/iconos/editar.svg" alt="" /> Editar
+        </p>
+      </div>
+    </div>
+    <hr class="mt-0" />
+
+    <div class="row my-3">
+      <div class="col-6">
+        <p class="title">Ciudad</p>
+        <p class="data">{{ getDataForm2.cityRent }}</p>
+      </div>
+
+      <div class="col-6">
+        <p class="title">Dirección</p>
+        <p class="data">{{ getDataForm2.addressRent }}</p>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-6">
+        <p class="title">Valor arrendamiento</p>
+        <p class="data">{{ getDataForm2.priceRent | currency }}</p>
+      </div>
+
+      <div *ngIf="getDataForm2.admin" class="col-6">
+        <p class="title">Cuota administración</p>
+        <p class="data">{{ getDataForm2?.admin }}</p>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-6">
+        <p class="title">Destino del inmueble</p>
+        <p class="data">{{ getDataForm2.useProperty }}</p>
+      </div>
+
+      <div class="col-6">
+        <p class="title">Tipo de inmueble</p>
+        <p class="data">{{ getDataForm2.typeProperty }}</p>
+      </div>
+    </div>
+    <div *ngIf="getDataForm2.inmobiliaria" class="row my-3">
+      <div class="col-6">
+        <p class="title">Inmobiliaria</p>
+        <p class="data">{{ getDataForm2.inmo }}</p>
+      </div>
+
+      <div class="col-6">
+        <p class="title">Tipo de inmueble</p>
+        <p class="data">{{ getDataForm2.cityInmobiliaria }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+@import "base/forms";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+p {
+  @include media(mobile) {
+    font-size: 12px;
+  }
+}
+
+:host::ng-deep.mat-checkbox-layout {
+  white-space: normal !important;
+
+  @include media(mobile) {
+    line-height: 16px;
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+}
+
+.buttonContainer {
+  .button-primary {
+    margin-left: 1rem;
+  }
+  @include media(mobile) {
+    display: block;
+
+    .button {
+      width: 100%;
+
+      &-primary {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.dflex {
+  @include media(desktop) {
+    display: flex;
+  }
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+  transition: visibility 0s linear 2s, opacity 2s linear;
+}
+
+.visible {
+  display: inline;
+  opacity: 1;
+  transition-delay: 0s;
+}
+::ng-deep .mat-slide-toggle-bar {
+	background-color: $blue-color !important;
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+	background-color: $red-color !important;
+}
+
+.terminos{
+  background: url(/assets/images/edificios.png) #F8F8F8;
+	background-size: contain;
+	background-position: 0px bottom;
+	background-repeat: no-repeat;
+  margin-left: -300vw;
+  padding-left: 300vw;
+  margin-right: -300vw;
+  padding-right: 300vw;
+  a{    
+    font-family: "Gotham-Medium";
+    padding: 0 5px;
+    text-decoration: underline;
+    color: $blue-color;
+  }
+  .text-dislcaimer{
+    display: inline-flex;
+    margin-left: -30px;
+  }
+} 

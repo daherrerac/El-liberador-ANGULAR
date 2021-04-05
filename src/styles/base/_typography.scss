@@ -1,0 +1,54 @@
+@import "../abstracts/variables";
+
+@font-face {
+  font-family: "Gotham-Book";
+  src: local("Gotham-Book"),
+    url("/assets/fonts/Gotham-Book.otf") format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Thin";
+  src: local("Gotham-Thin"),
+    url("/assets/fonts/Gotham-Thin.otf") format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Book-Regular";
+  src: local("Gotham-Book-Regular"),
+    url("/assets/fonts/Gotham-Book-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Bold";
+  src: local("Gotham-Bold"),
+    url("/assets/fonts/Gotham-Bold.otf") format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Medium";
+  src: local("Gotham-Medium"),
+    url("/assets/fonts/Gotham-medium.otf") format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Light";
+  src: local("Gotham-Medium"),
+    url("/assets/fonts/Gotham-Light.otf") format("truetype");
+}
+*,
+body {
+  font-family: "Gotham-Book", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Gotham-Bold";
+}
+
+a {
+  color: $blue-color;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    color: $red-color;
+  }
+}
