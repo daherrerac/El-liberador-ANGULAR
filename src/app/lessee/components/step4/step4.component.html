@@ -1,15 +1,70 @@
-<form>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="Address"
-      formControlName="secondCtrl"
-      required
-    />
-  </mat-form-field>
+<div class="content-tab">
+  <h4 class="m-5">
+    Detalle de tu solicitud de arriendo
+  </h4>
 
-  <div id="buttonContainer">
-    <button mat-button matStepperPrevious>Back</button>
-    <button mat-button matStepperNext>Next</button>
+  <div class="cont-detail">
+    <div class="box-sw">
+      <h1>Solicitud N° 1232143</h1>
+      <p *ngIf="!share">Recuerda guardar este número para consultar su estado</p>
+      <div class="msg-big" *ngIf="share">ASEGURABLE</div>
+      <p *ngIf="share">¡Esto es todo! ¡Felicidades! Cuentas con el respaldo de <b>El libertador</b></p>
+    </div>
+    <div *ngIf="!share">
+      <h3> Para continuar con el estudio requieres <b>2</b> deudores solidarios</h3>
+      <p>Conla opción <b>Compartir</b> envíala a tu deudor solidario para que se registre</p>
+      <button class="button button-primary mt-5" (click)="open(sharecont)" >
+        Compartir
+      </button>
+    </div>
+    <div *ngIf="share">
+      <h3>Puedes continuar tu proceso de arrendamiento descargando el documento y compartipendolo con tu arrendador.</h3>
+    </div>
   </div>
-</form>
+  <div class="bx-ms" *ngIf="!share">
+    <p>Validaremos su identidad, <b>es importante que sea él mismo quien realice el proceso.</b></p> 
+    <p>Una vez analicemos la información de todos tus deudores solidarios <b>te notificaremos el resultado.</b></p>
+  </div>
+  
+
+  <div class="box-sw">
+    <h3 class="mb-5">Si tienes dudas llámanos a los números:</h3>
+    <p><b>Bogotá</b> al (1) 3527070,</p>
+    <p><b>Línea de servicio nacional</b> 3235996460</p>
+    <p><b>Whatsapp</b> asistente virtual Victoria 3148390322.</p>
+  </div>
+
+  <div class="container" *ngIf="share">
+    <div class="row">
+      <div class="col">
+        <button class="button mat-stepper-previous mt-4 mb-4" >
+            Finalizar
+        </button>
+      </div>
+      <div class="col">
+        <button class="button button-primary mt-4 mb-4">
+           Descargar 
+        </button>
+     </div>
+    </div>
+  </div>
+
+  <ng-template #sharecont let-modal>
+    <button type="button" class="close close-modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-body text-center">
+      <h4 class="my-4">
+          Compartir solicitud
+      </h4>
+      <div class="content">
+        <div class="row">
+          <div class="col btn-sw"><img src="../../../../assets/iconos/email.svg" class="img-modal" alt="" (click)="share = true; modal.dismiss('Cross click')"/><label>Correo electónico</label> </div>
+          <div class="col btn-sw"><img src="../../../../assets/iconos/whatsapp.svg" class="img-modal" alt="" (click)="share = true; modal.dismiss('Cross click')"/> <label>Whatsapp</label></div>
+        </div>
+      </div>
+
+    </div>
+  </ng-template>
+
+</div>

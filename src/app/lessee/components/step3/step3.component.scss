@@ -1,3 +1,5 @@
+@import "abstracts/mixins";
+
 h4{
     font-family: "Gotham-Bold";
     small{
@@ -38,4 +40,22 @@ h4{
 .red-cel{
     font-weight: bold;
     color: #bd0f14; 
+}
+
+@include media(mobile) {
+
+    .box-code {
+        .my-auto{
+        margin: 32px !important;
+        }
+        .code{
+            margin: 3px !important;
+            font-size: 27px !important;
+            max-width: 43px;
+            height: auto;
+        }
+        p{
+            font-size: 20px;
+        }
+    }
 }

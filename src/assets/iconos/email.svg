@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84.303" height="80" viewBox="0 0 84.303 80">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #bd0f14;
+      }
+
+      .cls-3 {
+        filter: url(#Trazado_189);
+      }
+    </style>
+    <filter id="Trazado_189" x="0" y="14.185" width="84.303" height="57.782" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Componente_223_1" data-name="Componente 223 – 1" transform="translate(4.152)">
+    <rect id="Rectángulo_428" data-name="Rectángulo 428" class="cls-1" width="80" height="80"/>
+    <g id="outline" transform="translate(4.848 20.185)">
+      <g class="cls-3" transform="matrix(1, 0, 0, 1, -9, -20.18)">
+        <path id="Trazado_189-2" data-name="Trazado 189" class="cls-2" d="M77.607,112H27.327a4.7,4.7,0,0,0-4.7,4.7v15.195H17.105a1.105,1.105,0,0,0,0,2.21H22.63v6.63H20.42a1.105,1.105,0,0,0,0,2.21h2.21v4.144a4.7,4.7,0,0,0,4.7,4.7h50.28a4.7,4.7,0,0,0,4.7-4.7V116.7A4.7,4.7,0,0,0,77.607,112Zm-50.28,2.21h50.28a2.486,2.486,0,0,1,.511.053L54.787,134.006a3.581,3.581,0,0,1-4.64,0L26.816,114.264A2.485,2.485,0,0,1,27.327,114.21ZM24.84,147.086v-4.144h2.21a1.105,1.105,0,1,0,0-2.21H24.84v-2.21h3.315a1.105,1.105,0,0,0,0-2.21H24.84V134.1h4.42a1.105,1.105,0,0,0,0-2.21H24.84V116.7a2.466,2.466,0,0,1,.233-1.043,1.112,1.112,0,0,0,.159.166L46.3,133.645,25.054,148.09a2.468,2.468,0,0,1-.214-1Zm52.766,2.486H27.327a2.487,2.487,0,0,1-.457-.044l21.179-14.4.67.566a5.785,5.785,0,0,0,7.5,0l.67-.566,21.179,14.4a2.488,2.488,0,0,1-.457.044Zm2.486-2.486a2.468,2.468,0,0,1-.214,1L58.636,133.644l21.236-17.969a2.466,2.466,0,0,1,.222,1.021Z" transform="translate(-7 -91.82)"/>
+      </g>
+    </g>
+  </g>
+</svg>

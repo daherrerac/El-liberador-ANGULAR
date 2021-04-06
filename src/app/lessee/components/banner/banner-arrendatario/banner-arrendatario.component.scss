@@ -37,7 +37,7 @@
 }
 
 .banner_desktop {
-  background-image: url(../../../../../assets/images/banner_home.jpg);
+  background-image: url(../../../../../assets/images/banner_home.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -46,6 +46,7 @@
   position: relative;
   margin-bottom: 7rem;
   max-height: 450px;
+ 
 
   &--text {    
     .blue {
@@ -73,6 +74,12 @@
 @media(max-width:768px){
   .banner_desktop{  
     background-image: url(../../../../../assets/images/banner_mobile.jpg);  
+    .blue{
+      width: 66%;
+      padding: 18px;
+      font-size: 25px;
+      margin-top: 158px;
+    }
     &--text{
       margin-top: 20%;
     }
@@ -80,7 +87,7 @@
   }
 }
 
-@media(max-width:600px){
+@include media(mobile) {
   .banner_desktop{    
     background-size: 100%;
     margin-top: -72px;    

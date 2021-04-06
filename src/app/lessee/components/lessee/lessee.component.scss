@@ -7,7 +7,7 @@
 .formMobile {
   @include media(mobile) {
     padding-top: 3rem;
-    margin-top: -6rem;
+    margin-top: -14rem;
     background: $gray-color2;
     z-index: 10000;
     position: relative;
@@ -44,5 +44,13 @@
   margin-top: 0.5rem;
 }
 ::ng-deep .mat-radio-container{
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
+  margin-right: 0.4rem;
+  width: 30px !important;
+  height: 30px !important;
 }
+::ng-deep .mat-radio-outer-circle , ::ng-deep.mat-radio-inner-circle{
+  width: 30px !important;
+  height: 30px !important;
+}
+

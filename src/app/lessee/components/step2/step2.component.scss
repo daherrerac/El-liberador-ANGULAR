@@ -80,3 +80,13 @@ p {
     margin-left: -30px;
   }
 } 
+
+@include media(mobile) {
+  .terminos{
+    padding-top: 12vw;
+    padding-bottom: 12vw;
+    .text-dislcaimer{
+      display: contents;
+    }
+  }
+}

@@ -32,8 +32,14 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
 @import "themes/light";
 
+body{
+  background-color: #F8F8F8 !important;
+}
 .fs-25{
   font-size: 25px;
+}
+.content-tab{
+  text-align: center;
 }
 .d-block {
   background-color: #43598eba;
@@ -52,3 +58,71 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
     color: #bd0f14;
   }
 }
+
+.mat-stepper-next{
+  margin: 0 auto !important
+}
+.radio-location{
+  display: contents !important;
+}
+.text-alert{
+  color: #bd0f14;
+  a{
+    font-weight: bold;
+    color: #bd0f14;
+  }
+}
+
+.mat-stepper-horizontal, .mat-stepper-vertical{
+  background-color: initial !important;
+} 
+
+.btn-sw{
+  box-shadow: 1px 1px 7px 0px #dcdcdc;
+  margin: 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  img {
+    width: auto;
+    height: 130px;
+  }
+}
+
+.mat-step-icon-content {
+  font-size: 20px;
+}
+
+.mat-horizontal-stepper-header .mat-step-icon {
+  padding: 20px;
+}
+
+.mat-horizontal-stepper-header{
+  height: 90px !important;
+}
+
+.mat-stepper-horizontal-line{
+  margin-top: -43px !important;
+}
+
+.mat-step-header:hover{
+  background-color: initial !important;
+}
+
+.mat-horizontal-stepper-header-container{
+  margin-bottom: 78px;
+}
+
+.d-block {
+  z-index: 99999 !important;
+}
+
+@include media(mobile) {
+  .m-5 {
+    margin: 1rem!important;
+  }
+  .button{
+    width: 90%;
+    text-align: center;
+    padding: 9px;
+  }
+} 

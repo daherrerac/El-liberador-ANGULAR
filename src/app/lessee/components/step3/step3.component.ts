@@ -8,14 +8,38 @@ import {NgbModal,ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class Step3Component implements OnInit {
 
   closeResult = '';
+  showCode = true;
+  showLocation = false;
+  showNumber = false;
+  showEntities = false;
+  validData = true;
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(event: Event): any {
+  onSubmit(event: Event,type: any): any {
     event.preventDefault();
+
+    switch(type) { 
+      case 'location': { 
+        this.modalService.dismissAll();
+        this.showLocation = true;
+        this.showCode = false;
+         break; 
+      } 
+      case 'number': { 
+        this.showLocation = false;
+        this.showNumber = true;
+         break; 
+      } 
+      case 'entities': { 
+        this.showNumber = false;
+        this.showEntities = true;
+         break; 
+      } 
+    } 
 
   }
 

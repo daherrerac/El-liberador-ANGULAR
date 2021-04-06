@@ -12,11 +12,13 @@
     margin-right: 8px;
     padding: 10px 30px;
     width: 100%;
-    border: 0.20000000298023224px solid #cccccc;
+    border: 0.200000003px solid #e6e6e6;
 
     .mat-radio-label {
       margin-bottom: 0;
+      
     }
+   
   }
 }
 
@@ -31,11 +33,11 @@
   display: inline-block;
   width: 100%;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 16px 19px;
   outline: 0;
   border: none;
   box-shadow: 0px 1px 11px #cccccc66;
-  border-radius: 12px;
+  border-radius: 8px;
   background: #ffffff;
   color: #706f6f;
   appearance: none;
@@ -61,8 +63,8 @@
 }
 .select_arrow {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 19px;
+  right: 25px;
   width: 11px;
   height: 11px;
   border: solid #bd0f14;
@@ -90,7 +92,8 @@
 .form-control {
   box-shadow: 0px 1px 11px #cccccc66;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
+  padding: 28px;
 
   &:focus,
   &:hover {
@@ -157,4 +160,16 @@
   width: 85%;
   justify-content: space-between;
   margin: 0 auto;
+}
+
+@include media(mobile) {
+  .mat-radio-group {
+    display: contents;
+  }
+  .radio-location{
+    .mat-radio-label-content {
+      overflow-x: auto;
+    } 
+  }
+  
 }

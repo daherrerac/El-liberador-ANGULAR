@@ -1,11 +1,10 @@
 <app-banner-arrendatario></app-banner-arrendatario>
 <div class="container formMobile">
   <mat-horizontal-stepper [linear]="true" #stepper>
-    <mat-step [stepControl]="step1">
-      <ng-template matStepLabel
-        >Datos <br />
-        arrendatario</ng-template
-      >
+    <mat-step [stepControl]="step1" >
+      <ng-template matStepLabel>
+        Datos <br />arrendatario
+      </ng-template>
       <app-step1 (firstFormData)="getDataFromFirstForm($event)"></app-step1>
     </mat-step>
     <mat-step [stepControl]="step2">
@@ -27,7 +26,9 @@
         >Resultados <br />
         solicitud
       </ng-template>
+      <app-step4></app-step4>
     </mat-step>
+
   </mat-horizontal-stepper>
 </div>
 

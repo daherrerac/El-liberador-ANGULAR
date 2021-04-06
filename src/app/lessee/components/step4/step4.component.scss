@@ -1,12 +1,70 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "base/forms";
-.buttonContainer {
-    .button-primary {
-      margin-left: 3rem;
-  
-      @include media(mobile) {
-        margin-left: 0;
-      }
+
+.cont-detail {
+  background-color: white;
+  padding: 85px;
+  p{
+    font-size: 22px;
+  }
+  .box-sw {
+    box-shadow: 1px 1px 7px 0px #dcdcdc;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 22px;
+    margin-bottom: 55px;
+    h1{
+      color: #bd0f14;
     }
   }
+  h3{
+    b{
+      color: #bd0f14;
+    }
+  }
+}
+
+.bx-ms{
+  padding: 73px;
+  padding-bottom: 0;
+  p{
+    font-size: 22px;
+  }
+}
+
+.box-sw {
+  box-shadow: 1px 1px 7px 0px #dcdcdc;
+  padding: 42px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 96px;
+  margin-top: 90px;
+  p{
+    font-size: 22px;
+  }
+  .msg-big{
+    font-size: 41px;
+    font-weight: bold;
+    margin: 19px;
+  }
+}
+
+@include media(mobile) {
+  .mat-horizontal-content-container{
+    padding: 0;
+  }
+  .cont-detail{
+    padding: 14px;
+    h1{
+      font-size: 2rem;
+    }
+    h3,p{
+      font-size: 1.4rem;
+    } 
+  }
+  .bx-ms{
+    padding: 30px;
+  }
+}

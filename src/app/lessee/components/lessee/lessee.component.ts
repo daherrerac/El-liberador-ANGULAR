@@ -8,12 +8,16 @@ import { FormBuilder } from '@angular/forms';
 import { Step1Component } from '../step1/step1.component';
 import { Step2Component } from '../step2/step2.component';
 import { Step3Component } from '../step3/step3.component';
+import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-lessee',
   templateUrl: './lessee.component.html',
   styleUrls: ['./lessee.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
+  }]
 })
 export class LesseeComponent implements OnInit {
   @ViewChild(Step1Component)
