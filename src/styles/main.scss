@@ -135,7 +135,7 @@ b{
 }
 
  app-lessee{
-	background: url(assets/images/edificios2.png) #F8F8F8;
+	background: url(/assets/images/edificios2.png) #F8F8F8;
 	background-size: contain;
 	background-position: 0px bottom;
 	background-repeat: no-repeat;
@@ -148,7 +148,7 @@ mat-step-header .mat-step-icon-selected + .mat-stepper-horizontal-line{
 
 @include media(mobile) {
   h4{
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
   }
   .m-5 {
     margin: 1rem!important;
