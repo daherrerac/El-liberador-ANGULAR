@@ -9,11 +9,11 @@
   <div class="dataLessee my-4">
     <div class="row my-3">
       <div class="col-6">
-        <p>Información del arrendatario</p>
+        <b>Información del arrendatario</b>
       </div>
       <div class="col-6 end">
         <p class="editar">
-          <img src="../../../../assets/iconos/editar.svg" alt="" /> Editar
+          <img src="assets/iconos/editar.svg" alt="" /> Editar
         </p>
       </div>
     </div>
@@ -57,7 +57,7 @@
   <div class="dataRent">
     <div class="row my-3">
       <div class="col-6">
-        <p>Información del Inmueble</p>
+        <b>Información del Inmueble</b>
       </div>
       <div class="col-6 end">
         <p class="editar">
@@ -84,9 +84,9 @@
         <p class="data">{{ getDataForm2.priceRent | currency }}</p>
       </div>
 
-      <div *ngIf="getDataForm2.admin" class="col-6">
+      <div *ngIf="getDataForm2.administracion" class="col-6">
         <p class="title">Cuota administración</p>
-        <p class="data">{{ getDataForm2?.admin }}</p>
+        <p class="data">{{ getDataForm2?.administracion }}</p>
       </div>
     </div>
     <div class="row my-3">
@@ -103,11 +103,11 @@
     <div *ngIf="getDataForm2.inmobiliaria" class="row my-3">
       <div class="col-6">
         <p class="title">Inmobiliaria</p>
-        <p class="data">{{ getDataForm2.inmo }}</p>
+        <p class="data">{{ getDataForm2.inmobiliaria }}</p>
       </div>
 
       <div class="col-6">
-        <p class="title">Tipo de inmueble</p>
+        <p class="title">Ciudad inmobiliaria</p>
         <p class="data">{{ getDataForm2.cityInmobiliaria }}</p>
       </div>
     </div>

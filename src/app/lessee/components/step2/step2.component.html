@@ -1,6 +1,6 @@
 <ng-container *ngIf="!showSumary">
   <form [formGroup]="secondFormGroup">
-    <div class="container mt-4">
+    <div class="container mt-4 mobile_style">
       <div class="text-center">
         <h4>Ingrese los datos del inmueble que le interesa arrendar</h4>
         <p>Los campos marcados con * son obligatorios</p>
@@ -199,7 +199,7 @@
       </div>
 
 
-      <section class="mt-5">
+      <section class="box-check ">
         <div class="d-flex my-3">
           <label for="">
             ¿Incluye administración?<span class="red"
@@ -231,7 +231,7 @@
       </section>
 
 
-      <section class="mt-5">
+      <section class="box-check bg-white">
         <div class="d-flex my-3">
           <label for="">
             ¿Está arrendado con una Inmobiliaria?<span class="red"
@@ -251,18 +251,8 @@
           </p>
 
           <div class="form-group my-3 d-flex">
+
             <div class="group ">
-              <label for="">Ciudad <span class="red">*</span> </label>
-              <input
-                type="text"
-                name="cityInmobiliaria"
-                id="cityInmobiliaria"
-                formControlName="cityInmobiliaria"
-                class="form-control"
-                placeholder="Buscar..."
-              />
-            </div>
-            <div class="group ml-4">
               <label for="">Inmobiliaria <span class="red">*</span> </label>
               <input
                 type="add"
@@ -274,6 +264,17 @@
               />
             </div>
 
+            <div class="group ml-4">
+              <label for="">Ciudad <span class="red">*</span> </label>
+              <input
+                type="text"
+                name="cityInmobiliaria"
+                id="cityInmobiliaria"
+                formControlName="cityInmobiliaria"
+                class="form-control"
+                placeholder="Buscar..."
+              />
+            </div>
             
           </div>
         </div>
@@ -284,9 +285,9 @@
           <div class="col-1">
             <mat-checkbox formControlName="dataPolices" class="example-margin"></mat-checkbox>
           </div>
-          <div class="col-11">   
+          <div class="ml-2 col-9">   
             <div class="text-dislcaimer">
-              Acepto los <a href="#"> Términos y Condiciones</a>, y la <a href="#">Política de Privacidad.</a> y el <a href="#">Tratamiento de Mis datos Personales</a>
+              Acepto los <a href="#"> Términos y Condiciones </a>, la <a href="#">Política de Privacidad </a> y el <a href="#">Tratamiento de mis Datos Personales</a>
             </div>
           </div>
         </div>
@@ -310,10 +311,9 @@
             <div class="col-1">
               <mat-checkbox formControlName="useData" class="example-margin"></mat-checkbox>
             </div>
-            <div class="col-11">
+            <div class="ml-2 col-9">
               <div class="text-dislcaimer">
-                Autorizo el uso de mi información para consultas y reportes en centrales de riesgo,
-                operadores de información de seguridad para finalidades de gestión de riesgo crediticio.
+                Autorizo el uso de mi información para consultas y reportes en centrales de riesgo, operadores de información de seguridad para finalidades de gestión de riesgo crediticio. 
               </div>
             </div>
           </div>                              
@@ -334,15 +334,14 @@
         <div class="row no-gutters mb-3">
           <div class="col-1">
             <mat-checkbox formControlName="sendData" class="example-margin"></mat-checkbox></div>
-          <div class="col-11">
+          <div class="ml-2 col-9">
             <div class="text-dislcaimer">
-              Autorizo de manera expresa la utilización de mis datos personales para el envío de información y 
-              ofertas comerciales de Seguros Bolívar y de las compañías que hacen parte del Grupo Bolívar
+              Autorizo de manera expresa la utilización de mis datos personales para el envío de información y ofertas comerciales de Seguros Bolívar y de las compañías que hacen parte del Grupo Bolívar.
             </div>
           </div>
         </div>
                             
-        <mat-error
+       <!-- <mat-error
           *ngIf="
             secondFormGroup.controls['sendData'].invalid &&
             (secondFormGroup.controls['sendData'].dirty ||
@@ -354,7 +353,7 @@
           >
             Campo requerido
           </mat-error>
-        </mat-error>
+        </mat-error>-->
       </section>
     </div>
 

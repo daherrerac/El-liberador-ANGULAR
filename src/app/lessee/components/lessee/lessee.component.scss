@@ -2,6 +2,7 @@
 @import "abstracts/mixins";
 @import "base/forms";
 
+
 .ch-bg{background-color: red;height: 100%;}
 
 .formMobile {
@@ -26,15 +27,18 @@
     background-color: $blue-color;
   }
 
-  .mat-step-icon-selected {
-    background-color: $red-color;
-  }
+  .mat-step-icon-selected,.mat-step-icon-state-done {
+    background-color: $red-color !important;
+  } 
 
   .mat-step-label {
     text-align: center;
     margin-top: 1rem;
     line-height: 1;
     font-size: 0.8rem;
+    @include media(mobile) {
+      font-size: 0.7rem;
+    }
   }
 }
 ::ng-deep  .mat-radio-group{

@@ -45,17 +45,26 @@ h4{
 @include media(mobile) {
 
     .box-code {
+        height: auto;
+        padding-bottom: 8px;
         .my-auto{
         margin: 32px !important;
         }
         .code{
             margin: 3px !important;
             font-size: 27px !important;
-            max-width: 43px;
+            max-width: 22%;
             height: auto;
         }
         p{
-            font-size: 20px;
+            font-size: 15px;
         }
+        h4{
+            font-size: 0.9rem !important;
+        }
+    }
+
+    .text-link{
+        font-size: 15px;
     }
 }

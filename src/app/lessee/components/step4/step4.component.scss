@@ -51,20 +51,53 @@
   }
 }
 
-@include media(mobile) {
-  .mat-horizontal-content-container{
-    padding: 0;
+.buttonContainer{
+  display: block !important;
+  width: 86%;
+  .button-primary{
+    margin-left: 1rem;
   }
+}
+
+
+@include media(mobile) {
+
+ 
   .cont-detail{
     padding: 14px;
     h1{
-      font-size: 2rem;
+      font-size: 1.1rem;
     }
     h3,p{
-      font-size: 1.4rem;
+      font-size: 1rem;
     } 
   }
-  .bx-ms{
+  .bx-ms,.box-sw{
+    margin: 0px;
+    margin-top: 45px;
     padding: 30px;
+    margin-bottom: 39px;
+    h3,p{
+      font-size: 1rem;
+    } 
   }
+  .mobile_style{
+    h4{
+      text-align: initial !important; 
+      margin: 0px !important;
+      margin-bottom: 25px !important;
+    }
+  }
+  .msg-big{
+    font-size: 21px !important;
+  }
+  .buttonContainer{
+    .button-primary{
+      margin: 0;
+    }
+  }
+  
+
+  
 }
+

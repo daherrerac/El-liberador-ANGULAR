@@ -104,22 +104,26 @@
 :host {
   ::ng-deep.mat-slide-toggle-bar {
     position: relative;
-    width: 45px;
-    height: 20px;
-    border-radius: 10px;
+    /*width: 45px;
+    height: 20px;*/
+    width: 66px;
+    height: 27px;
+    border-radius: 20px;
+    //  border-radius: 10px;
     background-color: $red-color;
+    font-size: 23px;
   }
   ::ng-deep.mat-slide-toggle {
     margin-left: 3rem;
 
     &-thumb {
-      background-color: white;
-      height: 16px;
-      width: 16px;
+      background-color:$blue-color;
+      height: 20px;
+      width: 20px;
       border-radius: 50%;
       position: relative;
-      top: 5px;
-      left: 2px;
+      top: 6px;
+      left: 5px;
     }
     &.mat-checked {
       ::ng-deep.mat-slide-toggle-bar {
@@ -131,13 +135,14 @@
           font-family: "Gotham-Bold";
           color: white;
           position: absolute;
-          left: 8px;
-          top: -1px;
+          left: 16px;
+          top: 1px;
         }
       }
       .mat-slide-toggle-thumb {
         background-color: white;
-        left: 10px;
+        //background-color: white;
+        left: 25px;
       }
     }
     &:not(.mat-checked) {
@@ -146,10 +151,10 @@
         content: "NO";
         font-size: 77%;
         font-weight: 700;
-        color: white;
+        color:$blue-color;
         position: absolute;
-        left: 21px;
-        top: -1px;
+        left: 29px;
+        top:  1px;
       }
     }
   }
@@ -157,11 +162,21 @@
 
 .buttonContainer {
   display: flex;
-  width: 85%;
+  width: 52%;
   justify-content: space-between;
   margin: 0 auto;
 }
 
+.mat-checkbox-inner-container{
+  height: 23px  !important;
+  width: 23px  !important;
+}
+
+.mat-slide-toggle-thumb-container{
+  width: 43px;
+  height: 20px;
+  top: -3px;
+}
 @include media(mobile) {
   .mat-radio-group {
     display: contents;
@@ -170,6 +185,10 @@
     .mat-radio-label-content {
       overflow-x: auto;
     } 
+  }
+
+  .buttonContainer {
+    width: 100%;
   }
   
 }

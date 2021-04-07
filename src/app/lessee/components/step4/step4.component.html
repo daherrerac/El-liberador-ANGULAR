@@ -1,4 +1,4 @@
-<div class="content-tab">
+<div class="content-tab mobile_style">
   <h4 class="m-5">
     Detalle de tu solicitud de arriendo
   </h4>
@@ -34,19 +34,13 @@
     <p><b>Whatsapp</b> asistente virtual Victoria 3148390322.</p>
   </div>
 
-  <div class="container" *ngIf="share">
-    <div class="row">
-      <div class="col">
-        <button class="button mat-stepper-previous mt-4 mb-4" >
-            Finalizar
-        </button>
-      </div>
-      <div class="col">
-        <button class="button button-primary mt-4 mb-4">
-           Descargar 
-        </button>
-     </div>
-    </div>
+  
+
+  <div class="buttonContainer" *ngIf="share">
+    <button class="button" matStepperPrevious>Finalizar</button>
+    <button class="button mt-3 button-primary" >
+      Descargar 
+    </button>
   </div>
 
   <ng-template #sharecont let-modal>

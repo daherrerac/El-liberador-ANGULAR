@@ -35,6 +35,9 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 body{
   background-color: #F8F8F8 !important;
 }
+b{
+  font-family: "Gotham-Bold";
+}
 .fs-25{
   font-size: 25px;
 }
@@ -79,11 +82,14 @@ body{
 
 .btn-sw{
   box-shadow: 1px 1px 7px 0px #dcdcdc;
-  margin: 25px;
+  margin: 14px;
   border-radius: 12px;
   font-weight: bold;
+  .msg-big{
+    font-size: 22px;
+  }
   img {
-    width: auto;
+    width: 93%;
     height: 130px;
   }
 }
@@ -101,7 +107,15 @@ body{
 }
 
 .mat-stepper-horizontal-line{
+  border: initial !important;
+  height: 20px !important;
+  -webkit-box-shadow: inset 0px 3px 6px 0px rgb(50 50 50 / 30%);
+  -moz-box-shadow:    inset 0px 3px 6px 0px rgb(50 50 50 / 30%);
+  box-shadow:         inset 0px 3px 6px 0px rgb(50 50 50 / 30%);
   margin-top: -43px !important;
+  border-bottom: 2px white solid;
+  margin-left: -52px  !important;
+  margin-right: -52px !important;
 }
 
 .mat-step-header:hover{
@@ -109,14 +123,33 @@ body{
 }
 
 .mat-horizontal-stepper-header-container{
-  margin-bottom: 78px;
+  margin-bottom: 20px;
 }
 
 .d-block {
   z-index: 99999 !important;
 }
 
+.bg-white{
+  background-color: white;
+}
+
+ app-lessee{
+	background: url(/assets/images/edificios2.png) #F8F8F8;
+	background-size: contain;
+	background-position: 0px bottom;
+	background-repeat: no-repeat;
+  display: block;
+}
+
+mat-step-header .mat-step-icon-selected + .mat-stepper-horizontal-line{
+  background-color: red;
+}
+
 @include media(mobile) {
+  h4{
+    font-size: 1.2rem !important;
+  }
   .m-5 {
     margin: 1rem!important;
   }
@@ -124,5 +157,14 @@ body{
     width: 90%;
     text-align: center;
     padding: 9px;
+  }
+  .mobile_style{
+    
+    .text-center {
+      text-align: initial !important;
+    }
+  }
+  .mat-horizontal-content-container{
+    padding: 0 8px 24px 8px !important;
   }
 } 

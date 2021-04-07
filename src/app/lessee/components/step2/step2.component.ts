@@ -28,7 +28,7 @@ export class Step2Component implements OnInit {
       cityInmobiliaria: '',
       dataPolices: ['', Validators.required],
       useData: ['', Validators.required],
-      sendData: ['', Validators.required],
+     // sendData: ['', Validators.required],
       inmobiliaria2: '',
       administracion:'',
       administracion2:'',
