@@ -146,9 +146,29 @@ mat-step-header .mat-step-icon-selected + .mat-stepper-horizontal-line{
   background-color: red;
 }
 
+.modal-content{
+  border-radius: 12px !important;
+}
+.button {
+  height: max-content;
+}
+
+label{
+  color: #253150;
+}
+
 @include media(mobile) {
+  .navbar{
+    width: 94%;
+  }
+  .buttonContainer .rt-3{
+    margin-top: 13px;
+  }
   h4{
-    font-size: 1rem !important;
+    font-size: 16px !important;
+  }
+  p{
+    font-size: 12px;
   }
   .m-5 {
     margin: 1rem!important;
@@ -163,8 +183,28 @@ mat-step-header .mat-step-icon-selected + .mat-stepper-horizontal-line{
     .text-center {
       text-align: initial !important;
     }
+    
   }
   .mat-horizontal-content-container{
     padding: 0 8px 24px 8px !important;
   }
+  .box-sw{
+    h3,p{
+      font-size: 12px;
+    }
+  }
+  label{
+    font-size: 14px;
+  }
+  button.close-modal{
+    display: none;
+  }
 } 
+
+.mat-step-header .mat-step-header-ripple{
+  display: none  !important;
+}
+
+.mat-step-header{
+  background-color: initial !important;
+}

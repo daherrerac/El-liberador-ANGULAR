@@ -30,7 +30,7 @@
   src: local("Gotham-Medium"),
     url("../../assets/fonts/Gotham-Light.otf") format("truetype");
 }
-*,
+
 body {
   font-family: "Gotham-Book", Arial, Helvetica, sans-serif;
 }
@@ -51,4 +51,15 @@ a {
   &:hover {
     color: $red-color;
   }
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active {
+  color: #253150;
+  font-family: 'Gotham-Medium' !important;
+}
+label{
+  font-family: 'Gotham-Light'  ;
+}
+.mat-radio-label{
+  font-family: 'Gotham-Light';
 }

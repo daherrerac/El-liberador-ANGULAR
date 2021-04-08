@@ -54,7 +54,7 @@
 .buttonContainer{
   display: block !important;
   width: 86%;
-  .button-primary{
+  .mat-stepper-previous{
     margin-left: 1rem;
   }
 }
@@ -69,7 +69,7 @@
       font-size: 1.1rem;
     }
     h3,p{
-      font-size: 1rem;
+      font-size: 14px;
     } 
   }
   .bx-ms,.box-sw{
@@ -77,10 +77,11 @@
     margin-top: 45px;
     padding: 30px;
     margin-bottom: 39px;
-    h3,p{
-      font-size: 1rem;
-    } 
+    p{
+      font-size: 12px !important;
+    }
   }
+  
   .mobile_style{
     h4{
       text-align: initial !important; 
@@ -96,6 +97,9 @@
       margin: 0;
     }
   }
+  p{
+    font-size: 12px;
+  } 
   
 
   

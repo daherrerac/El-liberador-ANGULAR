@@ -12,7 +12,7 @@
     </div>
     <div *ngIf="!share">
       <h3> Para continuar con el estudio requieres <b>2</b> deudores solidarios</h3>
-      <p>Conla opción <b>Compartir</b> envíala a tu deudor solidario para que se registre</p>
+      <p>Con la opción <b>Compartir</b> envíala a tu deudor solidario para que se registre</p>
       <button class="button button-primary mt-5" (click)="open(sharecont)" >
         Compartir
       </button>
@@ -28,7 +28,7 @@
   
 
   <div class="box-sw">
-    <h3 class="mb-5">Si tienes dudas llámanos a los números:</h3>
+    <h3 class="mb-3">Si tienes dudas llámanos a los números:</h3>
     <p><b>Bogotá</b> al (1) 3527070,</p>
     <p><b>Línea de servicio nacional</b> 3235996460</p>
     <p><b>Whatsapp</b> asistente virtual Victoria 3148390322.</p>
@@ -37,10 +37,11 @@
   
 
   <div class="buttonContainer" *ngIf="share">
-    <button class="button" matStepperPrevious>Finalizar</button>
-    <button class="button mt-3 button-primary" >
+    
+    <button class="button  button-primary" >
       Descargar 
     </button>
+    <button class="button mt-3" matStepperPrevious>Finalizar</button>
   </div>
 
   <ng-template #sharecont let-modal>
