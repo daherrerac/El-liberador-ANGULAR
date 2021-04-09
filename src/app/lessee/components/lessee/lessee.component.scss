@@ -32,10 +32,12 @@
   } 
 
   .mat-step-label {
+    font-family: "Gotham-Book";
     text-align: center;
     margin-top: 1rem;
     line-height: 1;
     font-size: 0.8rem;
+    color: #706F6F;
     @include media(mobile) {
       font-size: 0.7rem;
     }

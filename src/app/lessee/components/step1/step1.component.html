@@ -2,13 +2,13 @@
   <div class="container mt-4 mobile_style">
     <div class="text-center ">
       <h4>Para iniciar necesitamos tus datos</h4>
-      <p>Recuerde que los campos con <span class="red">*</span> son obligatorios</p>
+      <p>Recuerda que los campos con <span class="red">*</span> son obligatorios</p>
     </div>
 
     <label class="w-100">Tipo de documento <span class="red">*</span> </label>
     <mat-radio-group class="desktop d-flex" formControlName="typeId">
-      <mat-radio-button value="cc">Cédula de ciudadanía</mat-radio-button>
-      <mat-radio-button value="ce">Cédula de extranjería</mat-radio-button>
+      <mat-radio-button value="CC">Cédula de ciudadanía</mat-radio-button>
+      <mat-radio-button value="CE">Cédula de extranjería</mat-radio-button>
     </mat-radio-group>
     <mat-error
       class="desktop"
@@ -26,8 +26,8 @@
     <div class="select mobile">
       <select formControlName="typeId">
         <option value="" [disabled]="true">--Seleccione una opción--</option>
-        <option value="cc">Cédula de ciudadanía</option>
-        <option value="ce">Cédula de extranjería</option>
+        <option value="CC">Cédula de ciudadanía</option>
+        <option value="CE">Cédula de extranjería</option>
       </select>
       <div class="select_arrow"></div>
     </div>
@@ -263,30 +263,7 @@
         </mat-error>
       </mat-error>
     </div>
-    <div class="form-group my-3">
-      <label for="">Ciudad <span class="red">*</span> </label>
-      <input
-        type="text"
-        name="city"
-        id="city"
-        formControlName="city"
-        class="form-control"
-        placeholder="Buscar..."
-      />
-
-      <mat-error
-        *ngIf="
-          firstFormGroup.controls['city'].invalid &&
-          (firstFormGroup.controls['city'].dirty ||
-            firstFormGroup.controls['city'].touched)
-        "
-      >
-        <mat-error *ngIf="firstFormGroup.controls['city'].hasError('required')">
-          Campo requerido
-        </mat-error>
-      </mat-error>
-    </div>
-
+    
     <div class="form-group my-3">
       <label for="">Correo electrónico <span class="red">*</span> </label>
       <input
@@ -372,5 +349,8 @@
     matStepperNext
   >
     Continuar
-  </button>
+  </button>  
 </div>
+<div class="div separador-100"></div>
+<div class="div separador-25"></div>
+

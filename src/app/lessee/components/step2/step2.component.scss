@@ -57,7 +57,10 @@
 ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
 	background-color: $red-color !important;
 }
-
+::ng-deep  .mat-radio-label-content{
+  font-family: "Gotham-Book";
+  color:#706F6F;
+}
 .terminos{
   /*background: url(/assets/images/edificios.png) #F8F8F8;
 	background-size: contain;
@@ -74,13 +77,16 @@
     color: $blue-color;
   }
   .text-dislcaimer{
+    font-family: "Gotham-Book";
     margin-left: -30px;
+    color: $blue-color;
+    margin-bottom: 2em;
   }
 } 
 
 .box-check{
-  padding: 32px;
-  padding-left: 54px
+  padding: 32px 0;
+  
 }
 
 @include media(mobile) {
@@ -107,4 +113,22 @@
       }
     }
   }
+}
+
+
+h4{
+  color: $blue-color;
+  margin-bottom: 20px;
+}
+p{
+  color: $blue-color;
+  font-family: "Gotham-Book";
+  margin-bottom: 60px;
+}
+::ng-deep  .mat-radio-label-content{
+  font-family: "Gotham-Book";
+  color:#706F6F;
+}
+input,select,.select{
+  font-family: "Gotham-Book";
 }

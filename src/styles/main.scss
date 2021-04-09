@@ -135,7 +135,7 @@ b{
 }
 
  app-lessee{
-	background: url(/assets/images/edificios2.png) #F8F8F8;
+	background: url(../assets/images/edificios2.png) #F8F8F8;
 	background-size: contain;
 	background-position: 0px bottom;
 	background-repeat: no-repeat;
@@ -207,4 +207,18 @@ label{
 
 .mat-step-header{
   background-color: initial !important;
+}
+
+/*Adicionales*/
+.separador-100{
+  height: 100px;
+  display: block;  
+}
+.separador-50{
+  height: 50px;
+  display: block;  
+}
+.separador-25{
+  height: 50px;
+  display: block;  
 }

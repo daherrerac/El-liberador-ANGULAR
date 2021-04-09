@@ -107,3 +107,13 @@
     }
   }
 }
+
+@media(max-width:480px){
+  .banner_desktop{    
+    background-size: 100%;
+    margin-top: -72px;    
+    &--text{
+      margin-top: 35%;
+    }
+  }
+}

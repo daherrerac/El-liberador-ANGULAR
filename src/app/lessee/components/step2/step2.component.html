@@ -3,7 +3,7 @@
     <div class="container mt-4 mobile_style">
       <div class="text-center">
         <h4>Ingrese los datos del inmueble que le interesa arrendar</h4>
-        <p>Los campos marcados con * son obligatorios</p>
+        <p>Recuerda que los campos con <span class="red">*</span> son obligatorios</p>
       </div>
 
       <div class="form-group my-3 desktop dflex">
@@ -125,8 +125,8 @@
 
       <label class="w-100">Destino <span class="red">*</span> </label>
       <mat-radio-group formControlName="useProperty">
-        <mat-radio-button value="vivienda">Vivienda</mat-radio-button>
-        <mat-radio-button value="comercio">Comercio</mat-radio-button>
+        <mat-radio-button value="Vivienda">Vivienda</mat-radio-button>
+        <mat-radio-button value="Comercio">Comercio</mat-radio-button>
       </mat-radio-group>
       <mat-error
         *ngIf="
@@ -141,7 +141,7 @@
           Campo requerido
         </mat-error>
       </mat-error>
-      <label class="w-100 my-3"
+      <label class="w-100 mt-4 mb-2"
         >Tipo de inmueble <span class="red">*</span>
       </label>
       <div class="select">
@@ -374,3 +374,5 @@
     <button class="button button-primary" matStepperNext>Confirmar</button>
   </div>
 </div>
+<div class="div separador-100"></div>
+<div class="div separador-25"></div>

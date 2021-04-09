@@ -1,4 +1,5 @@
 @import "abstracts/mixins";
+@import "abstracts/variables";
 
 h4{
     font-family: "Gotham-Bold";
@@ -27,14 +28,24 @@ h4{
         font-weight: bold;
         color: #bd0f14;  
     }
+    p{
+        font-family: "Gotham-Book";
+        color: $blue-color;
+        font-size: 23px;
+        strong{
+            font-family: "Gotham-Medium";
+        }
+    }
 }
 .text-link {
+    font-family: "Gotham-Medium";
     text-align: center;
-    font-size: 23px;
-    font-weight: bold;
-    margin-top: 59px;
+    font-size: 20px;    
+    margin-top: 10px;
+    color: $blue-color;    
     a{
         color: #bd0f14;
+        text-decoration: underline;
     }
 }
 .red-cel{
@@ -66,5 +77,21 @@ h4{
 
     .text-link{
         font-size: 15px;
+    }
+}
+h4{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    color: $blue-color;
+}
+
+.modal-body{
+    p{
+        font-family: "Gotham-Book";
+        color: $blue-color;
+        b{
+            font-family: "Gotham-Medium";
+        }
     }
 }

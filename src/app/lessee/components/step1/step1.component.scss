@@ -25,3 +25,20 @@
     }
   }
 }
+
+h4{
+  color: $blue-color;
+  margin-bottom: 20px;
+}
+p{
+  color: $blue-color;
+  font-family: "Gotham-Book";
+  margin-bottom: 60px;
+}
+::ng-deep  .mat-radio-label-content{
+  font-family: "Gotham-Book";
+  color:#706F6F;
+}
+input,select,.select{
+  font-family: "Gotham-Book";
+}

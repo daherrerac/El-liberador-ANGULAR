@@ -7,6 +7,8 @@
   color: $blue-color;
   font-weight: bold;
   padding: 0.5rem 6rem;
+  width: 320px;
+  max-width: 320px;
 
   &-primary {
     background: var(--unnamed-color-bd0f14) 0% 0% no-repeat padding-box;
@@ -14,5 +16,7 @@
     box-shadow: 0px 1px 11px #848484b1;
     border: 3px solid $red-color;
     color: $white-color;
+    width: 320px;
+    max-width: 320px;
   }
 }

@@ -6,10 +6,14 @@
 }
 
 p {
-  margin: 0;
+  font-family: "Gotham-Book";
+  margin: 0;  
 }
-
+label{
+  font-family: "Gotham-Medium";
+}
 .title {
+  font-family: "Gotham-Book";
   color: $gray-color;
 }
 .data {
@@ -21,4 +25,14 @@ p {
   color: white;
   padding: 3px 10px;
   border-radius: 20px;
+}
+.editar a{
+  text-decoration: none;
+  color: #fff;  
+}
+h4,P{
+  color: $blue-color;
+}
+.dataRent{
+  margin-top: 4rem;
 }

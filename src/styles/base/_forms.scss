@@ -28,8 +28,8 @@
   margin-bottom: 15px;
   width: 100%;
 }
-.select select {
-  font-family: "Arial";
+.select select {  
+  font-family: "Gotham-Book",Arial, Helvetica, sans-serif;
   display: inline-block;
   width: 100%;
   cursor: pointer;
@@ -162,9 +162,10 @@
 
 .buttonContainer {
   display: flex;
-  width: 52%;
+  width: 100%;
   justify-content: space-between;
   margin: 0 auto;
+  max-width: 660px;
 }
 
 .mat-checkbox-inner-container{

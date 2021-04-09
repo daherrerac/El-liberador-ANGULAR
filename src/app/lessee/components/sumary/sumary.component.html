@@ -13,7 +13,7 @@
       </div>
       <div class="col-6 end">
         <p class="editar">
-          <img src="assets/iconos/editar.svg" alt="" /> Editar
+          <a routerLink="/arrendatario"><img src="assets/iconos/editar.svg" alt="" /> Editar</a>
         </p>
       </div>
     </div>
@@ -22,7 +22,7 @@
     <div class="row my-3">
       <div class="col-6">
         <p class="title">Identificación</p>
-        <p class="data">{{ getDataForm1.numberDocument }}</p>
+        <p class="data"><span>{{ getDataForm1.typeId}}</span> {{ getDataForm1.numberDocument }}</p>
       </div>
 
       <div class="col-6">
@@ -52,6 +52,14 @@
         <p class="data">{{ getDataForm1.phone }}</p>
       </div>
     </div>
+    <div class="row my-3">
+      <div class="col-6">
+        <p class="title">Sexo</p>
+        <p class="data">{{ getDataForm1.gender }}</p>
+      </div>
+
+      
+    </div>
   </div>
 
   <div class="dataRent">
@@ -61,7 +69,7 @@
       </div>
       <div class="col-6 end">
         <p class="editar">
-          <img src="assets/iconos/editar.svg" alt="" /> Editar
+          <a><img src="assets/iconos/editar.svg" alt="" /> Editar</a>
         </p>
       </div>
     </div>
@@ -113,3 +121,4 @@
     </div>
   </div>
 </div>
+<div class="div separador-25"></div>
