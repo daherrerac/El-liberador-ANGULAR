@@ -79,6 +79,9 @@
     color: $blue-color;
     margin-bottom: 2em;
   }
+  .row{
+    height: 50px;
+  }
 } 
 
 .box-check{
@@ -144,4 +147,42 @@ input,select,.select{
 
 ::ng-deep app-stepp2 .arrow::before{ 
   border-right-color: $blue-color !important;  
+}
+
+
+.centerImg {
+  margin: 0 auto;
+  display: block;
+}
+
+p {
+  font-family: "Gotham-Book";
+  margin: 0;  
+}
+label{
+  font-family: "Gotham-Medium";
+}
+.title {
+  font-family: "Gotham-Book";
+  color: $gray-color;
+}
+.data {
+  color: $red-color;
+}
+
+.editar {
+  background: $blue-color;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.editar a{
+  text-decoration: none;
+  color: #fff;  
+}
+h4,P{
+  color: $blue-color;
+}
+.dataRent{
+  margin-top: 4rem;
 }

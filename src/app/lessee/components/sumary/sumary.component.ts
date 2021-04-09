@@ -1,5 +1,5 @@
 import { asLiteral } from '@angular/compiler/src/render3/view/util';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatStepper } from '@angular/material/stepper';
 
 @Component({
@@ -10,6 +10,8 @@ import { MatStepper } from '@angular/material/stepper';
 export class SumaryComponent implements OnInit {
   getDataForm1: any;
   getDataForm2: any;
+  childSummary = false;
+  @Input() showSumary!: boolean;
   
 
   constructor() {
@@ -24,5 +26,11 @@ export class SumaryComponent implements OnInit {
     this.getDataForm2 = this.getDataForm2[0];
   }
 
+  onClic(event: Event): any {
+    event.preventDefault();
+    if(this.showSumary){
+      this.childSummary = false;
+    }
+  }
  
 }

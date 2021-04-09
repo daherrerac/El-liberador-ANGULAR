@@ -245,16 +245,16 @@
           <mat-slide-toggle formControlName="inmobiliaria2"></mat-slide-toggle>
         </div>
 
-        <div
+        <div 
           [ngClass]="getValueSwitch() ? 'visible' : 'hide'"
           *ngIf="getValueSwitch()"
         >
-          <p>
+          <p >
             Si está realizando su proceso con una inmobiliaria cuéntenos cuál y
             nosotros le notificaremos el resultado.
           </p>
 
-          <div class="form-group my-3 d-flex">
+          <div class="form-group my-3 d-flex p-3">
 
             <div class="group ">
               <label for="">Inmobiliaria <span class="red">*</span> </label>
@@ -285,7 +285,7 @@
       </section>
 
       <section class="example-section my-5 terminos">
-        <div class="row  no-gutters mb-3">
+        <div class="row  no-gutters">
           <div class="col-1">
             <mat-checkbox formControlName="dataPolices" class="example-margin"></mat-checkbox>
           </div>
@@ -311,7 +311,7 @@
           
                   
           
-          <div class="row no-gutters mb-3">
+          <div class="row no-gutters mt-3">
             <div class="col-1">
               <mat-checkbox formControlName="useData" class="example-margin"></mat-checkbox>
             </div>
@@ -335,7 +335,7 @@
           </mat-error>
         </mat-error>
 
-        <div class="row no-gutters mb-3">
+        <div class="row no-gutters mt-3">
           <div class="col-1">
             <mat-checkbox formControlName="sendData" class="example-margin"></mat-checkbox></div>
           <div class="ml-2 col-lg-9 col-10">
@@ -371,11 +371,142 @@
 </ng-container>
 
 <div *ngIf="showSumary" class="summary">
-  <app-sumary></app-sumary>
+  
+
+  <div class="container my-3">
+    <img class="centerImg" src="assets/images/check.svg" alt="" />
+    <h4 class="text-center">Resumen de la información</h4>
+    <p class="text-center">
+      Presiona <strong>Confirmar</strong> si los datos son correctos
+    </p>
+    <hr class="w-50" />
+  
+    <div class="dataLessee my-4">
+      <div class="row my-3">
+        <div class="col-6">
+          <label>Información del arrendatario</label>
+        </div>
+        <div class="col-6 end">
+          <p class="editar">
+            <a  (click)="onClic($event)"><img src="assets/iconos/editar.svg" alt="" /> Editar</a>
+          </p>
+        </div>
+      </div>
+      <hr />
+  
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Identificación</p>
+          <p class="data"><span>{{ getDataForm1.typeId}}</span> {{ getDataForm1.numberDocument }}</p>
+        </div>
+  
+        <div class="col-6">
+          <p class="title">Nombres</p>
+          <p class="data">{{ getDataForm1.name }}</p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Apellidos</p>
+          <p class="data">{{ getDataForm1.lastName }}</p>
+        </div>
+  
+        <div class="col-6">
+          <p class="title">Correo electrónico</p>
+          <p class="data">{{ getDataForm1.email }}</p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Ocupación</p>
+          <p class="data">{{ getDataForm1.occupation }}</p>
+        </div>
+  
+        <div class="col-6">
+          <p class="title">Celular</p>
+          <p class="data">{{ getDataForm1.phone }}</p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Sexo</p>
+          <p class="data">{{ getDataForm1.gender }}</p>
+        </div>
+  
+        
+      </div>
+    </div>
+  
+    <div class="dataRent">
+      <div class="row my-3">
+        <div class="col-6">
+          <label>Información del Inmueble</label>
+        </div>
+        <div class="col-6 end">
+          <p class="editar">
+            <a (click)="onClic($event)"><img src="assets/iconos/editar.svg" alt="" /> Editar</a>
+          </p>
+        </div>
+      </div>
+      <hr class="mt-0" />
+  
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Ciudad</p>
+          <p class="data">{{ getDataForm2.cityRent }}</p>
+        </div>
+  
+        <div class="col-6">
+          <p class="title">Dirección</p>
+          <p class="data">{{ getDataForm2.addressRent }}</p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Valor arrendamiento</p>
+          <p class="data">{{ getDataForm2.priceRent | currency }}</p>
+        </div>
+  
+        <div *ngIf="getDataForm2.administracion" class="col-6">
+          <p class="title">Cuota administración</p>
+          <p class="data">{{ getDataForm2?.administracion }}</p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Destino del inmueble</p>
+          <p class="data">{{ getDataForm2.useProperty }}</p>
+        </div>
+  
+        <div class="col-6">
+          <p class="title">Tipo de inmueble</p>
+          <p class="data">{{ getDataForm2.typeProperty }}</p>
+        </div>
+      </div>
+      <div *ngIf="getDataForm2.inmobiliaria" class="row my-3">
+        <div class="col-6">
+          <p class="title">Inmobiliaria</p>
+          <p class="data">{{ getDataForm2.inmobiliaria }}</p>
+        </div>
+  
+        <div class="col-6">
+          <p class="title">Ciudad inmobiliaria</p>
+          <p class="data">{{ getDataForm2.cityInmobiliaria }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div separador-25"></div>
+  
+  
+
+
+
 
   <div class="buttonContainer center my-5">
     <button class="button button-primary" matStepperNext>Confirmar</button>
   </div>
 </div>
+
 <div class="div separador-100"></div>
 <div class="div separador-25"></div>

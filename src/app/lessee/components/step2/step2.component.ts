@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output,ViewChild  } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output,ViewChild, Input  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-step2',
@@ -13,6 +14,11 @@ export class Step2Component implements OnInit {
   showSumary = false;
 
   @ViewChild('tt', {static: false}) mytooltip!: NgbTooltip;
+  
+  getDataForm1: any;
+  getDataForm2: any; 
+  i=0;
+  j=0;
 
   constructor(private formBuilder: FormBuilder) {
     this.buildForm();
@@ -43,11 +49,20 @@ export class Step2Component implements OnInit {
     if (this.secondFormGroup.valid) {
       const dataForm = this.secondFormGroup.value;
       this.secondFormData.emit(dataForm);
-      this.showSumary = true;
+      this.showSumary = true;          
+      this.getDataForm1 = JSON.parse(localStorage.getItem('form1') || '{}');
+      this.getDataForm2 = JSON.parse(localStorage.getItem('form2') || '{}');
+      this.i = this.getDataForm1.length ;
+      this.j = this.getDataForm2.length ;
+      this.getDataForm1 = this.getDataForm1[this.i - 1];
+      this.getDataForm2 = this.getDataForm2[this.j - 1];
+      
     } else {
       this.secondFormGroup.markAllAsTouched();
     }
   }
+ 
+
 
   getValueSwitch(): boolean {
     return this.secondFormGroup.get('inmobiliaria2')?.value;
@@ -56,9 +71,17 @@ export class Step2Component implements OnInit {
     return this.secondFormGroup.get('administracion2')?.value;
   }
 
+  onClic(event: Event): any {
+    event.preventDefault();
+    if(this.showSumary){
+      this.showSumary = false;                   
+    }
+  }
   
   showTooltip(){
     this.mytooltip.open();
   }
 
 }
+
+

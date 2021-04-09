@@ -52,7 +52,7 @@ export class Step1Component implements OnInit {
       occupation: ['', Validators.required],
     });
   }
-
+ 
   onSubmit(event: Event): any {
     event.preventDefault();
     if (this.firstFormGroup.valid) {

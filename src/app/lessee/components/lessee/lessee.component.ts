@@ -31,8 +31,8 @@ export class LesseeComponent implements OnInit {
   last = false;
   labelPosition: 'before' | 'after' = 'after';
   disabled = false;
-  form1: any = [];
-  form2: any = [];
+  form1: any = [0];
+  form2: any = [0];
 
   constructor(private formBuilder: FormBuilder) {}
 
