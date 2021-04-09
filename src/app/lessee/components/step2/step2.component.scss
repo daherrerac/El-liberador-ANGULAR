@@ -18,9 +18,10 @@
   .button-primary {
     margin-left: 1rem;
   }
-  @include media(mobile) {
+  @include media(mediumdv) {
     display: block;
-
+    margin: 0 auto;
+    width: 320px;
     .button {
       width: 100%;
 
@@ -62,14 +63,6 @@
   color:#706F6F;
 }
 .terminos{
-  /*background: url(/assets/images/edificios.png) #F8F8F8;
-	background-size: contain;
-	background-position: 0px bottom;
-	background-repeat: no-repeat;
-  margin-left: -300vw;
-  padding-left: 300vw;
-  margin-right: -300vw;
-  padding-right: 300vw;*/
   a{    
     font-family: "Gotham-Medium";
     padding: 0 5px;
@@ -131,4 +124,40 @@ p{
 }
 input,select,.select{
   font-family: "Gotham-Book";
+}
+
+@media (max-width:992px){
+  .terminos{
+    
+    .text-dislcaimer{      
+      margin-left: 0px;
+    }
+  } 
+}
+
+
+
+::ng-deep .my-freaky-tooltip .arrow::before{
+  border-top-color: $blue-color !important;
+  border-bottom-color: $blue-color !important;
+  border-color: $blue-color !important;
+}
+::ng-deep .my-freaky-tooltip .tooltip-inner{
+  background-color: $blue-color !important;  
+  text-align: left !important;
+  padding: .25rem 1.5rem .5rem 1rem  !important;
+}
+
+::ng-deep .arrow::before{
+  border-top-color: $blue-color !important;
+  border-bottom-color: $blue-color !important;  
+}
+::ng-deep .tooltip-inner {	
+	padding: .25rem 1.5rem .25rem 1rem  !important;
+	color: #fff;
+	background-color: $blue-color !important;
+	border-radius: .5rem !important;
+  text-align: left !important;
+  min-width: 250px !important;
+  opacity: 1 !important;
 }

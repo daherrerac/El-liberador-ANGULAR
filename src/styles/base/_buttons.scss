@@ -20,3 +20,25 @@
     max-width: 320px;
   }
 }
+
+
+@include media(mediumdv) {
+  .button {
+    display: block;
+    margin: 0 auto;
+  
+    &-primary {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.buttonContainer {
+  
+  @include media(mediumdv) {
+    display: block;
+    margin: 0 auto;
+    width: 320px;    
+  }
+}

@@ -1,9 +1,11 @@
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
   OnInit,
   Output,
+  ViewChild 
 } from '@angular/core';
 import {
   AbstractControl,
@@ -12,15 +14,21 @@ import {
   Validators,
 } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-step1',
   templateUrl: './step1.component.html',
   styleUrls: ['./step1.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+ 
 })
+
 export class Step1Component implements OnInit {
   firstFormGroup!: FormGroup;
   @Output() private firstFormData = new EventEmitter<any>();
+
+  @ViewChild('tt', {static: false}) mytooltip!: NgbTooltip;
 
   constructor(private formBuilder: FormBuilder) {
     this.buildForm();
@@ -58,4 +66,9 @@ export class Step1Component implements OnInit {
   getNameValue(): any {
     return this.firstFormGroup.get('name');
   }
+
+  showTooltip(){
+    this.mytooltip.open();
+  }
+
 }

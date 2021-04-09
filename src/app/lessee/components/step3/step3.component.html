@@ -91,7 +91,7 @@
 </ng-template>
 
 <div *ngIf="showLocation" >
-  <h4 class="my-4 text-center">
+  <h4 class="my-5 text-center">
     ¿Cuál de las siguientes es tu dirección de residencia?
   </h4>
 
@@ -131,8 +131,8 @@
 
 
 <div *ngIf="showNumber" >
-  <h4 class="my-4 text-center">
-    ¿Cuál de estos numeros telefónicos ha sido tuyo?
+  <h4 class="my-5 text-center">
+    ¿Cuál de estos números telefónicos ha sido tuyo?
   </h4>
 
 
@@ -159,6 +159,7 @@
 
       </mat-radio-group>
 
+      <div class="separador-25"></div>
       <div  class="buttonContainer center my-5">
         <button class="button button-primary mat-stepper-next" (click)="onSubmit($event,'entities')">Continuar</button>
       </div>
@@ -169,7 +170,7 @@
 </div>
 
 <div *ngIf="showEntities" >
-  <h4 class="my-4 text-center">
+  <h4 class="my-5 text-center">
     ¿En cuál de las siguientes entidades tienes o has tenido cuenta de ahorros?
   </h4>
 
@@ -196,7 +197,7 @@
         </div>
 
       </mat-radio-group>
-
+      <div class="div separador-25"></div>
       
       <div  class="buttonContainer center my-5">
         <button class="button button-primary mat-stepper-next" *ngIf="validData"  (click)="open(content)">Continuar</button>

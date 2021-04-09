@@ -82,10 +82,7 @@
     h3,p{
       font-size: 14px;
     } 
-    .separador-25 {
-      height: 0px;
-      display: block;
-    }
+    
   }
   .box-sw{
     margin: 0px;
@@ -152,4 +149,8 @@ h4{
 p{
   color: $blue-color;
   font-family: "Gotham-Book";
+}
+p.angosto{  
+    max-width: 600px;
+    margin: 0 auto;  
 }

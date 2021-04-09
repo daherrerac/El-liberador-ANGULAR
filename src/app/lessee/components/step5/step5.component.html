@@ -1,0 +1,70 @@
+
+<div class="content-tab mobile_style">
+    <h4 class="m-5">
+      Detalle de tu solicitud de arriendo
+    </h4>
+  
+    <div class="cont-detail">
+      <div class="box-sw">
+        <h1>Solicitud N° 1232143</h1>
+        
+        <div class="msg-big" *ngIf="share">NO ASEGURABLE</div>
+        <div class="msg-big" *ngIf="!share">EN ESTUDIO</div>
+        <p *ngIf="share">Tu solicitud fue calificada como  <b>No asegurable.</b></p>
+        <P *ngIf="!share"> Recuerda guardar este número para consultar su estado</P>
+      </div>
+      <div *ngIf="!share">
+        
+        
+      </div>
+      <div *ngIf="share">
+        <div class="div separador-25"></div>
+        <h3>Puedes ver el detalle descargando el documento.</h3>
+      </div>
+      <div *ngIf="!share">
+        <div class="div separador-25"></div>
+        <p class="angosto">Ya registramos tu solicitud y nuestro equipo está trabajando para darte una respuesta en un tiempo <b>máximo de 8 horas hábiles.</b></p>
+      </div>
+    </div>
+    
+    
+  
+    <div class="box-sw">
+      <h3 class="mb-5">Si tienes dudas llámanos a los números:</h3>
+      <p><b>Bogotá</b> al (1) 3527070, <br>
+          <b>Línea de servicio nacional</b> 3235996460 <br>
+          <b>Whatsapp</b> asistente virtual Victoria 3148390322.
+      </p>    
+    </div>
+  
+  
+  
+    <div class="buttonContainer">
+      
+      <button class="button  button-primary">Descargar</button>
+      <button class="button" (click)="share = false;">Finalizar</button>
+      
+      
+    </div>
+    <div class="div separador-100"></div>
+    <div class="div separador-25"></div>
+  
+    <ng-template #sharecont let-modal>
+      <button type="button" class="close close-modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body text-center">
+        <h4 class="my-4">
+            Compartir solicitud
+        </h4>
+        <div class="content">
+          <div class="row">
+            <div class="col btn-sw"><img src="assets/iconos/email.svg" class="img-modal" alt="" (click)="share = true; modal.dismiss('Cross click')"/><label>Correo electónico</label> </div>
+            <div class="col btn-sw"><img src="assets/iconos/whatsapp.svg" class="img-modal" alt="" (click)="share = true; modal.dismiss('Cross click')"/> <label>Whatsapp</label></div>
+          </div>
+        </div>
+  
+      </div>
+    </ng-template>
+  
+  </div>

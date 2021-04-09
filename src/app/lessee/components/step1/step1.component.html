@@ -5,7 +5,12 @@
       <p>Recuerda que los campos con <span class="red">*</span> son obligatorios</p>
     </div>
 
-    <label class="w-100">Tipo de documento <span class="red">*</span> </label>
+    <label class="w-100">Tipo de documento <span class="red">*</span> <img src="assets/images/tp.png" alt="" class="ml-2" 
+      [ngbTooltip]="tipContent"
+      placement="bottom"
+      aria-label="Documento" #tt="ngbTooltip"  (click)="showTooltip()">
+      <ng-template #tipContent>Si cuenta con otro tipo de documento de identidad, le invitamos a comunicarse al (1) <b>352 7070 en Bogotá</b> o a la Linea de <b>servicio nacional 323 599 6460</b> para brindarle la asesoría correspondiente</ng-template>    
+    </label>
     <mat-radio-group class="desktop d-flex" formControlName="typeId">
       <mat-radio-button value="CC">Cédula de ciudadanía</mat-radio-button>
       <mat-radio-button value="CE">Cédula de extranjería</mat-radio-button>
@@ -237,6 +242,7 @@
           </mat-error>
         </mat-error>
       </div>
+
     </div>
     <div class="form-group my-3 mobile">
       <label for="">Dirección de residencia <span class="red">*</span> </label>
@@ -262,6 +268,32 @@
           Campo requerido
         </mat-error>
       </mat-error>
+    </div>
+
+    <div class="form-group my-3 mobile">
+      <label for="">Ciudad <span class="red">*</span> </label>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          formControlName="city"
+          class="form-control"
+          placeholder="Buscar..."
+        />
+
+        <mat-error
+          *ngIf="
+            firstFormGroup.controls['city'].invalid &&
+            (firstFormGroup.controls['city'].dirty ||
+              firstFormGroup.controls['city'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="firstFormGroup.controls['city'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
     </div>
     
     <div class="form-group my-3">

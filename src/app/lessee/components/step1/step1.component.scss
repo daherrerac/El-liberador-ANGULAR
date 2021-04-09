@@ -42,3 +42,34 @@ p{
 input,select,.select{
   font-family: "Gotham-Book";
 }
+
+
+::ng-deep .my-freaky-tooltip .arrow::before{
+  border-top-color: $blue-color !important;
+  border-bottom-color: $blue-color !important;
+  border-color: $blue-color !important;
+}
+::ng-deep .my-freaky-tooltip .tooltip-inner{
+  background-color: $blue-color !important;  
+  text-align: left !important;
+  padding: .25rem 1.5rem .25rem 1rem  !important;
+  opacity: 1 !important;
+}
+
+::ng-deep .arrow::before{
+  border-top-color: $blue-color !important;
+  border-bottom-color: $blue-color !important;  
+}
+
+::ng-deep .tooltip-inner {	
+	padding: .25rem 1.5rem .25rem 1rem  !important;
+	color: #fff;
+	background-color: $blue-color !important;
+	border-radius: .5rem !important;
+  text-align: left !important;
+  min-width: 250px !important;
+  
+}
+::ng-deep .tooltip.show{
+  opacity: 1 !important;
+}

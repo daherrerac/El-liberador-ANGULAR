@@ -7,6 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatTooltipModule} from '@angular/material/tooltip'; 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const materialModules = [
   MatStepperModule,
@@ -16,6 +18,8 @@ const materialModules = [
   MatRadioModule,
   MatCheckboxModule,
   MatSlideToggleModule,
+  MatTooltipModule,
+  NgbModule
 ];
 
 @NgModule({

@@ -12,6 +12,8 @@ import { Step4Component } from './components/step4/step4.component';
 import { SwitchControlModule } from '@shared/switch-control/switch-control.module';
 import { SumaryComponent } from './components/sumary/sumary.component';
 import { BannerArrendatarioComponent } from './components/banner/banner-arrendatario/banner-arrendatario.component';
+import { Step6Component } from './components/step6/step6.component';
+import { Step5Component } from './components/step5/step5.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { BannerArrendatarioComponent } from './components/banner/banner-arrendat
     Step3Component,
     Step4Component,
     SumaryComponent,
-    BannerArrendatarioComponent,
+    BannerArrendatarioComponent,    
+    Step6Component, Step5Component,
   ],
   imports: [
     CommonModule,

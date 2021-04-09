@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output,ViewChild  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-step2',
@@ -10,6 +11,8 @@ export class Step2Component implements OnInit {
   secondFormGroup!: FormGroup;
   @Output() private secondFormData = new EventEmitter<any>();
   showSumary = false;
+
+  @ViewChild('tt', {static: false}) mytooltip!: NgbTooltip;
 
   constructor(private formBuilder: FormBuilder) {
     this.buildForm();
@@ -52,4 +55,10 @@ export class Step2Component implements OnInit {
   getValueSwitchAdmon(): boolean {
     return this.secondFormGroup.get('administracion2')?.value;
   }
+
+  
+  showTooltip(){
+    this.mytooltip.open();
+  }
+
 }

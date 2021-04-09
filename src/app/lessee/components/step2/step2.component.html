@@ -123,7 +123,11 @@
         </mat-error>
       </div>
 
-      <label class="w-100">Destino <span class="red">*</span> </label>
+      <label class="w-100">Destino <span class="red">*</span> <img src="assets/images/tp.png" alt="" class="ml-2" 
+        [ngbTooltip]="tipContent"
+        placement="bottom"
+        aria-label="Documento" #tt="ngbTooltip"  (click)="showTooltip()" >
+        <ng-template #tipContent> <b>Para vivienda:</b> apartamento, casa o finca. <br> <b>Para comercio:</b> bodega, casa, finca, local u oficina.</ng-template> </label>
       <mat-radio-group formControlName="useProperty">
         <mat-radio-button value="Vivienda">Vivienda</mat-radio-button>
         <mat-radio-button value="Comercio">Comercio</mat-radio-button>
@@ -232,7 +236,7 @@
 
 
       <section class="box-check bg-white">
-        <div class="d-flex my-3">
+        <div class="d-flex my-3 pl-3">
           <label for="">
             ¿Está arrendado con una Inmobiliaria?<span class="red"
               >*</span
@@ -285,7 +289,7 @@
           <div class="col-1">
             <mat-checkbox formControlName="dataPolices" class="example-margin"></mat-checkbox>
           </div>
-          <div class="ml-2 col-9">   
+          <div class="ml-2 col-lg-9 col-10">   
             <div class="text-dislcaimer">
               Acepto los <a href="#"> Términos y Condiciones </a>, la <a href="#">Política de Privacidad </a> y el <a href="#">Tratamiento de mis Datos Personales</a>
             </div>
@@ -311,7 +315,7 @@
             <div class="col-1">
               <mat-checkbox formControlName="useData" class="example-margin"></mat-checkbox>
             </div>
-            <div class="ml-2 col-9">
+            <div class="ml-2 col-lg-9 col-10">
               <div class="text-dislcaimer">
                 Autorizo el uso de mi información para consultas y reportes en centrales de riesgo, operadores de información de seguridad para finalidades de gestión de riesgo crediticio. 
               </div>
@@ -334,7 +338,7 @@
         <div class="row no-gutters mb-3">
           <div class="col-1">
             <mat-checkbox formControlName="sendData" class="example-margin"></mat-checkbox></div>
-          <div class="ml-2 col-9">
+          <div class="ml-2 col-lg-9 col-10">
             <div class="text-dislcaimer">
               Autorizo de manera expresa la utilización de mis datos personales para el envío de información y ofertas comerciales de Seguros Bolívar y de las compañías que hacen parte del Grupo Bolívar.
             </div>

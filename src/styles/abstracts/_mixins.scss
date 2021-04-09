@@ -6,6 +6,12 @@
       @content;
     }
   }
+  @if $breakpoint==mediumdv {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  }
+
   @if $breakpoint==tablet {
     @media only screen and (max-width: 600px) {
       @content;

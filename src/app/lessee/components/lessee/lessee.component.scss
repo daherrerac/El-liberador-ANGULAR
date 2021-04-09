@@ -3,7 +3,7 @@
 @import "base/forms";
 
 
-.ch-bg{background-color: red;height: 100%;}
+
 
 .formMobile {
   @include media(mobile) {
@@ -60,3 +60,12 @@
   height: 30px !important;
 }
 
+::ng-deep{
+  #cdk-step-label-1-4,
+  #cdk-step-label-0-4{
+    display: none;
+  }
+}
+::ng-deep .mat-stepper-horizontal-line:last-of-type{
+  display: none;
+}
