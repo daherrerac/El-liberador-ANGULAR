@@ -15,6 +15,7 @@
 }
 
 .buttonContainer {
+  flex-direction: row-reverse;
   .button-primary {
     margin-left: 1rem;
   }
@@ -29,6 +30,9 @@
         margin-left: 0;
         margin-top: 1rem;
       }
+    }
+    .mobile-mg{
+      margin-top: 20px;
     }
   }
 }

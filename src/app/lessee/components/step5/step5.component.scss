@@ -68,6 +68,9 @@
     margin: 19px;
     color: $blue-color;
   }
+  @include media(mediumdv){
+    max-width: 520px;
+  }
 }
 
 
