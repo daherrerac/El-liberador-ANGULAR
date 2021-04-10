@@ -96,6 +96,9 @@
     .text-dislcaimer{
       display: contents;
     }
+    .row{
+      height: auto;
+    }
   }
   .box-check{
     padding: 19px;
@@ -138,6 +141,9 @@ input,select,.select{
     
     .text-dislcaimer{      
       margin-left: 0px;
+    }
+    .row{
+      height: auto;
     }
   } 
 }

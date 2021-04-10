@@ -127,12 +127,14 @@
         [ngbTooltip]="tipContent"
         placement="bottom"
         aria-label="Documento" #tt="ngbTooltip"  (click)="showTooltip()" >
-        <ng-template #tipContent> <b>Para vivienda:</b> apartamento, casa o finca. <br> <b>Para comercio:</b> bodega, casa, finca, local u oficina.</ng-template> </label>
-      <mat-radio-group formControlName="useProperty">
+        <ng-template #tipContent> <b>Para vivienda:</b> apartamento, casa o finca. <br> <b>Para comercio:</b> bodega, casa, finca, local u oficina.</ng-template>
+      </label>
+      <mat-radio-group class="desktop" formControlName="useProperty">
         <mat-radio-button value="Vivienda">Vivienda</mat-radio-button>
         <mat-radio-button value="Comercio">Comercio</mat-radio-button>
       </mat-radio-group>
       <mat-error
+        class="desktop"
         *ngIf="
           secondFormGroup.controls['useProperty'].invalid &&
           (secondFormGroup.controls['useProperty'].dirty ||
@@ -145,6 +147,31 @@
           Campo requerido
         </mat-error>
       </mat-error>
+
+      <div class="select mobile">
+        <select formControlName="useProperty">
+          <option value="" [disabled]="true">--Seleccione una opción--</option>
+          <option value="Vivienda">Vivienda</option>
+          <option value="Comercio">Comercio</option>
+        </select>
+        <div class="select_arrow"></div>
+      </div>
+      <mat-error
+        class="mobile"
+        *ngIf="
+          secondFormGroup.controls['useProperty'].invalid &&
+          (secondFormGroup.controls['useProperty'].dirty ||
+            secondFormGroup.controls['useProperty'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="secondFormGroup.controls['useProperty'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+
+
       <label class="w-100 mt-4 mb-2"
         >Tipo de inmueble <span class="red">*</span>
       </label>
