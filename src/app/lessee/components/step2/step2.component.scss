@@ -89,34 +89,7 @@
   
 }
 
-@include media(mobile) {
-  .terminos{
-    padding-top: 12vw;
-    padding-bottom: 12vw;
-    .text-dislcaimer{
-      display: contents;
-    }
-    .row{
-      height: auto;
-    }
-  }
-  .box-check{
-    padding: 19px;
-  }
-  .box-check{
-    .visible .d-flex{
-      display: block !important;
-    }
-    .d-flex{
-      
-      .group {
-        width: 100%;
-        margin: 0 !important;
-        margin-top: 24px !important;
-      }
-    }
-  }
-}
+
 
 
 h4{
@@ -192,3 +165,56 @@ h4,P{
 .dataRent{
   margin-top: 4rem;
 }
+
+.inmobiliaria{      
+    padding-left: 300vw;
+    padding-right: 300vw;
+    margin-left: -300vw;
+    margin-right: 300vw;
+    width: max-content;
+    padding-top: 32px;
+}
+
+@include media(mobile) {
+  .terminos{
+    padding-top: 12vw;
+    padding-bottom: 12vw;
+    .text-dislcaimer{
+      display: contents;
+    }
+    .row{
+      height: auto;
+    }
+  }
+  .box-check{
+    padding: 19px;
+  }
+  .box-check{
+    .visible .d-flex{
+      display: block !important;
+    }
+    .d-flex{
+      
+      .group {
+        width: 100%;
+        margin: 0 !important;
+        margin-top: 24px !important;
+      }
+    }
+  }
+  .inmobiliaria {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+    width: 100%;
+    padding-top: 32px;
+  }  
+}
+@media screen and (max-width:800px) {
+  .d-flex.desktop{
+    display: none !important;
+  }
+}
+

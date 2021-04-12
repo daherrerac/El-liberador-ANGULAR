@@ -129,10 +129,11 @@
         aria-label="Documento" #tt="ngbTooltip"  (click)="showTooltip()" >
         <ng-template #tipContent> <b>Para vivienda:</b> apartamento, casa o finca. <br> <b>Para comercio:</b> bodega, casa, finca, local u oficina.</ng-template>
       </label>
-      <mat-radio-group class="desktop" formControlName="useProperty">
-        <mat-radio-button value="Vivienda">Vivienda</mat-radio-button>
-        <mat-radio-button value="Comercio">Comercio</mat-radio-button>
+      <mat-radio-group class="d-flex desktop" formControlName="useProperty" >
+        <mat-radio-button value="Vivienda" class="col-lg-6">Vivienda</mat-radio-button>
+        <mat-radio-button value="Comercio" class="col-lg-6">Comercio</mat-radio-button>
       </mat-radio-group>
+      
       <mat-error
         class="desktop"
         *ngIf="
@@ -262,8 +263,8 @@
       </section>
 
 
-      <section class="box-check bg-white">
-        <div class="d-flex my-3 pl-3">
+      <section class="box-check bg-white inmobiliaria">
+        <div class="d-flex my-3 ">
           <label for="">
             ¿Está arrendado con una Inmobiliaria?<span class="red"
               >*</span
@@ -276,14 +277,26 @@
           [ngClass]="getValueSwitch() ? 'visible' : 'hide'"
           *ngIf="getValueSwitch()"
         >
-          <p >
+          <p>
             Si está realizando su proceso con una inmobiliaria cuéntenos cuál y
             nosotros le notificaremos el resultado.
           </p>
 
           <div class="form-group my-3 d-flex p-3">
 
-            <div class="group ">
+            <div class="group">
+              <label for="">Ciudad <span class="red">*</span> </label>
+              <input
+                type="text"
+                name="cityInmobiliaria"
+                id="cityInmobiliaria"
+                formControlName="cityInmobiliaria"
+                class="form-control"
+                placeholder="Buscar..."
+              />
+            </div>
+
+            <div class="group ml-4">
               <label for="">Inmobiliaria <span class="red">*</span> </label>
               <input
                 type="add"
@@ -295,17 +308,7 @@
               />
             </div>
 
-            <div class="group ml-4">
-              <label for="">Ciudad <span class="red">*</span> </label>
-              <input
-                type="text"
-                name="cityInmobiliaria"
-                id="cityInmobiliaria"
-                formControlName="cityInmobiliaria"
-                class="form-control"
-                placeholder="Buscar..."
-              />
-            </div>
+            
             
           </div>
         </div>

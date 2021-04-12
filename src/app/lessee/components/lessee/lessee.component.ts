@@ -9,6 +9,7 @@ import { Step1Component } from '../step1/step1.component';
 import { Step2Component } from '../step2/step2.component';
 import { Step3Component } from '../step3/step3.component';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-lessee',
@@ -20,9 +21,11 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
   }]
 })
 export class LesseeComponent implements OnInit {
+  encabezado!:string;
   @ViewChild(Step1Component)
   step1Component!: Step1Component;
   @ViewChild(Step2Component) step2Component!: Step2Component;
+  @ViewChild(Step2Component) mensaje!:string;
   // @ViewChild(Step3Component) step3Component: Step3Component;
   isLinear = false;
   $event: any;
@@ -33,8 +36,15 @@ export class LesseeComponent implements OnInit {
   disabled = false;
   form1: any = [0];
   form2: any = [0];
+  
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {
+   
+  }
+
+  readSteep(stepper:MatStepper){   
+    console.log(stepper.selectedIndex);
+  }
 
   ngOnInit(): void {}
 
@@ -46,14 +56,28 @@ export class LesseeComponent implements OnInit {
   }
 
   getDataFromFirstForm(newItem: any): any {
+    this.encabezado ='Datos del Inmueble';
     this.form1.push(newItem);
     localStorage.setItem('form1', JSON.stringify(this.form1));
   }
   getDataFromSecondForm(newItem: any): any {
+    this.encabezado ='Datos del Inmueble';
     this.form2.push(newItem);
     localStorage.setItem('form2', JSON.stringify(this.form2));
   }
 
+  ngAfterViewInit(stepper:MatStepper) { 
+       
+    if(!(this.step1Component.firstFormGroup.touched)){
+      this.encabezado ='Datos del Arrendatario';
+   }
+    // if((this.step1Component.firstFormGroup.touched) && (this.step2Component.secondFormGroup.touched)){
+    //   this.encabezado ='Datos del Inmueble';
+    // }
+    // console.log(this.encabezado);
+    // console.log(this.step1Component);
+    // console.log(this.step2Component);
+  }
   // get step3(): any {
   //   return this.step3Component ? this.step3Component.firstFormGroup : null;
   // }

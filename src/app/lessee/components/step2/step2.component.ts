@@ -12,6 +12,7 @@ export class Step2Component implements OnInit {
   secondFormGroup!: FormGroup;
   @Output() private secondFormData = new EventEmitter<any>();
   showSumary = false;
+  mensaje: string = "Datos del Inmueble"
 
   @ViewChild('tt', {static: false}) mytooltip!: NgbTooltip;
   

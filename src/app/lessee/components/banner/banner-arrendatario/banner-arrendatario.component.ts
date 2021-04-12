@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-banner-arrendatario',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerArrendatarioComponent implements OnInit {
 
-  constructor() { }
+  encabezado!:string;
+  message$: any;
+  subscription!: Subscription;
+
+  constructor() {
+    this.encabezado ='Datos del Arrendatario'
+   }
 
   ngOnInit(): void {
   }
