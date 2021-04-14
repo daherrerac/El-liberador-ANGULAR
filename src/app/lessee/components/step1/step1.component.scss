@@ -76,3 +76,53 @@ input,select,.select{
 ::ng-deep .tooltip.show{
   opacity: 1 !important;
 }
+
+.autocomplete{
+  label{
+    display: block;
+  }
+  input{
+    width: 100%;
+    background: #fff;
+    display: block;
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+  .mat-form-field-infix {
+    display: inherit;    
+  }
+  
+}
+::ng-deep .mat-option {
+	color: #706F6F;
+}
+::ng-deep .mat-option.mat-active {
+  background: $red-color;
+  color: white;
+}
+::ng-deep .mat-option.mat-active:hover{
+  color: #706F6F;
+}
+
+::ng-deep .mat-option:focus:not(.mat-option-disabled) {
+	background: $red-color;
+  color:#fff;
+}
+.residencia{
+  display: flex;
+}
+
+@media only screen and (max-width: 480px) {
+  .residencia{
+    display: block;
+    .group{
+      display: block;
+      width: 100%;
+    }
+    .ml-4.autocomplete{
+      margin-left: 0  !important;
+      margin-top: 1.5em;
+    }
+  }
+}

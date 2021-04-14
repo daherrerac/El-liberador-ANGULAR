@@ -189,7 +189,7 @@
   </mat-error>
 
   <div class="container">
-    <div class="form-group my-3 d-flex desktop">
+    <div class="form-group my-3 residencia">
       <div class="group">
         <label for=""
           >Dirección de residencia <span class="red">*</span>
@@ -217,16 +217,28 @@
         </mat-error>
       </div>
 
-      <div class="group ml-4">
+      <div class="group ml-4 autocomplete">
         <label for="">Ciudad <span class="red">*</span> </label>
-        <input
-          type="text"
-          name="city"
-          id="city"
-          formControlName="city"
-          class="form-control"
-          placeholder="Buscar..."
-        />
+        
+          
+          <input type="text"
+                  name="city"
+                  id="city"                                 
+                  placeholder="Buscar..."
+                  class="form-control"
+                  matInput
+                  formControlName="city"                  
+                  [matAutocomplete]="auto"
+                  position='below'
+                  panelOpen=true
+          >
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let ciudades of fillCiudades | async" [value]="ciudades">
+              {{ciudades}}
+            </mat-option>
+          </mat-autocomplete>
+        
+                
 
         <mat-error
           *ngIf="
@@ -244,57 +256,9 @@
       </div>
 
     </div>
-    <div class="form-group my-3 mobile">
-      <label for="">Dirección de residencia <span class="red">*</span> </label>
-      <input
-        type="add"
-        name="address"
-        id="address"
-        formControlName="address"
-        class="form-control"
-        placeholder="Ej: Calle 25#49-01"
-      />
+      
 
-      <mat-error
-        *ngIf="
-          firstFormGroup.controls['address'].invalid &&
-          (firstFormGroup.controls['address'].dirty ||
-            firstFormGroup.controls['address'].touched)
-        "
-      >
-        <mat-error
-          *ngIf="firstFormGroup.controls['address'].hasError('required')"
-        >
-          Campo requerido
-        </mat-error>
-      </mat-error>
-    </div>
-
-    <div class="form-group my-3 mobile">
-      <label for="">Ciudad <span class="red">*</span> </label>
-        <input
-          type="text"
-          name="city"
-          id="city"
-          formControlName="city"
-          class="form-control"
-          placeholder="Buscar..."
-        />
-
-        <mat-error
-          *ngIf="
-            firstFormGroup.controls['city'].invalid &&
-            (firstFormGroup.controls['city'].dirty ||
-              firstFormGroup.controls['city'].touched)
-          "
-        >
-          <mat-error
-            *ngIf="firstFormGroup.controls['city'].hasError('required')"
-          >
-            Campo requerido
-          </mat-error>
-        </mat-error>
-    </div>
+    
     
     <div class="form-group my-3">
       <label for="">Correo electrónico <span class="red">*</span> </label>

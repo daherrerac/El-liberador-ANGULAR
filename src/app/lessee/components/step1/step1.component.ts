@@ -12,7 +12,10 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
+  FormControl
 } from '@angular/forms';
+import {map, startWith,debounceTime} from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 
@@ -25,16 +28,28 @@ import {
 })
 
 export class Step1Component implements OnInit {
+  ciudades:string[] =['Bogotá','Cali','Medellín','Tunja'];
+
   firstFormGroup!: FormGroup;
   @Output() private firstFormData = new EventEmitter<any>();
 
   @ViewChild('tt', {static: false}) mytooltip!: NgbTooltip;
 
+  control = new FormControl();
+  fillCiudades !: Observable<string[]>;
+
+  
+  
   constructor(private formBuilder: FormBuilder) {
     this.buildForm();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fillCiudades = this.firstFormGroup.controls['city'].valueChanges.pipe(
+      startWith(''),
+      map(val=> this._filter(val))
+    );
+  }
 
   private buildForm(): void {
     this.firstFormGroup = this.formBuilder.group({
@@ -71,4 +86,8 @@ export class Step1Component implements OnInit {
     this.mytooltip.open();
   }
 
+  private _filter(val: string): string[]{
+    const formatVal = val.toLocaleLowerCase();
+    return this.ciudades.filter(ciudades => ciudades.toLocaleLowerCase().indexOf(formatVal) === 0);
+  }
 }

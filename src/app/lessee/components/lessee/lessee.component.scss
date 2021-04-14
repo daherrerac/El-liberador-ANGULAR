@@ -1,6 +1,7 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "base/forms";
+@import "base/typography";
 
 
 
@@ -10,7 +11,7 @@
     padding-top: 3rem;
     margin-top: -14rem;
     background: $gray-color2;
-    z-index: 10000;
+    z-index: 10;
     position: relative;
     border-radius: 50px 50px 0 0;
 
@@ -38,7 +39,7 @@
     line-height: 1;
     font-size: 0.8rem;
     color: #706F6F;
-    @include media(mobile) {
+    @media only screen and (max-width: 480px) {
       font-size: 0.7rem;
     }
   }
@@ -69,11 +70,6 @@
 ::ng-deep .mat-stepper-horizontal-line:last-of-type{
   display: none;
 }
-
-@import "abstracts/variables";
-@import "abstracts/mixins";
-@import "base/typography";
-
 
 
 .banner_mobile {
@@ -160,7 +156,7 @@
   }
 }
 
-@include media(mobile) {
+@media only screen and (max-width: 480px) {
   .banner_desktop{    
     background-size: 100%;
     margin-top: -72px;    

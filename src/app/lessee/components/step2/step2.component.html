@@ -39,17 +39,29 @@
           </mat-error>
         </div>
 
-        <div class="group ml-4">
+        <div class="group ml-4 autocomplete">
           <label for="">Ciudad <span class="red">*</span> </label>
-          <input
-            type="text"
-            name="city"
-            formControlName="cityRent"
-            id="city"
-            class="form-control"
-            placeholder="Buscar..."
-          />
-
+          
+            
+            <input type="text"
+                    name="city"
+                    id="city"                                 
+                    placeholder="Buscar..."
+                    class="form-control"
+                    matInput
+                    formControlName="cityRent"                  
+                    [matAutocomplete]="auto"
+                    position='below'
+                    panelOpen=true
+            >
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let ciudades of fillCiudades | async" [value]="ciudades">
+                {{ciudades}}
+              </mat-option>
+            </mat-autocomplete>
+          
+                  
+  
           <mat-error
             class="desktop"
             *ngIf="
@@ -64,7 +76,7 @@
               Campo requerido
             </mat-error>
           </mat-error>
-        </div>
+        </div>        
       </div>
 
       <div class="mobile my-3">
@@ -98,29 +110,41 @@
       </div>
       <div class="mobile my-3">
         <label for="">Ciudad <span class="red">*</span> </label>
-        <input
-          type="text"
-          name="city"
-          formControlName="cityRent"
-          id="city"
-          class="form-control"
-          placeholder="Buscar..."
-        />
-
-        <mat-error
-          class="mobile"
-          *ngIf="
-            secondFormGroup.controls['cityRent'].invalid &&
-            (secondFormGroup.controls['cityRent'].dirty ||
-              secondFormGroup.controls['cityRent'].touched)
-          "
-        >
+          
+            
+            <input type="text"
+                    name="city"
+                    id="city"                                 
+                    placeholder="Buscar..."
+                    class="form-control"
+                    matInput
+                    formControlName="cityRent"                  
+                    [matAutocomplete]="auto"
+                    position='below'
+                    panelOpen=true
+            >
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let ciudades of fillCiudades | async" [value]="ciudades">
+                {{ciudades}}
+              </mat-option>
+            </mat-autocomplete>
+          
+                  
+  
           <mat-error
-            *ngIf="secondFormGroup.controls['cityRent'].hasError('required')"
+            class="desktop"
+            *ngIf="
+              secondFormGroup.controls['cityRent'].invalid &&
+              (secondFormGroup.controls['cityRent'].dirty ||
+                secondFormGroup.controls['cityRent'].touched)
+            "
           >
-            Campo requerido
+            <mat-error
+              *ngIf="secondFormGroup.controls['cityRent'].hasError('required')"
+            >
+              Campo requerido
+            </mat-error>
           </mat-error>
-        </mat-error>
       </div>
 
       <label class="w-100">Destino <span class="red">*</span> <img src="assets/images/tp.png" alt="" class="ml-3" 
@@ -284,28 +308,56 @@
 
           <div class="form-group my-3 d-flex p-3">
 
-            <div class="group">
+            <div class="group">                            
               <label for="">Ciudad <span class="red">*</span> </label>
-              <input
-                type="text"
-                name="cityInmobiliaria"
-                id="cityInmobiliaria"
-                formControlName="cityInmobiliaria"
-                class="form-control"
-                placeholder="Buscar..."
-              />
+          
+            
+              <input type="text"
+                      name="cityInmobiliaria"
+                      id="cityInmobiliaria"                            
+                      placeholder="Buscar..."
+                      class="form-control"
+                      matInput
+                      formControlName="cityInmobiliaria"               
+                      [matAutocomplete]="auto2"
+                      position='below'
+                      panelOpen=true
+              >
+              <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
+                <mat-option *ngFor="let ciudades of fillCiudadesIMB | async" [value]="ciudades">
+                  {{ciudades}}
+                </mat-option>
+              </mat-autocomplete>
+                                      
+
             </div>
 
             <div class="group ml-4">
+              
+              
+
               <label for="">Inmobiliaria <span class="red">*</span> </label>
-              <input
-                type="add"
-                name="inmobiliaria"
-                id="inmobiliaria"
-                formControlName="inmobiliaria"
-                class="form-control"
-                placeholder="Buscar..."
-              />
+          
+            
+              <input type="text"
+                    name="inmobiliaria"
+                    id="inmobiliaria"
+                    placeholder="Buscar..."
+                    matInput
+                    class="form-control"
+                    formControlName="inmobiliaria"                           
+                      
+                      
+                                                          
+                      [matAutocomplete]="auto3"
+                      position='below'
+                      panelOpen=true
+              >
+              <mat-autocomplete autoActiveFirstOption #auto3="matAutocomplete">
+                <mat-option *ngFor="let inmobiliarias of fillInmobiliaria  | async" [value]="inmobiliarias">
+                  {{inmobiliarias}}
+                </mat-option>
+              </mat-autocomplete>
             </div>
 
             

@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output,ViewChild, Input  } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import {map, startWith,debounceTime} from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,9 +14,19 @@ export class Step2Component implements OnInit {
   secondFormGroup!: FormGroup;
   @Output() private secondFormData = new EventEmitter<any>();
   showSumary = false;
+
   mensaje: string = "Datos del Inmueble"
+  ciudades:string[] =['Bogotá','Cali','Medellín','Tunja'];
+  ciudadesIMB:string[] =['Bogotá','Cali','Medellín','Tunja','Otra'];
+  inmobiliarias:string[] =['La Inmobiliaria','IMB1','IMB2','Otra'];
 
   @ViewChild('tt', {static: false}) mytooltip!: NgbTooltip;
+
+  fillCiudades !: Observable<string[]>;
+
+  fillCiudadesIMB !: Observable<string[]>;
+
+  fillInmobiliaria !: Observable<string[]>;
   
   getDataForm1: any;
   getDataForm2: any; 
@@ -25,7 +37,20 @@ export class Step2Component implements OnInit {
     this.buildForm();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fillCiudades = this.secondFormGroup.controls['cityRent'].valueChanges.pipe(
+      startWith(''),
+      map(val=> this._filter(val))
+    );
+    this.fillCiudadesIMB = this.secondFormGroup.controls['cityInmobiliaria'].valueChanges.pipe(
+      startWith(''),
+      map(val=> this._filter2(val))
+    );
+    this.fillInmobiliaria = this.secondFormGroup.controls['inmobiliaria'].valueChanges.pipe(
+      startWith(''),
+      map(val=> this._filter3(val))
+    );
+  }
 
   private buildForm(): void {
     this.secondFormGroup = this.formBuilder.group({
@@ -38,7 +63,7 @@ export class Step2Component implements OnInit {
       cityInmobiliaria: '',
       dataPolices: ['', Validators.required],
       useData: ['', Validators.required],
-     // sendData: ['', Validators.required],
+      sendData: [''],
       inmobiliaria2: '',
       administracion:'',
       administracion2:'',
@@ -83,6 +108,18 @@ export class Step2Component implements OnInit {
     this.mytooltip.open();
   }
 
+  private _filter(val: string): string[]{
+    const formatVal = val.toLocaleLowerCase();
+    return this.ciudades.filter(ciudades => ciudades.toLocaleLowerCase().indexOf(formatVal) === 0);
+  }
+  private _filter2(val: string): string[]{
+    const formatVal = val.toLocaleLowerCase();
+    return this.ciudadesIMB.filter(ciudades => ciudades.toLocaleLowerCase().indexOf(formatVal) === 0);
+  }
+  private _filter3(val: string): string[]{
+    const formatVal = val.toLocaleLowerCase();
+    return this.inmobiliarias.filter(ciudades => ciudades.toLocaleLowerCase().indexOf(formatVal) === 0);
+  }
 }
 
 
