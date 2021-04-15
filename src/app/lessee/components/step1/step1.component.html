@@ -224,8 +224,8 @@
           <input type="text"
                   name="city"
                   id="city"                                 
-                  placeholder="Buscar..."
-                  class="form-control"
+                  placeholder=" Buscar..."
+                  class="form-control input-text"
                   matInput
                   formControlName="city"                  
                   [matAutocomplete]="auto"
@@ -311,16 +311,20 @@
       </mat-error>
     </div>
 
-    <label class="w-100">Ocupación<span class="red">*</span> </label>
-    <div class="select">
-      <select formControlName="occupation">
-        <option value="" [disabled]="true">--Seleccione una opción--</option>
-        <option>Opción 1</option>
-        <option>Opción 2</option>
-        <option>Opción 3</option>
-        <option>Opción 4</option>
-      </select>
-      <div class="select_arrow"></div>
+    
+    
+    <label class="w-100">Ocupación<span class="red">*</span></label>
+    <mat-form-field appearance="fill">      
+      <mat-select formControlName="occupation"
+      disableOptionCentering
+      placeholder="--Seleccione una opción--"
+      >
+        <mat-option value="option1">Opción 1</mat-option>
+        <mat-option value="option2">Opción 2</mat-option>
+        <mat-option value="option3">Opción 3</mat-option>
+        <mat-option value="option3">Opción 4</mat-option>
+      </mat-select>
+
       <mat-error
         *ngIf="
           firstFormGroup.controls['occupation'].invalid &&
@@ -334,7 +338,7 @@
           Campo requerido
         </mat-error>
       </mat-error>
-    </div>
+    </mat-form-field>    
   </div>
 </form>
 

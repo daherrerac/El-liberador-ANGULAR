@@ -174,7 +174,28 @@ h4,P{
     width: max-content;
     padding-top: 32px;
 }
-
+.autocomplete{
+  label{
+    display: block;
+  }
+  input{
+    width: 100%;
+    background: #fff;
+    display: block;
+    padding: 0 20px;
+    height: 56px;
+    margin-top: 2px;
+    color:#706F6F;
+    max-width: 92%;
+  }  
+  
+  ::ng-deep .mat-form-field-infix {
+    display: inherit;    
+  }  
+}
+.mat-form-field {
+	width: 100%;
+}
 @include media(mobile) {
   .terminos{
     padding-top: 12vw;

@@ -200,16 +200,18 @@
       <label class="w-100 mt-4 mb-2"
         >Tipo de inmueble <span class="red">*</span>
       </label>
-      <div class="select">
-        <select formControlName="typeProperty">
-          <option value="" [disabled]="true">--Seleccione una opción--</option>
-          <option>Opción 1</option>
-          <option>Opción 2</option>
-          <option>Opción 3</option>
-          <option>Opción 4</option>
-        </select>
-        <div class="select_arrow"></div>
 
+      <mat-form-field appearance="fill">      
+        <mat-select formControlName="typeProperty"
+        disableOptionCentering
+        placeholder="--Seleccione una opción--"
+        >
+          <mat-option value="option1">Opción 1</mat-option>
+          <mat-option value="option2">Opción 2</mat-option>
+          <mat-option value="option3">Opción 3</mat-option>
+          <mat-option value="option3">Opción 4</mat-option>
+        </mat-select>
+  
         <mat-error
           *ngIf="
             secondFormGroup.controls['typeProperty'].invalid &&
@@ -225,7 +227,9 @@
             Campo requerido
           </mat-error>
         </mat-error>
-      </div>
+      </mat-form-field> 
+
+      
 
       <div class="form-group my-3">
         <label for="">Valor arriendo <span class="red">*</span> </label>
@@ -308,7 +312,7 @@
 
           <div class="form-group my-3 d-flex p-3">
 
-            <div class="group">                            
+            <div class="group autocomplete">                            
               <label for="">Ciudad <span class="red">*</span> </label>
           
             
@@ -332,7 +336,7 @@
 
             </div>
 
-            <div class="group ml-4">
+            <div class="group ml-4 autocomplete">
               
               
 

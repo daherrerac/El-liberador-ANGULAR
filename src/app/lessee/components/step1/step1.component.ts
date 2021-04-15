@@ -19,6 +19,7 @@ import { Observable } from 'rxjs';
 
 
 
+
 @Component({
   selector: 'app-step1',
   templateUrl: './step1.component.html',
@@ -28,7 +29,8 @@ import { Observable } from 'rxjs';
 })
 
 export class Step1Component implements OnInit {
-  ciudades:string[] =['Bogotá','Cali','Medellín','Tunja'];
+  ciudades:string[] =['   Bogotá','   Cali','   Medellín','   Tunja'];
+  
 
   firstFormGroup!: FormGroup;
   @Output() private firstFormData = new EventEmitter<any>();
@@ -38,7 +40,7 @@ export class Step1Component implements OnInit {
   control = new FormControl();
   fillCiudades !: Observable<string[]>;
 
-  
+    
   
   constructor(private formBuilder: FormBuilder) {
     this.buildForm();

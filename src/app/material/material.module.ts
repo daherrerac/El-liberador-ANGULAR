@@ -9,6 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTooltipModule} from '@angular/material/tooltip'; 
 import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
+import {MatSelectModule} from '@angular/material/select';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const materialModules = [
@@ -21,6 +22,7 @@ const materialModules = [
   MatSlideToggleModule,
   MatTooltipModule,
   MatAutocompleteModule,
+  MatSelectModule,
   NgbModule
 ];
 
