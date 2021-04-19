@@ -3,11 +3,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@shared/*": ["src/app/shared/*"]
+    },
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -17,15 +17,5 @@
     "target": "es2015",
     "module": "es2020",
     "lib": ["es2018", "dom"],
-    "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@shared/*": ["src/app/shared/*"]
-    }
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
   }
 }
