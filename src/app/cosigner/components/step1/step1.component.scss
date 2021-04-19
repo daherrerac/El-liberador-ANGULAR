@@ -1,0 +1,93 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/forms";
+@import "base/typography";
+
+.contentAll {  
+  h3 {
+    text-align: center;
+  }
+
+  .tagLine {
+    font: 400 27px "Gotham-Book";
+    margin: 0 auto 70px;
+    max-width: 752px;
+    text-align: center;
+  }
+
+  .card-lib {
+    box-sizing: border-box;
+    margin: 0 auto 83px;
+    padding: 53px 86px;
+
+    .dataGroup {
+      margin: 0 auto 46px;
+      
+      .text1, .text2 {
+        font: 400 24px "Gotham-Book";
+      }
+    }
+  }
+
+  .button {
+    margin: 0 auto 154px !important;
+  }
+
+  @media(max-width:768px) {
+    .banner_desktop {  
+      background-image: url(../../../../assets/images/banner_mobile.jpg);
+  
+      .blue{
+        width: 66%;
+        padding: 18px;
+        font-size: 25px;
+        margin-top: 158px;
+      }
+  
+      &--text{
+        margin-top: 20%;
+      }
+    }
+
+    &.formMobile {
+      h3 {
+        font: 700 16px 'Gotham-Bold';
+        text-align: left;
+      }
+
+      .tagLine {
+        font: 400 12px 'Gotham-Book';
+        text-align: left;
+      }
+    }
+
+    .card-lib {
+      margin: 0 auto 48px;
+      padding: 21px 25px;
+  
+      .dataGroup {
+        margin: 0 auto 17px;
+        
+        .text1 {
+          font: 400 12px "Gotham-Book";
+          margin: 0;
+        }
+
+        .text2 {
+          font: 400 16px "Gotham-Book";
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .banner_desktop{    
+      background-size: 100%;
+      margin-top: -72px;
+      
+      &--text{
+        margin-top: 30%;
+      }
+    }
+  }
+}

@@ -1,0 +1,478 @@
+<form [formGroup]="cosignerDataForm" *ngIf="!showSumary">
+  <div class="container mt-4 mobile_style">
+    <div class="text-center ">
+      <h4>Para iniciar necesitamos tus datos</h4>
+      <p>Recuerda que los campos con <span class="red">*</span> son obligatorios</p>
+    </div>
+
+    <label class="w-100">Tipo de documento <span class="red">*</span> <img src="assets/images/tp.png" alt="" class="ml-2" 
+      [ngbTooltip]="tipContent"
+      placement="bottom"
+      aria-label="Documento" #tt="ngbTooltip"  (click)="showTooltip()">
+      <ng-template #tipContent>Si cuenta con otro tipo de documento de identidad, le invitamos a comunicarse al (1) <b>352 7070 en Bogotá</b> o a la Linea de <b>servicio nacional 323 599 6460</b> para brindarle la asesoría correspondiente</ng-template>    
+    </label>
+    <mat-radio-group class="desktop d-flex" formControlName="typeId">
+      <mat-radio-button value="CC">Cédula de ciudadanía</mat-radio-button>
+      <mat-radio-button value="CE">Cédula de extranjería</mat-radio-button>
+    </mat-radio-group>
+    <mat-error
+      class="desktop"
+      *ngIf="
+        cosignerDataForm.controls['typeId'].invalid &&
+        (cosignerDataForm.controls['typeId'].dirty ||
+          cosignerDataForm.controls['typeId'].touched)
+      "
+    >
+      <mat-error *ngIf="cosignerDataForm.controls['typeId'].hasError('required')">
+        Campo requerido
+      </mat-error>
+    </mat-error>
+
+    <div class="select mobile">
+      <select formControlName="typeId">
+        <option value="" [disabled]="true">--Seleccione una opción--</option>
+        <option value="CC">Cédula de ciudadanía</option>
+        <option value="CE">Cédula de extranjería</option>
+      </select>
+      <div class="select_arrow"></div>
+    </div>
+
+    <mat-error
+      class="mobile"
+      *ngIf="
+        cosignerDataForm.controls['typeId'].invalid &&
+        (cosignerDataForm.controls['typeId'].dirty ||
+          cosignerDataForm.controls['typeId'].touched)
+      "
+    >
+      <mat-error *ngIf="cosignerDataForm.controls['typeId'].hasError('required')">
+        Campo requerido
+      </mat-error>
+    </mat-error>
+
+    <div class="form-group my-3">
+      <label for="">Número de documento <span class="red">*</span> </label>
+      <input
+        [class.is-valid]
+        type="number"
+        name="numberDocument"
+        id="numberDocument"
+        formControlName="numberDocument"
+        class="form-control"
+        placeholder="Ej: 1132329843"
+      />
+
+      <mat-error
+        *ngIf="
+          cosignerDataForm.controls['numberDocument'].invalid &&
+          (cosignerDataForm.controls['numberDocument'].dirty ||
+            cosignerDataForm.controls['numberDocument'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="cosignerDataForm.controls['numberDocument'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+    <div class="form-group my-3">
+      <label for="">Primer nombre <span class="red">*</span> </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        formControlName="name"
+        class="form-control"
+        placeholder="Ej: Mariana"
+        required
+      />
+      <mat-error
+        *ngIf="
+          cosignerDataForm.controls['name'].invalid &&
+          (cosignerDataForm.controls['name'].dirty ||
+            cosignerDataForm.controls['name'].touched)
+        "
+      >
+        <mat-error *ngIf="cosignerDataForm.controls['name'].hasError('required')">
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+    <div class="form-group my-3">
+      <label for="">Segundo nombre </label>
+      <input
+        type="text"
+        name="secondName"
+        id="secondName"
+        formControlName="secondName"
+        class="form-control"
+        placeholder="Ej: Andrea"
+      />
+    </div>
+    <div class="form-group my-3">
+      <label for="">Primer apellido <span class="red">*</span> </label>
+      <input
+        type="text"
+        name="lastName"
+        id="lastName"
+        formControlName="lastName"
+        class="form-control"
+        placeholder="Ej: Rodriguez"
+      />
+      <mat-error
+        *ngIf="
+          cosignerDataForm.controls['lastName'].invalid &&
+          (cosignerDataForm.controls['lastName'].dirty ||
+            cosignerDataForm.controls['lastName'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="cosignerDataForm.controls['lastName'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+    <div class="form-group my-3">
+      <label for="">Segundo apellido </label>
+      <input
+        type="text"
+        name="lastName2"
+        id="lastName2"
+        formControlName="lastName2"
+        class="form-control"
+        placeholder="Ej: Pérez"
+      />
+    </div>
+
+    <label class="w-100">Sexo <span class="red">*</span> </label>
+    <mat-radio-group class="desktop" formControlName="gender">
+      <mat-radio-button value="Femenino">Femenino</mat-radio-button>
+      <mat-radio-button value="Masculino">Masculino</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-error
+      class="desktop"
+      *ngIf="
+        cosignerDataForm.controls['gender'].invalid &&
+        (cosignerDataForm.controls['gender'].dirty ||
+          cosignerDataForm.controls['gender'].touched)
+      "
+    >
+      <mat-error *ngIf="cosignerDataForm.controls['gender'].hasError('required')">
+        Campo requerido
+      </mat-error>
+    </mat-error>
+
+    <div class="select mobile">
+      <select formControlName="gender">
+        <option value="" [disabled]="true">--Seleccione una opción--</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Masculino">Masculino</option>
+      </select>
+      <div class="select_arrow"></div>
+    </div>
+  </div>
+
+  <mat-error
+    class="mobile"
+    *ngIf="
+      cosignerDataForm.controls['gender'].invalid &&
+      (cosignerDataForm.controls['gender'].dirty ||
+        cosignerDataForm.controls['gender'].touched)
+    "
+  >
+    <mat-error *ngIf="cosignerDataForm.controls['gender'].hasError('required')">
+      Campo requerido
+    </mat-error>
+  </mat-error>
+
+  <div class="container">
+    <div class="form-group my-3 residencia">
+      <div class="group">
+        <label for=""
+          >Dirección de residencia <span class="red">*</span>
+        </label>
+        <input
+          type="add"
+          name="address"
+          id="address"
+          formControlName="address"
+          class="form-control"
+          placeholder="Ej: Calle 25#49-01"
+        />
+        <mat-error
+          *ngIf="
+            cosignerDataForm.controls['address'].invalid &&
+            (cosignerDataForm.controls['address'].dirty ||
+              cosignerDataForm.controls['address'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="cosignerDataForm.controls['address'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+      <div class="group ml-4 autocomplete">
+        <label for="">Ciudad <span class="red">*</span> </label>
+        
+          
+          <input type="text"
+                  name="city"
+                  id="city"                                 
+                  placeholder=" Buscar..."
+                  class="form-control input-text"
+                  matInput
+                  formControlName="city"                  
+                  [matAutocomplete]="auto"
+                  position='below'
+                  panelOpen=true
+          >
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let ciudades of fillCiudades | async" [value]="ciudades">
+              {{ciudades}}
+            </mat-option>
+          </mat-autocomplete>
+        
+                
+
+        <mat-error
+          *ngIf="
+            cosignerDataForm.controls['city'].invalid &&
+            (cosignerDataForm.controls['city'].dirty ||
+              cosignerDataForm.controls['city'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="cosignerDataForm.controls['city'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+    </div>
+      
+
+    
+    
+    <div class="form-group my-3">
+      <label for="">Correo electrónico <span class="red">*</span> </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        formControlName="email"
+        class="form-control"
+        placeholder="Ej: mrodriguez@gmail.com"
+      />
+
+      <mat-error
+        *ngIf="
+          cosignerDataForm.controls['email'].invalid &&
+          (cosignerDataForm.controls['email'].dirty ||
+            cosignerDataForm.controls['email'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="cosignerDataForm.controls['email'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+    <div class="form-group my-3">
+      <label for="">Celular <span class="red">*</span> </label>
+      <input
+        type="number"
+        name="phone"
+        id="phone"
+        formControlName="phone"
+        class="form-control"
+        placeholder="Ej: 3007895436"
+      />
+
+      <mat-error
+        *ngIf="
+          cosignerDataForm.controls['phone'].invalid &&
+          (cosignerDataForm.controls['phone'].dirty ||
+            cosignerDataForm.controls['phone'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="cosignerDataForm.controls['phone'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </div>
+
+    
+    
+    <label class="w-100">Ocupación<span class="red">*</span></label>
+    <mat-form-field appearance="fill">      
+      <mat-select formControlName="occupation"
+      disableOptionCentering
+      placeholder="--Seleccione una opción--"
+      >
+        <mat-option value="option1">Opción 1</mat-option>
+        <mat-option value="option2">Opción 2</mat-option>
+        <mat-option value="option3">Opción 3</mat-option>
+        <mat-option value="option3">Opción 4</mat-option>
+      </mat-select>
+
+      <mat-error
+        *ngIf="
+          cosignerDataForm.controls['occupation'].invalid &&
+          (cosignerDataForm.controls['occupation'].dirty ||
+            cosignerDataForm.controls['occupation'].touched)
+        "
+      >
+        <mat-error
+          *ngIf="cosignerDataForm.controls['occupation'].hasError('required')"
+        >
+          Campo requerido
+        </mat-error>
+      </mat-error>
+    </mat-form-field>    
+  </div>
+  <!-- <section class="box-check bg-white certificate">
+    <strong>Certificado de tradición y libertad</strong>
+    <p>Es el documento que registra información relevante sobre el estado jurídico de la propiedad. Para descargarlo acceda a la <a href="">página de notariado y registro.</a> Tenga en cuenta que debe tener una vigencia máxima de 3 meses.</p>
+  </section> -->
+  <section class="example-section my-5 terminos">
+    <div class="row  no-gutters">
+      <div class="col-1">
+        <mat-checkbox formControlName="dataPolices" class="example-margin"></mat-checkbox>
+      </div>
+      <div class="ml-2 col-lg-9 col-10">   
+        <div class="text-dislcaimer">
+          Acepto los <a href="#"> Términos y Condiciones </a>, la <a href="#">Política de Privacidad </a> y el <a href="#">Tratamiento de mis Datos Personales</a> <span class="red"> *</span>
+        </div>
+      </div>
+    </div>
+    <mat-error
+      *ngIf="
+        cosignerDataForm.controls['dataPolices'].invalid &&
+        (cosignerDataForm.controls['dataPolices'].dirty ||
+          cosignerDataForm.controls['dataPolices'].touched)
+      "
+    >
+      <mat-error
+        *ngIf="cosignerDataForm.controls['dataPolices'].hasError('required')"
+      >
+        Campo requerido
+      </mat-error>
+    </mat-error>
+    <div class="row no-gutters mt-3">
+      <div class="col-1">
+        <mat-checkbox formControlName="useData" class="example-margin"></mat-checkbox>
+      </div>
+      <div class="ml-2 col-lg-9 col-10">
+        <div class="text-dislcaimer">
+          Autorizo el uso de mi información para consultas y reportes en centrales de riesgo,operadores de información de seguridad para finalidades de gestión de riesgo crediticio. <span class="red"> *</span>
+        </div>
+      </div>
+    </div>                              
+    <mat-error
+      *ngIf="
+        cosignerDataForm.controls['useData'].invalid &&
+        (cosignerDataForm.controls['useData'].dirty ||
+          cosignerDataForm.controls['useData'].touched)
+      "
+    >
+      <mat-error *ngIf="cosignerDataForm.controls['useData'].hasError('required')">Campo requerido</mat-error>
+    </mat-error>
+
+    <div class="row no-gutters mt-3">
+      <div class="col-1">
+        <mat-checkbox formControlName="sendData" class="example-margin"></mat-checkbox></div>
+      <div class="ml-2 col-lg-9 col-10">
+        <div class="text-dislcaimer">
+          Autorizo de manera expresa la utilización de mis datos personales para el envío de información y ofertas comerciales de Seguros Bolívar y de las compañías que hacen parte del Grupo Bolívar.
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="buttonContainer my-5">  
+    <button
+      class="button button-primary mx-auto"
+      (click)="onSubmit($event)"
+    >
+      Continuar
+    </button>  
+  </div>
+</form>
+
+<div *ngIf="showSumary" class="summary">
+  <div class="container my-3">
+    <img class="centerImg" src="assets/images/check.svg" alt="" />
+    <h4 class="text-center">Resumen de la información</h4>
+    <p class="text-center">
+      Presiona <strong>Confirmar</strong> si los datos son correctos
+    </p>
+    <hr class="w-50" />
+  
+    <div class="dataLessee my-4">
+      <div class="row my-3">
+        <div class="col-6">
+          <label>Información del arrendatario</label>
+        </div>
+        <div class="col-6 end">
+          <p class="editar">
+            <a  (click)="hideSumary($event)"><img src="assets/iconos/editar.svg" alt="" /> Editar</a>
+          </p>
+        </div>
+      </div>
+      <hr />
+  
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Identificación</p>
+          <p class="data"><span>{{ getDataFormCosigner.typeId}}</span> {{ getDataFormCosigner.numberDocument }}</p>
+        </div>
+  
+        <div class="col-6">
+          <p class="title">Nombres</p>
+          <p class="data">{{ getDataFormCosigner.name }}</p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Apellidos</p>
+          <p class="data">{{ getDataFormCosigner.lastName }}</p>
+        </div>
+  
+        <div class="col-6">
+          <p class="title">Correo electrónico</p>
+          <p class="data">{{ getDataFormCosigner.email }}</p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Ocupación</p>
+          <p class="data">{{ getDataFormCosigner.occupation }}</p>
+        </div>
+  
+        <div class="col-6">
+          <p class="title">Celular</p>
+          <p class="data">{{ getDataFormCosigner.phone }}</p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Sexo</p>
+          <p class="data">{{ getDataFormCosigner.gender }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="button button-primary" matStepperNext>Confirmar</button>
+</div>
+
+<div class="div separador-100"></div>
+<div class="div separador-25"></div>

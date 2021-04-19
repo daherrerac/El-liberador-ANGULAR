@@ -1,0 +1,52 @@
+<div class="contentAll">
+  <div class="banner_desktop">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10   col-md-12">
+            <div class="banner_desktop--text">
+              <p class="blue">{{title}}</p>              
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="container formMobile">
+    <div class="row">
+      <div class="max-130 col-4">
+        <img src="../../../../assets/iconos/paperglass.svg" alt="" class="image img-responsive">
+      </div>
+      <div class="col">
+        <h3>Registrarme como codeudor</h3>
+        <p class="blue-text">Ingresa el número de la solicitud para poder registrarte</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="form">
+      <form [formGroup]="codeForm">
+        <div class="group">
+          <label for="code">Número de la solicitud <span class="red">*</span></label>
+          <input
+            [class.is-valid]
+            formControlName="code"
+            name="code"
+            id="code"
+            type="number"
+            class="form-control"
+            placeholder="Ej: 627283">
+          <mat-error
+            *ngIf="
+            codeForm.controls['code'].invalid &&
+            (codeForm.controls['code'].dirty ||
+              codeForm.controls['code'].touched)
+            "
+          >
+          <mat-error *ngIf="codeForm.controls['code'].hasError('required')">Campo requerido</mat-error>
+        </mat-error>
+        </div>
+        <div class="buttonContainer">
+          <button type="button" class="button button button-primary" (click)="submitForm($event)">Continuar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

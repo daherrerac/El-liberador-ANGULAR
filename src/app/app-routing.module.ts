@@ -22,6 +22,9 @@ const routes: Routes = [
         loadChildren: () =>
           import('./lessee/lessee.module').then((m) => m.LesseeModule),
       },
+      {
+        path: 'codeudor', loadChildren: () => import('./cosigner/cosigner.module').then(m => m.CosignerModule)
+      },
     ],
   },
 ];

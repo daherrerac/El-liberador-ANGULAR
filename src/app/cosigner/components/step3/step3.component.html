@@ -1,0 +1,204 @@
+<form *ngIf="showCode" >
+  <h4 class="my-5">
+    Para validar su identidad enviamos un código al número de celular
+      <span class="red-cel">311********09.</span>
+  </h4>
+
+  <div class="container">
+    <div class="box-code my">
+      <div class="row mx-5 pt-5 my-auto">
+        <input type="phone" name="code1" id="code1" class="code col-3" value="1" />
+
+        <input type="phone" name="code1" id="code1" class="code col-3" value="1"/>
+
+        <input type="phone" name="code1" id="code1" class="code col-3" value="1"/>
+
+        <input type="phone" name="code1" id="code1" class="code col-3" value="1"/>
+      </div>
+
+      <div class="mt-5 fs-25">
+        <p class="text-center">El código vence en: <strong>15 MINUTOS</strong></p>
+      </div>
+    </div>
+
+    <div class="separador-50"></div>
+
+    <div class="text-link">
+      ¿No recibó el código?<a href="#"> Enviar de nuevo</a>
+    </div>
+    
+    <div class="text-link">
+      Intentar con <a href="#">otro método.</a>
+    </div>
+
+  </div>
+
+  <div class="buttonContainer my-5">
+ 
+    <div class="div separador-25"></div>
+    <button class="button button-primary  mx-auto" (click)="open(content)" >
+      Continuar
+    </button>
+  </div>
+
+</form>
+
+<ng-template #content let-modal>
+  <button type="button" class="close close-modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true"></span>
+  </button>
+  <div class="modal-body text-center">
+    <img src="assets/iconos/card-people.svg" class="img-modal" alt="" /> 
+    <h4 class="my-4">
+        Hemos validado su identidad
+    </h4>
+    <p>Presiona <b>Continuar</b> para registrar tu solicitud.</p>
+
+    <button class="button button-primary mt-4 mb-4" *ngIf="!showEntities"  (click)="onSubmit($event,'location')" >Continuar</button>
+    <button class="button button-primary mt-4 mb-4" *ngIf="showEntities"  matStepperNext (click)="modal.dismiss('Cross click')">Continuar</button>
+
+  </div>
+</ng-template>
+
+<ng-template #error let-modal>
+  <button type="button" class="close close-modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="modal-body text-center">
+    <img src="assets/iconos/card-people-error.svg" class="img-modal" alt="" /> 
+    <h4 class="my-4">
+        No pudimos validar tu identidad
+    </h4>
+    <p>Verifica tus datos o llamanos para ayudarte por otros medios con tu solicitud</p>
+    <p class="text-alert mt-5">Consulta nuestro <a href="#">puntos de servicio</a> y llámanos para brindarte asesoría.</p>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <button class="button mat-stepper-previous mt-4 mb-4" (click)="modal.dismiss('Cross click')">
+              Finalizar
+          </button>
+        </div>
+        <div class="col">
+          <button class="button button-primary mt-4 mb-4" (click)="onSubmit($event,'location')" >
+             Ver mis datos
+          </button>
+       </div>
+      </div>
+    </div>
+    
+  </div>
+</ng-template>
+
+<div *ngIf="showLocation" >
+  <h4 class="my-5 text-center">
+    ¿Cuál de las siguientes es tu dirección de residencia?
+  </h4>
+
+
+  <form [formGroup]="formLocation">
+      <mat-radio-group formControlName="userLocation" class="radio-location">
+
+        <div class="form-row">
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="Cra 59 # 89-98">Cra 59 # 89-98</mat-radio-button>
+          </div>
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="Calle 78B # 85-92">Calle 78B # 85-92</mat-radio-button>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="Diagonal 6B # 85-92">Diagonal 6B # 85-92</mat-radio-button>
+          </div>
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="No reconozco ninguna dirección">No reconozco ninguna dirección</mat-radio-button>
+          </div>
+        </div>
+
+      </mat-radio-group>
+
+      <div class="separador-25"></div>
+      <div  class="buttonContainer center my-5">
+        <button class="button button-primary mat-stepper-next" (click)="onSubmit($event,'number')">Continuar</button>
+      </div>
+
+  </form>
+
+  
+</div>
+
+
+<div *ngIf="showNumber" >
+  <h4 class="my-5 text-center">
+    ¿Cuál de estos números telefónicos ha sido tuyo?
+  </h4>
+
+
+  <form [formGroup]="formNumber">
+      <mat-radio-group formControlName="userNumber" class="radio-location">
+
+        <div class="form-row">
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="3167653445">3167653445</mat-radio-button>
+          </div>
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="3303892299">3303892299</mat-radio-button>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="3213569087">3213569087</mat-radio-button>
+          </div>
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="3168920290">3168920290</mat-radio-button>
+          </div>
+        </div>
+
+      </mat-radio-group>
+
+      <div class="separador-25"></div>
+      <div  class="buttonContainer center my-5">
+        <button class="button button-primary mat-stepper-next" (click)="onSubmit($event,'entities')">Continuar</button>
+      </div>
+  </form>
+</div>
+
+<div *ngIf="showEntities" >
+  <h4 class="my-5 text-center">
+    ¿En cuál de las siguientes entidades tienes o has tenido cuenta de ahorros?
+  </h4>
+  <form [formGroup]="formBank">
+      <mat-radio-group formControlName="userBank" class="radio-location">
+
+        <div class="form-row">
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="Davivienda">Davivienda</mat-radio-button>
+          </div>
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="Granahorrar">Granahorrar</mat-radio-button>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="Bancolombia">Bancolombia</mat-radio-button>
+          </div>
+          <div class="col-lg-6 col-md-12 px-2 my-3">
+            <mat-radio-button  value="Banco de occidente">Banco de occidente</mat-radio-button>
+          </div>
+        </div>
+
+      </mat-radio-group>
+      <div class="div separador-25"></div>
+      
+      <div  class="buttonContainer center my-5">
+        <button class="button button-primary mat-stepper-next" *ngIf="validData"  (click)="open(content)">Continuar</button>
+        <button class="button button-primary mat-stepper-next" *ngIf="!validData"  (click)="open(error)">Continuar</button>
+      </div>
+
+  </form>
+
+  
+</div>
+<div class="div separador-100"></div>
+<div class="div separador-25"></div>
