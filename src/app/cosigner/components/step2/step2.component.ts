@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/cor
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-step2',
@@ -37,6 +37,7 @@ export class Step2Component implements OnInit {
   public fillCiudades !: Observable<string[]>;
   public getDataFormCosigner: any;
   public showSumary = false;
+  public srcResult: any;
 
   constructor() {}
 
@@ -60,6 +61,20 @@ export class Step2Component implements OnInit {
     event.preventDefault();
 
     if(this.showSumary) this.showSumary = false;                   
+  }
+
+  onFileSelected() {
+    const inputNode: any = document.querySelector('#file');
+  
+    if (typeof (FileReader) !== 'undefined') {
+      const reader = new FileReader();
+  
+      reader.onload = (e: any) => {
+        this.srcResult = e.target.result;
+      };
+  
+      reader.readAsArrayBuffer(inputNode.files[0]);
+    }
   }
 
   onSubmit(event: Event): any {    

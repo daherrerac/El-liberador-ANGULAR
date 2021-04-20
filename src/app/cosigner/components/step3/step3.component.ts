@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,10 +24,16 @@ export class Step3Component implements OnInit {
   public showNumber = false;
   public showEntities = false;
   public validData = true;
+  public stepIndex = 0;
 
   constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {}
+
+  goToForm() {
+    this.modalService.dismissAll();
+    this.stepIndex = 1;
+  }
 
   onSubmit(event: Event,type: any): any {
     event.preventDefault();
@@ -37,16 +43,22 @@ export class Step3Component implements OnInit {
         this.modalService.dismissAll();
         this.showLocation = true;
         this.showCode = false;
+        this.showNumber = false;
+        this.showEntities = false;
         break; 
       }
       
       case 'number': { 
         this.showLocation = false;
+        this.showCode = false;
         this.showNumber = true;
+        this.showEntities = false;
         break; 
       }
       
       case 'entities': { 
+        this.showLocation = false;
+        this.showCode = false;
         this.showNumber = false;
         this.showEntities = true;
         break; 

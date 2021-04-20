@@ -1,7 +1,7 @@
 <form [formGroup]="cosignerDataForm" *ngIf="!showSumary">
   <div class="container mt-4 mobile_style">
     <div class="text-center ">
-      <h4>Para iniciar necesitamos tus datos</h4>
+      <h4>Ahora tus datos como deudor solidario</h4>
       <p>Recuerda que los campos con <span class="red">*</span> son obligatorios</p>
     </div>
 
@@ -14,6 +14,7 @@
     <mat-radio-group class="desktop d-flex" formControlName="typeId">
       <mat-radio-button value="CC">Cédula de ciudadanía</mat-radio-button>
       <mat-radio-button value="CE">Cédula de extranjería</mat-radio-button>
+      <mat-radio-button value="PA">Pasaporte</mat-radio-button>
     </mat-radio-group>
     <mat-error
       class="desktop"
@@ -340,10 +341,14 @@
       </mat-error>
     </mat-form-field>    
   </div>
-  <!-- <section class="box-check bg-white certificate">
-    <strong>Certificado de tradición y libertad</strong>
-    <p>Es el documento que registra información relevante sobre el estado jurídico de la propiedad. Para descargarlo acceda a la <a href="">página de notariado y registro.</a> Tenga en cuenta que debe tener una vigencia máxima de 3 meses.</p>
-  </section> -->
+  <section class="box-check bg-white certificate">
+    <p class="title">Certificado de tradición y libertad</p>
+    <p class="text">Es el documento que registra información relevante sobre el estado jurídico de la propiedad. Para descargarlo acceda a la <a href="#">página de notariado y registro.</a> Tenga en cuenta que debe tener una vigencia máxima de 3 meses.</p>
+    <div class="form-group">
+      <button class="button" type="button" mat-raised-button (click)="fileInput.click()">Adjuntar archivo</button>
+      <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+    </div>
+  </section>
   <section class="example-section my-5 terminos">
     <div class="row  no-gutters">
       <div class="col-1">
@@ -399,12 +404,13 @@
     </div>
   </section>
   <div class="buttonContainer my-5">  
+    <button class="button button-secondary" matStepperPrevious>Volver</button>
     <button
       class="button button-primary mx-auto"
       (click)="onSubmit($event)"
     >
       Continuar
-    </button>  
+    </button>
   </div>
 </form>
 
@@ -420,11 +426,11 @@
     <div class="dataCosigner my-4">
       <div class="row">
         <div class="col-6">
-          <label>Datos del codeudor</label>
+          <label>Deudor solidario</label>
         </div>
         <div class="col-6 end">
           <p class="editar">
-            <a  (click)="hideSumary($event)"><img src="assets/iconos/editar.svg" alt="" /> Editar</a>
+            <a (click)="hideSumary($event)"><img src="assets/iconos/editar.svg" alt="" /> Editar</a>
           </p>
         </div>
       </div>
@@ -469,9 +475,42 @@
           <p class="data">{{ getDataFormCosigner.gender }}</p>
         </div>
       </div>
+
+      <div class="clearfix"></div>
+      
+      <div class="row">
+        <div class="col-6">
+          <label>Arrendatario</label>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      
+      <div class="row my-3">
+        <div class="col-6">
+          <p class="title">Identificación</p>
+          <p class="data red-text">CC 102038374</p>
+        </div>
+        <div class="col-6">
+          <p class="title">Nombre completo</p>
+          <p class="data red-text">Carlos Eduardo Cruz Pérez</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-6">
+          <p class="title">Ciudad de inmueble</p>
+          <p class="data red-text">Bogotá</p>
+        </div>
+        <div class="col-6">
+          <p class="title">Solicitud:</p>
+          <p class="data red-text">1281943</p>
+        </div>
+      </div>
     </div>
   </div>
   <div class="buttonContainer">
+    <button class="button button-secondary" (click)="hideSumary($event)">Volver</button>
     <button type="button" class="button button-primary" matStepperNext>Confirmar</button>
   </div>
 </div>

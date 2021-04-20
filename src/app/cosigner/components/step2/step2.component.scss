@@ -224,10 +224,52 @@ input,select,.select{
   }
 }
 
+.certificate {
+  margin: 0 -30px;
+  padding: 59px 60px 56px;
+  
+  .title {
+    font: 500 17px "Gotham-Medium";
+    margin: 0 0 28px;
+  }
+
+  .text {
+    font: 400 17px "Gotham-Book";
+
+    a {
+      font: 700 17px "Gotham-Bold";
+    }
+  }
+
+  .button {
+    border: none;
+    border-radius: 12px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 11px #CCCCCC66;
+    color: #706F6F;
+    font: 400 12px "Gotham-Book" !important;
+    height: 48px;
+  }
+}
+
+.terminos {
+  .text-dislcaimer {
+    font: 400 17px "Gotham-Book";
+
+    a {
+      font: 500 17px "Gotham-Medium";
+    }
+  }
+}
+
 .summary {
   .centerImg {
     margin: 0 auto;
     display: block;
+  }
+
+  .clearfix {
+    margin: 70px 0 0;
   }
   
   label{

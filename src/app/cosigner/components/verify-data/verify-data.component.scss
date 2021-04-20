@@ -11,8 +11,14 @@
   }
 }
 
+::ng-deep .mat-horizontal-stepper-header-container {
+  margin: 0 auto 82px;
+  max-width: 650px;
+}
+
 ::ng-deep .mat-step-header {
   flex-direction: column;
+  padding: 0 36px !important;
 
   .mat-step-icon {
     background-color: $blue-color;
@@ -20,12 +26,15 @@
 
   .mat-step-icon-selected, .mat-step-icon-state-done {
     background-color: $red-color !important;
-  } 
+  }
+
+  .mat-step-label-active {
+    color: #253150;
+  }
 
   .mat-step-label {
     color: #706F6F;
-    font-family: "Gotham-Book";
-    font-size: 0.8rem;
+    font: 400 18px 'Gotham-Book';
     line-height: 1;
     margin-top: 1rem;
     text-align: center;
