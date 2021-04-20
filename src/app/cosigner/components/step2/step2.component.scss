@@ -236,15 +236,43 @@ input,select,.select{
   
   .title {
     color: $gray-color;
-    font-family: "Gotham-Book";
+    font: 400 24px "Gotham-Book";
   }
   
   .data {
     color: $red-color;
+    font: 400 24px "Gotham-Book";
+  }
+
+  h4 {
+    &.text-center {
+      font: 700 30px "Gotham-Bold";
+    }
   }
 
   p {
     margin-bottom: 0;
+
+    &.text-center {
+      font: 400 27px "Gotham-Book";
+
+      strong {
+        font: 700 27px "Gotham-Bold";
+      }
+    }
+  }
+
+  .dataCosigner {
+    label {
+      font: 500 26px "Gotham-Medium";
+    }
+  }
+
+  .divider {
+    background: #DFDFDF;
+    height: 1px;
+    margin: 0 0 18px;
+    width: 100%;
   }
 
   .editar {
@@ -256,6 +284,14 @@ input,select,.select{
     a {
       color: #fff !important;  
       text-decoration: none;
+    }
+  }
+
+  .buttonContainer {
+    margin: 108px auto 0;
+    
+    button {
+      margin: 0 auto;
     }
   }
 }
