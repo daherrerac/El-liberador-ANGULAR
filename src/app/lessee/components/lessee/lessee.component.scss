@@ -24,53 +24,58 @@
 
 ::ng-deep .mat-step-header {
   flex-direction: column;
+
   .mat-step-icon {
     background-color: $blue-color;
   }
 
-  .mat-step-icon-selected,.mat-step-icon-state-done {
+  .mat-step-icon-selected, .mat-step-icon-state-done {
     background-color: $red-color !important;
   } 
 
   .mat-step-label {
-    font-family: "Gotham-Book";
-    text-align: center;
-    margin-top: 1rem;
-    line-height: 1;
-    font-size: 0.8rem;
     color: #706F6F;
+    font-family: "Gotham-Book";
+    font-size: 0.8rem;
+    line-height: 1;
+    margin-top: 1rem;
+    text-align: center;
+
     @media only screen and (max-width: 480px) {
       font-size: 0.7rem;
     }
   }
 }
-::ng-deep  .mat-radio-group{
+
+::ng-deep .mat-radio-group{
   height: 60px;
 }
+
 ::ng-deep .mat-radio-label-content{
   margin-top: 0.5rem;
 }
+
 ::ng-deep .mat-radio-container{
-  margin-top: 0.2rem;
+  height: 30px !important;
   margin-right: 0.4rem;
+  margin-top: 0.2rem;
   width: 30px !important;
-  height: 30px !important;
 }
+
 ::ng-deep .mat-radio-outer-circle , ::ng-deep.mat-radio-inner-circle{
-  width: 30px !important;
   height: 30px !important;
+  width: 30px !important;
 }
 
 ::ng-deep{
-  #cdk-step-label-1-4,
-  #cdk-step-label-0-4{
+  #cdk-step-label-1-4, #cdk-step-label-0-4{
     display: none;
   }
 }
+
 ::ng-deep .mat-stepper-horizontal-line:last-of-type{
   display: none;
 }
-
 
 .banner_mobile {
   background-image: url(../../../../assets/images/banner_mobile.jpg);
@@ -138,7 +143,6 @@
     }
   }
 }
-
 
 @media(max-width:768px){
   .banner_desktop{  
