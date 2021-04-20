@@ -43,7 +43,7 @@
 
 </form>
 
-<ng-template #content let-modal>
+<ng-template #content let-modal style="min-width: 650px;">
   <button type="button" class="close close-modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true"></span>
   </button>
@@ -60,7 +60,7 @@
   </div>
 </ng-template>
 
-<ng-template #error let-modal>
+<ng-template #error let-modal style="min-width: 650px;">
   <button type="button" class="close close-modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
   </button>
@@ -70,21 +70,11 @@
         No pudimos validar tu identidad
     </h4>
     <p>Verifica tus datos o llamanos para ayudarte por otros medios con tu solicitud</p>
-    <p class="text-alert mt-5">Consulta nuestro <a href="#">puntos de servicio</a> y llámanos para brindarte asesoría.</p>
+    <p class="text-alert mt-5">Consulta nuestros <a href="#">puntos de servicio</a> y llámanos para brindarte asesoría.</p>
 
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <button class="button mat-stepper-previous mt-4 mb-4" (click)="modal.dismiss('Cross click')">
-              Finalizar
-          </button>
-        </div>
-        <div class="col">
-          <button class="button button-primary mt-4 mb-4" (click)="onSubmit($event,'location')" >
-             Ver mis datos
-          </button>
-       </div>
-      </div>
+      <button class="button mat-stepper-previous mt-4 mb-4" (click)="modal.dismiss('Cross click')">Finalizar</button>
+      <button class="button button-primary mt-4 mb-4" (click)="goToForm()">Ver mis datos</button>
     </div>
     
   </div>
@@ -190,10 +180,12 @@
 
       </mat-radio-group>
       <div class="div separador-25"></div>
+
+      <!-- validacion formulario erroneo, ocultar previo -->
       
       <div  class="buttonContainer center my-5">
-        <button class="button button-primary mat-stepper-next" *ngIf="validData"  (click)="open(content)">Continuar</button>
-        <button class="button button-primary mat-stepper-next" *ngIf="!validData"  (click)="open(error)">Continuar</button>
+        <button class="button button-primary mat-stepper-next" *ngIf="!validData"  (click)="open(content)">Continuar</button>
+        <button class="button button-primary mat-stepper-next" *ngIf="validData"  (click)="open(error)">Continuar</button>
       </div>
 
   </form>

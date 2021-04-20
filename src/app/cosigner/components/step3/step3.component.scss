@@ -99,12 +99,38 @@ h4 {
 }
 
 .modal-body{
+  min-width: 652px;
+  
   p {
     color: $blue-color;
-    font-family: "Gotham-Book";
+    font: 400 20px "Gotham-Book";
+    margin: 0 auto;
+    max-width: 464px;
+
+    &.text-alert {
+      color: #BD0F14;
+      font-size: 17px;
+      
+      a {
+        font-family: "Gotham-Bold"
+      }
+    }
 
     b {
       font-family: "Gotham-Medium";
     }
   }
+
+  button {
+    max-width: 264px;
+    padding: 0.5rem 0;
+
+    &:first-child {
+      margin: 0 32px 0 0;
+    }
+  }
+}
+
+::ng-deep .modal-dialog {
+  min-width: 652px;
 }

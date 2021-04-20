@@ -5,11 +5,11 @@ import { RouterModule } from '@angular/router';
 import { HeaderNewComponent } from './components/header-new/header-new.component';
 import { WhatsappbtnComponent } from './components/whatsappbtn/whatsappbtn.component';
 
-const components = [FooterComponent, HeaderNewComponent,WhatsappbtnComponent];
+const components = [FooterComponent, HeaderNewComponent, WhatsappbtnComponent];
 
 @NgModule({
-  declarations: [components, FooterComponent],
   imports: [CommonModule, RouterModule],
-  exports: [components],
+  declarations: [...components],
+  exports: [...components],
 })
 export class SharedModule {}  

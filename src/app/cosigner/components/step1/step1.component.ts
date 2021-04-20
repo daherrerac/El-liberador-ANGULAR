@@ -11,8 +11,4 @@ export class Step1Component implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
-
-  continue() {
-    this.router.navigate(['codeudor/codeudor-datos']);
-  }
 }
