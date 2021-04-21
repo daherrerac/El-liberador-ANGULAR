@@ -3,7 +3,16 @@
 @import "base/forms";
 @import "base/typography";
 
+.divider {
+  background: #DFDFDF;
+  height: 1px;
+  margin: 52px 0;
+  width: 100%;
+}
+
 .contentAll {
+  background: tomato;
+  
   .banner_desktop {
     background-image: url(../../../../assets/images/banner_home.png);
     background-repeat: no-repeat;
@@ -46,11 +55,24 @@
   
     > .row {
       max-width: 780px;
+
+      @media screen and (max-width: 480px) {
+        margin: 0 auto;
+        max-width: 320px;
+      }
+
+      .col {
+        padding: 0;
+      }
     }
     
     .max-130 {
       max-width: 130px;
       margin: 0 49px 0 0;
+
+      @media screen and (max-width: 480px) {
+        padding: 0;
+      }
     }
     
     .image {
@@ -72,6 +94,10 @@
       .group {
         margin: 0 auto 75px;
         width: 100%;
+
+        @media screen and (max-width: 480px) {
+          max-width: 320px;
+        }
       }
       
       label, input {
@@ -87,6 +113,13 @@
         font: 400 17px 'Gotham-Book';
         outline: none;
         padding: 20px;
+      }
+
+      .captcha {
+        background: white;
+        height: 92px;
+        margin: 0 auto 52px;
+        width: 280px;
       }
 
       button {
@@ -142,10 +175,18 @@
 
       .form {
         .group {
+          margin: 0 auto 52px;
+          
           input {
             font: 400 14px 'Gotham-Book';
             padding: 17px;
           }
+        }
+
+        .captcha {
+          height: 71px;
+          margin: 0 auto 27px;
+          width: 217px;
         }
 
         button {
@@ -162,6 +203,15 @@
       
       &--text{
         margin-top: 30%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .formMobile {
+      .divider {
+        margin: 32px auto 48px;
+        max-width: 320px;
       }
     }
   }

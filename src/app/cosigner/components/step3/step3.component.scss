@@ -62,6 +62,13 @@ h4 {
 }
 
 @include media(mobile) {
+  .divider {
+    background: #DFDFDF;
+    height: 1px;
+    margin: 18px 0 41px;
+    width: 100%;
+  }
+  
   .box-code {
     height: auto;
     padding-bottom: 8px;
@@ -92,14 +99,15 @@ h4 {
 }
 
 h4 {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
   color: $blue-color;
 }
 
 .modal-body{
   min-width: 652px;
+
+  @media screen and (max-width: 768px) {
+    min-width: initial;
+  }
   
   p {
     color: $blue-color;
@@ -133,4 +141,10 @@ h4 {
 
 ::ng-deep .modal-dialog {
   min-width: 652px;
+
+  @media screen and (max-width: 768px) {
+    margin: 100px auto 0;
+    max-width: 86%;
+    min-width: initial;
+  }
 }

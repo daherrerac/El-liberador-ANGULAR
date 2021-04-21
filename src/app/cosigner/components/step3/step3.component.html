@@ -1,3 +1,5 @@
+<div class="divider"></div>
+
 <form *ngIf="showCode" >
   <h4 class="my-5">
     Para validar su identidad enviamos un código al número de celular
@@ -72,7 +74,7 @@
     <p>Verifica tus datos o llamanos para ayudarte por otros medios con tu solicitud</p>
     <p class="text-alert mt-5">Consulta nuestros <a href="#">puntos de servicio</a> y llámanos para brindarte asesoría.</p>
 
-    <div class="container">
+    <div class="buttonContainer">
       <button class="button mat-stepper-previous mt-4 mb-4" (click)="modal.dismiss('Cross click')">Finalizar</button>
       <button class="button button-primary mt-4 mb-4" (click)="goToForm()">Ver mis datos</button>
     </div>
@@ -80,8 +82,8 @@
   </div>
 </ng-template>
 
-<div *ngIf="showLocation" >
-  <h4 class="my-5 text-center">
+<div *ngIf="showLocation">
+  <h4 class="my-2">
     ¿Cuál de las siguientes es tu dirección de residencia?
   </h4>
 
@@ -120,7 +122,7 @@
 
 
 <div *ngIf="showNumber" >
-  <h4 class="my-5 text-center">
+  <h4 class="my-2">
     ¿Cuál de estos números telefónicos ha sido tuyo?
   </h4>
 
@@ -155,7 +157,7 @@
 </div>
 
 <div *ngIf="showEntities" >
-  <h4 class="my-5 text-center">
+  <h4 class="my-2">
     ¿En cuál de las siguientes entidades tienes o has tenido cuenta de ahorros?
   </h4>
   <form [formGroup]="formBank">
