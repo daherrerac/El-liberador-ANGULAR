@@ -37,6 +37,7 @@ export class Step3Component implements OnInit {
   public formsData: any;
   public visibleIndex: number;
   public alert: boolean;
+  public startForm: boolean;
 
   constructor(private modalService: NgbModal, private verifyIndentityService: VerifyIdentityServiceService) {
     this.formResults = [];
@@ -50,6 +51,12 @@ export class Step3Component implements OnInit {
   goToForm() {
     this.modalService.dismissAll();
     this.stepIndex = 1;
+  }
+
+  startQuestions() {
+    this.modalService.dismissAll();
+    this.showCode = false;
+    this.startForm = true;
   }
 
   buildForms() {

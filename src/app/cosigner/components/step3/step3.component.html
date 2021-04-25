@@ -56,8 +56,8 @@
     </h4>
     <p>Presiona <b>Continuar</b> para registrar tu solicitud.</p>
 
-    <button class="button button-primary mt-4 mb-4" *ngIf="!showEntities"  (click)="onSubmit($event,'location')" >Continuar</button>
-    <button class="button button-primary mt-4 mb-4" *ngIf="showEntities"  matStepperNext (click)="modal.dismiss('Cross click')">Continuar</button>
+    <button class="button button-primary mt-4 mb-4" *ngIf="!showEntities" (click)="startQuestions()" >Continuar</button>
+    <button class="button button-primary mt-4 mb-4" *ngIf="showEntities" matStepperNext (click)="modal.dismiss('Cross click')">Continuar</button>
 
   </div>
 </ng-template>
@@ -82,7 +82,7 @@
   </div>
 </ng-template>
 
-<div class="form" *ngIf="">
+<div class="form" *ngIf="startForm">
   <div *ngFor="let item of formsData; let i = index">
     <div *ngIf="visibleIndex === i">
       <h4 class="my-2">{{item.texto}}</h4>
@@ -103,213 +103,8 @@
         <button type="button" class="button button-primary mat-stepper-next" (click)="saveResults(selection, selection = undefined)">Continuar</button>
       </div>
     </div>
-    
-    
-    <!-- <div *ngIf="showLocation">
-      <h4 class="my-2">
-        ¿Cuál de las siguientes es tu dirección de residencia?
-      </h4>
-
-      <mat-radio-group formControlName="userLocation" class="radio-location">
-
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Cra 59 # 89-98">Cra 59 # 89-98</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Calle 78B # 85-92">Calle 78B # 85-92</mat-radio-button>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Diagonal 6B # 85-92">Diagonal 6B # 85-92</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="No reconozco ninguna dirección">No reconozco ninguna dirección</mat-radio-button>
-          </div>
-        </div>
-
-      </mat-radio-group>
-
-      <div class="separador-25"></div>
-      <div  class="buttonContainer center my-5">
-        <button type="button" class="button button-primary mat-stepper-next" (click)="onSubmit($event,'number')">Continuar</button>
-      </div>
-    </div>
-
-    <div *ngIf="showNumber">
-      <h4 class="my-2">
-        ¿Cuál de estos números telefónicos ha sido tuyo?
-      </h4>
-      <mat-radio-group formControlName="userNumber" class="radio-location">
-
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="3167653445">3167653445</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="3303892299">3303892299</mat-radio-button>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="3213569087">3213569087</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="3168920290">3168920290</mat-radio-button>
-          </div>
-        </div>
-
-      </mat-radio-group>
-
-      <div class="separador-25"></div>
-      <div  class="buttonContainer center my-5">
-        <button type="button" class="button button-primary mat-stepper-next" (click)="onSubmit($event,'entities')">Continuar</button>
-      </div>
-    </div>
-
-    <div *ngIf="showEntities" >
-      <h4 class="my-2">
-        ¿En cuál de las siguientes entidades tienes o has tenido cuenta de ahorros?
-      </h4>
-      <mat-radio-group formControlName="userBank" class="radio-location">
-
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Davivienda">Davivienda</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Granahorrar">Granahorrar</mat-radio-button>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Bancolombia">Bancolombia</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Banco de occidente">Banco de occidente</mat-radio-button>
-          </div>
-        </div>
-
-      </mat-radio-group>
-      <div class="div separador-25"></div>
-      
-      <div  class="buttonContainer center my-5">
-        <button type="button" class="button button-primary mat-stepper-next" *ngIf="!validData"  (click)="open(content)">Continuar</button>
-        <button type="button" class="button button-primary mat-stepper-next" *ngIf="validData"  (click)="open(error)">Continuar</button>
-      </div>
-    </div> -->
   </div>
 </div>
-
-<!-- <div *ngIf="showLocation">
-  <h4 class="my-2">
-    ¿Cuál de las siguientes es tu dirección de residencia?
-  </h4>
-
-
-  <form [formGroup]="formLocation">
-    <mat-radio-group formControlName="userLocation" class="radio-location">
-
-      <div class="form-row">
-        <div class="col-lg-6 col-md-12 px-2 my-3">
-          <mat-radio-button  value="Cra 59 # 89-98">Cra 59 # 89-98</mat-radio-button>
-        </div>
-        <div class="col-lg-6 col-md-12 px-2 my-3">
-          <mat-radio-button  value="Calle 78B # 85-92">Calle 78B # 85-92</mat-radio-button>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="col-lg-6 col-md-12 px-2 my-3">
-          <mat-radio-button  value="Diagonal 6B # 85-92">Diagonal 6B # 85-92</mat-radio-button>
-        </div>
-        <div class="col-lg-6 col-md-12 px-2 my-3">
-          <mat-radio-button  value="No reconozco ninguna dirección">No reconozco ninguna dirección</mat-radio-button>
-        </div>
-      </div>
-
-    </mat-radio-group>
-
-    <div class="separador-25"></div>
-    <div  class="buttonContainer center my-5">
-      <button class="button button-primary mat-stepper-next" (click)="onSubmit($event,'number')">Continuar</button>
-    </div>
-
-  </form>
-
-  
-</div>
-
-
-<div *ngIf="showNumber" >
-  <h4 class="my-2">
-    ¿Cuál de estos números telefónicos ha sido tuyo?
-  </h4>
-
-
-  <form [formGroup]="formNumber">
-      <mat-radio-group formControlName="userNumber" class="radio-location">
-
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="3167653445">3167653445</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="3303892299">3303892299</mat-radio-button>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="3213569087">3213569087</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="3168920290">3168920290</mat-radio-button>
-          </div>
-        </div>
-
-      </mat-radio-group>
-
-      <div class="separador-25"></div>
-      <div  class="buttonContainer center my-5">
-        <button class="button button-primary mat-stepper-next" (click)="onSubmit($event,'entities')">Continuar</button>
-      </div>
-  </form>
-</div>
-
-<div *ngIf="showEntities" >
-  <h4 class="my-2">
-    ¿En cuál de las siguientes entidades tienes o has tenido cuenta de ahorros?
-  </h4>
-  <form [formGroup]="formBank">
-      <mat-radio-group formControlName="userBank" class="radio-location">
-
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Davivienda">Davivienda</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Granahorrar">Granahorrar</mat-radio-button>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Bancolombia">Bancolombia</mat-radio-button>
-          </div>
-          <div class="col-lg-6 col-md-12 px-2 my-3">
-            <mat-radio-button  value="Banco de occidente">Banco de occidente</mat-radio-button>
-          </div>
-        </div>
-
-      </mat-radio-group>
-      <div class="div separador-25"></div>
-
-      <div  class="buttonContainer center my-5">
-        <button class="button button-primary mat-stepper-next" *ngIf="!validData"  (click)="open(content)">Continuar</button>
-        <button class="button button-primary mat-stepper-next" *ngIf="validData"  (click)="open(error)">Continuar</button>
-      </div>
-
-  </form>
-</div> -->
 
 <div class="div separador-100"></div>
 <div class="div separador-25"></div>

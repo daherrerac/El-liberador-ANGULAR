@@ -59,7 +59,8 @@ export class VerifyDataComponent implements OnInit {
 
   changeStep(event: any) {
     if(event.selectedIndex == 0) this.title = "Verificar";
-    else if(event.selectedIndex == 1) this.title = "Datos del Codeudor"
+    else if(event.selectedIndex == 1) this.title = "Datos del Codeudor";
+    else if(event.selectedIndex == 2) this.title = "Validación de identidad";
   }
 
   changeStepperIndex() {
