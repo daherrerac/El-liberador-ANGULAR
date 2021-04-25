@@ -10,6 +10,8 @@ const routes: Routes = [
 
   { path: 'codeudor', loadChildren: () => import('./cosigner/cosigner.module').then(m => m.CosignerModule) },
 
+  { path: 'consultar-solicitud', loadChildren: () => import('./request-consult/request-consult.module').then(m => m.RequestConsultModule) },
+
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

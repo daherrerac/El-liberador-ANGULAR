@@ -1,0 +1,137 @@
+<div class="banner_desktop">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10   col-md-12">
+          <div class="banner_desktop--text">
+            <p class="blue">{{title}}</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container formMobile">
+  <div class="row">
+    <div class="max-130 col-4">
+      <img src="../../../../assets/iconos/buscar.svg" alt="" class="image img-responsive">
+    </div>
+    <div class="col">
+      <h3>Consulta de solicitudes</h3>
+      <p class="blue-text">Para consultar el estado de la solicitud por favor ingrese los siguientes <span>datos del arrendatario</span></p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="form">
+    <form [formGroup]="consultForm">
+      <div class="form-group my-3">
+        <label class="w-100">Tipo de documento <span class="red">*</span> <img src="assets/images/tp.png" alt="" class="ml-2" 
+          [ngbTooltip]="tipContent"
+          placement="bottom"
+          aria-label="Documento" #tt="ngbTooltip" (click)="showTooltip()">
+          <ng-template #tipContent>Si cuenta con otro tipo de documento de identidad, le invitamos a comunicarse al (1) <b>352 7070 en Bogotá</b> o a la Linea de <b>servicio nacional 323 599 6460</b> para brindarle la asesoría correspondiente</ng-template>    
+        </label>
+        <mat-radio-group class="desktop d-flex" formControlName="document" name="document" id="document">
+          <mat-radio-button value="CC">Cédula de ciudadanía</mat-radio-button>
+          <mat-radio-button value="CE">Cédula de extranjería</mat-radio-button>
+        </mat-radio-group>
+        <mat-error
+          class="desktop"
+          *ngIf="
+            consultForm.controls['document'].invalid &&
+            (consultForm.controls['document'].dirty ||
+              consultForm.controls['document'].touched)
+          "
+        >
+          <mat-error *ngIf="consultForm.controls['document'].hasError('required')">
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+      <div class="form-group my-3">
+        <div class="select mobile">
+          <select formControlName="document">
+            <option value="" [disabled]="true">--Seleccione una opción--</option>
+            <option value="CC">Cédula de ciudadanía</option>
+            <option value="CE">Cédula de extranjería</option>
+          </select>
+          <div class="select_arrow"></div>
+        </div>
+    
+        <mat-error
+          class="mobile"
+          *ngIf="
+            consultForm.controls['document'].invalid &&
+            (consultForm.controls['document'].dirty ||
+              consultForm.controls['document'].touched)
+          "
+        >
+          <mat-error *ngIf="consultForm.controls['document'].hasError('required')">
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+      <div class="form-group my-3">
+        <label for="documentNumber">Número de documento <span class="red">*</span> </label>
+        <input
+          [class.is-valid]
+          type="number"
+          min="0"
+          name="documentNumber"
+          id="documentNumber"
+          formControlName="documentNumber"
+          class="form-control"
+          placeholder="Ej: 1132329843"
+        />
+  
+        <mat-error
+          *ngIf="
+            consultForm.controls['documentNumber'].invalid &&
+            (consultForm.controls['documentNumber'].dirty ||
+              consultForm.controls['documentNumber'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="consultForm.controls['documentNumber'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+      <div class="form-group my-3">
+        <label for="requestNumber">Número de la solicitud <span class="red">*</span> </label>
+        <input
+          [class.is-valid]
+          type="number"
+          min="0"
+          name="requestNumber"
+          id="requestNumber"
+          formControlName="requestNumber"
+          class="form-control"
+          placeholder="Ej: 627283"
+        />
+  
+        <mat-error
+          *ngIf="
+            consultForm.controls['requestNumber'].invalid &&
+            (consultForm.controls['requestNumber'].dirty ||
+              consultForm.controls['requestNumber'].touched)
+          "
+        >
+          <mat-error
+            *ngIf="consultForm.controls['requestNumber'].hasError('required')"
+          >
+            Campo requerido
+          </mat-error>
+        </mat-error>
+      </div>
+
+      <div class="buttonContainer">
+        <button type="button" class="button button-primary mx-auto" (click)="onSubmit()">Continuar</button>
+      </div>
+    </form>
+    <div class="div separador-100"></div>
+    <div class="div separador-25"></div>
+  </div>
+</div>
