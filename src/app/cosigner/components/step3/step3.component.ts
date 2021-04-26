@@ -76,6 +76,7 @@ export class Step3Component implements OnInit {
       });
 
       console.log(this.formResults)
+      localStorage.setItem('questionsFormsResults', JSON.stringify(this.formResults))
     }
   }
 

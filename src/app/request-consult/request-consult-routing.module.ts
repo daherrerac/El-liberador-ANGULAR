@@ -5,7 +5,7 @@ import { DetailComponent } from './components/detail/detail.component'
 
 const routes: Routes = [
   { path: '', component: ConsultComponent },
-  { path: 'detalle/:documentNumber/:requestNumber', component: DetailComponent }
+  { path: 'resultado', component: DetailComponent }
 ];
 
 @NgModule({

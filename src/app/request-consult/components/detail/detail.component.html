@@ -9,9 +9,158 @@
     </div>
   </div>
 </div>
-<div class="white-bg">
-  <div class="card-lib">
-    <h2 class="red-text">Solicitud Nº {{requestNumber}}</h2>
-    <h1 class="result">{{resultText}}</h1>
+
+<div class="contentAll">
+  <p class="tagLine">Detalle de tu solicitud de arrendamiento</p>
+  
+  <div class="white-bg">
+    <div class="card-lib">
+      <h2 class="red-text requestNumber">Solicitud Nº {{requestNumber}}</h2>
+      <h1 *ngIf="resultText != ''" class="result">{{resultText}}</h1>
+  
+      <div class="detailText">
+        <div *ngIf="resultText == 'ASEGURABLE'">
+          <p>¡Esto es todo! ¡Felicidades! Cuentas con el respaldo de <span>El Libertador</span></p>
+        </div>
+        <div *ngIf="resultText == 'NO ASEGURABLE'">
+          <p>Tu solicitud fue calificada como <span>No asegurable.</span></p>
+        </div>
+        <div *ngIf="resultText == 'EN ESTUDIO'">
+          <p>Recuerda guardar este número para consultar su estado</p>
+        </div>
+        <div *ngIf="resultText == ''">
+          <p>Con la opción <span>Compartir</span> envíala a tu deudor solidario para que se registre.</p>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="resultText == 'ASEGURABLE'" class="cta">
+      <p class="ctaText">Puedes continuar tu proceso de arrendamiento descargando el documento y compartiéndolo con tu arrendador.</p>
+    </div>
+    <div *ngIf="resultText == 'NO ASEGURABLE'" class="cta">
+      <p class="ctaText">Puedes ver el detalle descargando el documento.</p>
+    </div>
+    <div *ngIf="resultText == 'EN ESTUDIO'" class="cta">
+      <p class="ctaText">Ya registramos tu solicitud y nuestro equipo está trabajando para darte una respuesta en un tiempo máximo de 8 horas hábiles.</p>
+    </div>
+    <div *ngIf="resultText == ''" class="cta">
+      <p class="ctaText"><span>Una vez analicemos la información de los deudores solidarios notificaremos nuevamente el resultado.</span></p>
+    </div>
   </div>
+  
+  <div *ngIf="resultText == 'ASEGURABLE'" class="cta">
+    <div class="card-lib">
+      <p>
+        <span class="title">Si tienes dudas llámanos a los números:</span>
+        <span>Bogotá</span> al (1) 352 7070,
+        <br>
+        <span>Línea de servicio nacional</span> 323 599 6460,
+        <br>
+        <span>Whatsapp</span> asistente virtual Victoria 314 839 0322.
+      </p>
+    </div>
+    <div class="buttonContainer desktop">
+      <button class="button button-secondary mx-auto">Finalizar</button>
+      <button class="button button-primary mx-auto">Descargar</button>
+    </div>
+    <div class="buttonContainer mobile">
+      <button class="button button-primary mx-auto">Descargar</button>
+      <button class="button button-secondary mx-auto">Finalizar</button>
+    </div>
+  </div>
+  
+  <div *ngIf="resultText == 'NO ASEGURABLE'" class="cta">
+    <div class="card-lib">
+      <p>
+        <span class="title">Si tienes dudas llámanos a los números:</span>
+        <span>Bogotá</span> al (1) 352 7070,
+        <br>
+        <span>Línea de servicio nacional</span> 323 599 6460,
+        <br>
+        <span>Whatsapp</span> asistente virtual Victoria 314 839 0322.
+      </p>
+    </div>
+    <div class="buttonContainer desktop">
+      <button class="button button-secondary mx-auto">Finalizar</button>
+      <button class="button button-primary mx-auto">Descargar</button>
+    </div>
+    <div class="buttonContainer mobile">
+      <button class="button button-primary mx-auto">Descargar</button>
+      <button class="button button-secondary mx-auto">Finalizar</button>
+    </div>
+  </div>
+  
+  <div *ngIf="resultText == 'EN ESTUDIO'" class="cta">
+    <div class="card-lib">
+      <p>
+        <span class="title">Si tienes dudas llámanos a los números:</span>
+        <span>Bogotá</span> al (1) 352 7070,
+        <br>
+        <span>Línea de servicio nacional</span> 323 599 6460,
+        <br>
+        <span>Whatsapp</span> asistente virtual Victoria 314 839 0322.
+      </p>
+    </div>
+    <div class="buttonContainer">
+      <button class="button button-primary mx-auto">Aceptar</button>
+    </div>
+  </div>
+  
+  <div *ngIf="resultText == ''" class="cta">
+    <div class="buttonContainer mt-5">
+      <button class="button button-primary mx-auto" (click)="open(share)">Compartir</button>
+    </div>
+    <div class="buttonContainer">
+      <button class="button button-line" (click)="open(help)">No cuento con 2 codeudores</button>
+    </div>
+  </div>
+  
+  <div class="div separador-100"></div>
+  <div class="div separador-25"></div>
+  
+  <ng-template #help let-modal style="min-width: 650px;">
+    <button type="button" class="close close-modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="modal-body helpModal">
+      <p class="title">Nosotros te ayudamos</p>
+      <p class="tagLine">Si no cuentas con los codeudores por favor déjanos un mensaje contándonos tu situación.</p>
+      <div class="form">
+        <form [formGroup]="helpCosignerForm">
+          <textarea maxlength="500" name="text" id="text" formControlName="text" placeholder="Escriba su comentario acá"></textarea>
+          <mat-error *ngIf="alert">
+            Campo requerido
+          </mat-error>
+          <p class="maxText">Máximo 500 caractéres</p>
+          <div class="buttonContainer desktop">
+            <button type="button" class="button button-secondary" (click)="modal.dismiss('Cross click')">Cancelar</button>
+            <button type="button" class="button button-primary" (click)="sendHelpForm()">Enviar</button>
+          </div>
+          <div class="buttonContainer mobile">
+            <button type="button" class="button button-secondary" (click)="modal.dismiss('Cross click')">Cancelar</button>
+            <button type="button" class="button button-primary" (click)="sendHelpForm()">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-template>
+  
+  <ng-template #share let-modal style="min-width: 650px;">
+    <button type="button" class="close close-modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true"></span>
+    </button>
+    <div class="modal-body shareModal">
+      <p class="title">Compartir solicitud</p>
+      <div class="contentButtonsShare">
+        <div class="buttonShare" (click)="shareRequest('email')">
+          <img src="../../../../assets/iconos/email.svg" alt="Email">
+          <p>Correo <br>electrónico</p>
+        </div>
+        <div class="buttonShare" (click)="shareRequest('whatsapp')">
+          <img src="../../../../assets/iconos/whatsapp.svg" alt="Whatsapp">
+          <p>Whatsapp</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </div>

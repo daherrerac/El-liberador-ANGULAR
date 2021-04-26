@@ -1,0 +1,373 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/forms";
+@import "base/typography";
+
+.banner_desktop {
+  background-image: url(../../../../assets/images/banner_home.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 450px;
+  margin-bottom: 7rem;
+  margin-top: -20px;
+  max-height: 450px;
+  position: relative;
+  width: 100%;
+
+  &--text {    
+    .blue {
+      background-color: $blue-color;
+      border-radius: 3px;
+      color: $white-color;
+      font-family: "Gotham-Bold";
+      font-size: 45px;
+      margin-top: 10%;
+      min-width: 35%;
+      padding: 5px;
+      text-align: left;
+      text-transform: none;
+      width: min-content;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 20px;
+      font-weight: lighter;
+      line-height: 1;
+    }
+  }
+}
+
+.tagLine {
+  background: #f8f8f8;
+  color: #253150;
+  font: 700 30px "Gotham-Bold";
+  margin: 0;
+  padding: 0 0 50px;
+  text-align: center;
+}
+
+.white-bg {
+  overflow: hidden;
+}
+
+.card-lib {
+  box-sizing: border-box;
+  margin: 62px auto 60px;
+  max-width: 874px;
+  padding: 51px;
+}
+
+.requestNumber, .result {
+  color: #253150;
+  font: 700 48px "Gotham-Bold";
+  margin: 0 0 37px;
+  text-align: center;
+
+  &.requestNumber {
+    color: #bd0f14;
+  }
+}
+
+.result {
+  text-transform: uppercase;
+}
+
+.detailText {
+  margin: 0 auto;
+  max-width: 502px;
+  
+  p {
+    color: #253150;
+    font: 400 24px "Gotham-Book";
+    margin: 0;
+    text-align: center;
+
+    span {
+      font-family: "Gotham-Bold";
+    }
+  }
+}
+
+.cta {
+  .ctaText {
+    color: #253150;
+    font: 700 24px "Gotham-Bold";
+    margin: 0 auto 63px;
+    max-width: 565px  ;
+    text-align: center;
+  }
+
+  .card-lib {
+    p {
+      color: #253150;
+      font: 400 24px "Gotham-Book";
+      text-align: center;
+
+      span {
+        font-family: "Gotham-Bold";
+
+        &.title {
+          display: block;
+          margin: 0 auto 40px;
+        }
+      }
+    }
+  }
+
+  .buttonContainer {
+    .button-primary {
+      margin: 0 auto 64px;
+    }
+  }
+}
+
+::ng-deep.modal-dialog {
+  max-width: 652px;
+}
+
+::ng-deep.modal-content {
+  .modal-body {
+    box-sizing: border-box;
+
+    &.shareModal {
+      padding: 74px 71px 99px;
+    }
+
+    &.helpModal {
+      padding: 57px 35px;
+
+      .title {
+        margin: 0 0 27px;
+      }
+    }
+  }
+
+  .title {
+    color: #27314E;
+    font: 700 27px "Gotham-Bold";
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .tagLine {
+    background: none;
+    color: #253150;
+    font: 400 18px "Gotham-Book";
+    margin: 0 auto 31px;
+    max-width: 438px;
+    padding: 0;
+    text-align: center;
+  }
+
+  textarea {
+    border: 0.20000000298023224px solid #707070;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 145px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .maxText {
+    color: #706F6F;
+    font: 400 13px "Gotham-Book";
+    margin: 0;
+    text-align: right;
+  }
+
+  .buttonContainer {
+    margin: 42px auto 0;
+
+    .button {
+      &:first-child {
+        margin: 0 11px 0 0;
+      }
+    }
+  }
+
+  .contentButtonsShare {
+    margin: 0 auto;
+    text-align: center;
+
+    .buttonShare {
+      border-radius: 11px;
+      box-shadow: 0px 1px 11px #CCCCCC66;
+      cursor: pointer;
+      display: inline-block;
+      min-height: 225px;
+      vertical-align: top;
+      width: 238px;
+
+      img {
+        height: 150px;
+      }
+
+      p {
+        color: #253150;
+        font: 700 20px "Gotham-Bold";
+      }
+
+      &:first-child {
+        margin: 0 32px 0 0;
+      }
+      
+      &:last-child {
+        p {
+          margin: 10px 0 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 100px auto 0;
+    max-width: 350px;
+    
+    .modal-body {
+      &.shareModal {
+        padding: 41px 20px 46px;
+      }
+
+      &.helpModal {
+        padding: 41px 24px 46px;
+      }
+    }
+    
+    .title {
+      font: 700 16px "Gotham-Bold";
+    }
+
+    .tagLine {
+      font: 400 12px "Gotham-Book";
+    }
+
+    textarea, .maxText {
+      font: 400 10px "Gotham-Book";
+    }
+
+    .buttonContainer {
+      margin: 24px auto 0;
+
+      .button {
+        display: inline-block;
+        max-width: 136px;
+
+        &:first-child {
+          margin: 0 27px 0 0;
+        }
+      }
+    }
+
+    .contentButtonsShare {
+      .buttonShare {
+        min-height: 120px;
+        width: 139px;
+        
+        img {
+          height: 70px;
+        }
+
+        p {
+          font: 700 13px "Gotham-Bold";
+        }
+
+        &:first-child {
+          margin: 0 7px 0 0;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .banner_desktop {
+    background-image: url(../../../../assets/images/banner_mobile.jpg);
+    margin-top: -72px;
+
+    .blue{
+      font-size: 25px;
+      margin-top: 158px;
+      padding: 18px;
+      width: 66%;
+    }
+
+    &--text{
+      margin-top: 20%;
+    }
+  }
+
+  .contentAll {
+    background: #f2f2f2;
+    border-radius: 50px 50px 0 0;
+    margin-top: -14rem;
+    padding-top: 3rem;
+    position: relative;
+    z-index: 10;
+
+    .tagLine {
+      background: none;
+      font: 700 16px "Gotham-Bold";
+      margin: 0 auto;
+      max-width: 78.3%;
+      text-align: left;
+    }
+
+    .card-lib {
+      margin: 29px auto 33px;
+      max-width: 78.3%;
+      padding: 19px 0 17px;
+    }
+
+    .requestNumber {
+      font: 700 18px "Gotham-Bold";
+      margin: 0 auto 16px;
+    }
+
+    .result {
+      font: 700 18px "Gotham-Bold";
+      margin: 0 0 10px;
+    }
+
+    .detailText {
+      p {
+        font: 400 13px "Gotham-Book";
+        margin: 0 auto;
+        max-width: 258px;
+      }
+    }
+
+    .cta {
+      .ctaText {
+        font: 700 13px "Gotham-Bold";
+        margin: 0 auto 18px;
+        max-width: 318px;
+      }
+
+      .card-lib {
+        p {
+          font: 400 10px "Gotham-Book";
+          
+          span {
+            font: 700 10px "Gotham-Bold";
+
+            &.title {
+              margin: 0 auto 25px;
+            }
+          }
+        }
+      }
+
+      .buttonContainer {
+        .button-primary {
+          margin: 0 auto 17px;
+        }
+
+        .button-line {
+          font: 500 13px "Gotham-Medium";
+        }
+      }
+    }
+  }
+}

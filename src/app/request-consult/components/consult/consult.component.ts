@@ -30,7 +30,7 @@ export class ConsultComponent implements OnInit {
 
   onSubmit() {
     if (this.consultForm.valid) {
-      this.router.navigate(['consultar-solicitud/detalle'])
+      this.router.navigate(['consultar-solicitud/resultado'])
       let dataForm = this.consultForm.value;
       localStorage.setItem('consultForm', JSON.stringify(dataForm))
     } else this.consultForm.markAllAsTouched();
