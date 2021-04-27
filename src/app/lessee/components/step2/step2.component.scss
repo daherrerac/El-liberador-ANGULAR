@@ -2,8 +2,6 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
-
-
 :host::ng-deep.mat-checkbox-layout {
   white-space: normal !important;
 
@@ -154,6 +152,13 @@ label{
   color: white;
   padding: 3px 10px;
   border-radius: 20px;
+
+  button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 0;
+  }
 }
 .editar a{
   text-decoration: none;
@@ -231,7 +236,13 @@ h4,P{
     width: auto;
     width: 100%;
     padding-top: 32px;
-  }  
+  }
+
+  .autocomplete{
+    input{
+      padding: 0 0 0 20px;
+    }
+  }
 }
 @media screen and (max-width:800px) {
   .d-flex.desktop{

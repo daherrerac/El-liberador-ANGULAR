@@ -47,8 +47,7 @@
                     name="city"
                     id="city"                                 
                     placeholder="Buscar..."
-                    class="form-control"
-                    matInput
+                    class="form-control input-text"
                     formControlName="cityRent"                  
                     [matAutocomplete]="auto"
                     position='below'
@@ -116,8 +115,7 @@
                     name="city"
                     id="city"                                 
                     placeholder="Buscar..."
-                    class="form-control"
-                    matInput
+                    class="form-control input-text"
                     formControlName="cityRent"                  
                     [matAutocomplete]="auto"
                     position='below'
@@ -474,7 +472,7 @@
         </div>
         <div class="col-6 end">
           <p class="editar">
-            <a  (click)="onClic($event)"><img src="assets/iconos/editar.svg" alt="" /> Editar</a>
+            <button matStepperPrevious (click)="showSumary = false"><img src="assets/iconos/editar.svg" alt="" /> Editar</button>
           </p>
         </div>
       </div>
