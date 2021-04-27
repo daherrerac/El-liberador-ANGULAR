@@ -25,11 +25,15 @@ h4 {
     color: #bd0f14;  
     font-size: 50px;
     font-weight: bold;
-    height: 107px;
-    margin: 0 auto;
+    height: 86px;
+    margin: 0 10px 0 0;
     max-width: 120px;
     text-align: center;
-    width: 22%;
+    width: 15%;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   p {
@@ -80,8 +84,8 @@ h4 {
     .code {
       height: auto;
       font-size: 27px !important;
-      margin: 3px !important;
-      max-width: 22%;
+      margin: 0 3px 0 0 !important;
+      max-width: 15%;
     }
 
     p {

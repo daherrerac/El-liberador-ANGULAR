@@ -141,6 +141,13 @@
       .title {
         margin: 0 0 27px;
       }
+
+      .buttonContainer {
+        .button {
+          padding: 0.5rem 0;
+          max-width: 282px;
+        }
+      }
     }
   }
 
@@ -251,11 +258,12 @@
       margin: 24px auto 0;
 
       .button {
-        display: inline-block;
+        display: block;
+        margin: 0 auto;
         max-width: 136px;
 
         &:first-child {
-          margin: 0 27px 0 0;
+          margin: 0 auto 27px;
         }
       }
     }

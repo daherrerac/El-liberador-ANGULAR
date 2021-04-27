@@ -222,3 +222,7 @@ label{
   height: 50px;
   display: block;  
 }
+
+::ng-deep.mat-radio-label {
+  white-space: initial !important;
+}

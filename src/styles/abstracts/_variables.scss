@@ -33,3 +33,7 @@ $red-color: #bd0f14;
 .bg-gray {
   background-color: $gray-color2;
 }
+
+::ng-deep.mat-radio-label {
+  white-space: initial !important;
+}

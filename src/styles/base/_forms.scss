@@ -193,3 +193,7 @@
   }
   
 }
+
+::ng-deep.mat-radio-label {
+  white-space: initial !important;
+}
