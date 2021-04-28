@@ -1,8 +1,9 @@
+<div class="divider mobile"></div>
 <form [formGroup]="cosignerDataForm" *ngIf="!showSumary">
   <div class="container mt-4 mobile_style">
     <div class="text-center ">
       <h4>Ahora tus datos como deudor solidario</h4>
-      <p>Recuerda que los campos con <span class="red">*</span> son obligatorios</p>
+      <p class="disclaimer">Recuerda que los campos con <span class="red">*</span> son obligatorios</p>
     </div>
 
     <label class="w-100">Tipo de documento <span class="red">*</span> <img src="assets/images/tp.png" alt="" class="ml-2" 
@@ -14,7 +15,6 @@
     <mat-radio-group class="desktop d-flex" formControlName="typeId">
       <mat-radio-button value="CC">Cédula de ciudadanía</mat-radio-button>
       <mat-radio-button value="CE">Cédula de extranjería</mat-radio-button>
-      <mat-radio-button value="PA">Pasaporte</mat-radio-button>
     </mat-radio-group>
     <mat-error
       class="desktop"
@@ -403,7 +403,7 @@
       </div>
     </div>
   </section>
-  <div class="buttonContainer my-5">  
+  <div class="buttonContainer my-5 desktop">  
     <button class="button button-secondary" matStepperPrevious>Volver</button>
     <button
       class="button button-primary mx-auto"
@@ -411,6 +411,16 @@
     >
       Continuar
     </button>
+  </div>
+
+  <div class="buttonContainer my-5 mobile">  
+    <button
+      class="button button-primary mx-auto"
+      (click)="onSubmit($event)"
+      >
+      Continuar
+    </button>
+    <button class="button button-secondary" matStepperPrevious>Volver</button>
   </div>
 </form>
 
@@ -421,8 +431,6 @@
     <p class="text-center">
       Presiona <strong>Confirmar</strong> si los datos son correctos
     </p>
-    <hr class="w-50" />
-  
     <div class="dataCosigner my-4">
       <div class="row">
         <div class="col-6">
@@ -509,9 +517,13 @@
       </div>
     </div>
   </div>
-  <div class="buttonContainer">
+  <div class="buttonContainer desktop">
     <button class="button button-secondary" (click)="hideSumary($event)">Volver</button>
     <button type="button" class="button button-primary" matStepperNext>Confirmar</button>
+  </div>
+  <div class="buttonContainer mobile">
+    <button type="button" class="button button-primary" matStepperNext>Confirmar</button>
+    <button class="button button-secondary" (click)="hideSumary($event)">Volver</button>
   </div>
 </div>
 

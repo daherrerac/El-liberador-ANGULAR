@@ -134,7 +134,7 @@ b{
   background-color: white;
 }
 
- app-lessee, app-verify-data, app-cosigner{
+ app-lessee, app-verify-data, app-cosigner, app-detail{
 	background: url(../assets/images/edificios2.png) #F8F8F8;
 	background-size: contain;
 	background-position: 0px bottom;
@@ -221,4 +221,8 @@ label{
 .separador-25{
   height: 50px;
   display: block;  
+}
+
+::ng-deep.mat-radio-label {
+  white-space: initial !important;
 }

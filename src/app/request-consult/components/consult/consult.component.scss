@@ -1,0 +1,248 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/typography";
+@import "base/forms";
+
+.mobile {
+  display: none;
+  @include media(mobile) {
+    display: block;
+  }
+}
+
+.desktop {
+  display: flex;
+  @include media(mobile) {
+    display: none !important;
+  }
+}
+
+.divider {
+  background: #DFDFDF;
+  height: 1px;
+  margin: 52px 0;
+  width: 100%;
+}
+
+.banner_desktop {
+  background-image: url(../../../../assets/images/banner_home.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 450px;
+  margin-bottom: 7rem;
+  margin-top: -20px;
+  max-height: 450px;
+  position: relative;
+  width: 100%;
+
+  &--text {    
+    .blue {
+      background-color: $blue-color;
+      border-radius: 3px;
+      color: $white-color;
+      font-family: "Gotham-Bold";
+      font-size: 45px;
+      margin-top: 10%;
+      min-width: 35%;
+      padding: 5px;
+      text-align: left;
+      text-transform: none;
+      width: min-content;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 20px;
+      font-weight: lighter;
+      line-height: 1;
+    }
+  }
+}
+
+.formMobile {
+  margin: 0 auto;
+  max-width: 905px;
+
+  > .row {
+    max-width: 780px;
+
+    @media screen and (max-width: 480px) {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+
+    .col {
+      padding: 0;
+    }
+  }
+  
+  .max-130 {
+    max-width: 130px;
+    margin: 0 49px 0 0;
+
+    @media screen and (max-width: 480px) {
+      padding: 0;
+    }
+  }
+  
+  .image {
+    width: 130px;
+  }
+
+  .blue-text {
+    font: 400 27px 'Gotham-Book';
+  }
+
+  .divider {
+    background: #DFDFDF;
+    height: 1px;
+    margin: 52px 0;
+    width: 100%;
+  }
+
+  .form {    
+    label, input {
+      width: 100%;
+    }
+
+    input {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0px 1px 11px #CCCCCC66;
+      box-sizing: border-box;
+      color: $gray-color;
+      font: 400 17px 'Gotham-Book';
+      outline: none;
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .banner_desktop{  
+    background-image: url(../../../../assets/images/banner_mobile.jpg);
+
+    .blue{
+      width: 66%;
+      padding: 18px;
+      font-size: 25px;
+      margin-top: 158px;
+    }
+
+    &--text{
+      margin-top: 20%;
+    }
+  }
+
+  .formMobile {
+    background: #f2f2f2;
+    border-radius: 50px 50px 0 0;
+    margin-top: -14rem;
+    padding-top: 3rem;
+    position: relative;
+    z-index: 10;
+
+    .max-130 {
+      max-width: 66px;
+      margin: 0 16px 0 0;
+    }
+
+    .image {
+      width: 66px;
+    }
+
+    h3 {
+      font: 700 16px 'Gotham-Bold';
+    }
+
+    .blue-text {
+      font: 400 12px 'Gotham-Book';
+    }
+
+    .divider {
+      margin: 32px 0 48px;
+    }
+  }
+}
+
+::ng-deep  .mat-radio-label-content{
+  font-family: "Gotham-Book";
+  color:#706F6F;
+}
+
+input,select,.select{
+  font-family: "Gotham-Book";
+}
+
+::ng-deep .my-freaky-tooltip .arrow::before {
+  border-top-color: $blue-color !important;
+  border-bottom-color: $blue-color !important;
+  border-color: $blue-color !important;
+}
+::ng-deep .my-freaky-tooltip .tooltip-inner {
+  background-color: $blue-color !important;  
+  text-align: left !important;
+  padding: .25rem 1.5rem .25rem 1rem  !important;
+  opacity: 1 !important;
+}
+
+::ng-deep .arrow::before {
+  border-top-color: $blue-color !important;
+  border-bottom-color: $blue-color !important;  
+}
+
+::ng-deep .tooltip-inner {	
+	padding: 15px 20px 20px 20px !important;
+	color: #fff;
+	background-color: $blue-color !important;
+	border-radius: 1.5rem !important;
+  text-align: left !important;
+  min-width: 250px !important;
+  line-height: 1.1;
+  b{
+    font-family: "Gotham-Medium";
+  }
+}
+::ng-deep .tooltip.show{
+  opacity: 1 !important;
+}
+
+::ng-deep .mat-radio-group{
+  height: 60px;
+}
+
+::ng-deep .mat-radio-label-content{
+  margin-top: 0.5rem;
+}
+
+::ng-deep .mat-radio-container{
+  height: 30px !important;
+  margin-right: 0.4rem;
+  margin-top: 0.2rem;
+  width: 30px !important;
+}
+
+::ng-deep .mat-radio-outer-circle , ::ng-deep.mat-radio-inner-circle{
+  height: 30px !important;
+  width: 30px !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .banner_desktop{    
+    background-size: 100%;
+    margin-top: -72px;
+    
+    &--text{
+      margin-top: 30%;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .formMobile {
+    .divider {
+      margin: 32px auto 48px;
+      max-width: 320px;
+    }
+  }
+}

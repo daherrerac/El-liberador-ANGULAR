@@ -23,6 +23,7 @@ export class VerifyDataComponent implements OnInit {
   private form1: any = [0];
   private interval: any;
   
+  public stepComplete: boolean;
   public title: string;
   public stepper: MatStepper;
 
@@ -58,7 +59,8 @@ export class VerifyDataComponent implements OnInit {
 
   changeStep(event: any) {
     if(event.selectedIndex == 0) this.title = "Verificar";
-    else if(event.selectedIndex == 1) this.title = "Datos del Codeudor"
+    else if(event.selectedIndex == 1) this.title = "Datos del Codeudor";
+    else if(event.selectedIndex == 2) this.title = "Validación de identidad";
   }
 
   changeStepperIndex() {
@@ -66,11 +68,5 @@ export class VerifyDataComponent implements OnInit {
     this.step3Component.stepIndex = 0;
 
     clearInterval(this.interval)
-  }
-
-  ngAfterViewInit() {
-    console.log(this.step3Component.stepIndex)
-
-    
   }
 }

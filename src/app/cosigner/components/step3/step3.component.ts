@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { VerifyIdentityServiceService } from '../../services/verify-identity-service.service';
 
 @Component({
   selector: 'app-step3',
@@ -9,6 +10,13 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class Step3Component implements OnInit {
   private closeResult = '';
+  private formResults: any;
+
+  public formQuestions = new FormGroup({
+    userLocation: new FormControl('', [Validators.required]),
+    userNumber: new FormControl('', [Validators.required]),
+    userBank: new FormControl('', [Validators.required])
+  });
 
   public formLocation = new FormGroup({
     userLocation: new FormControl('', [Validators.required])
@@ -19,51 +27,57 @@ export class Step3Component implements OnInit {
   public formBank = new FormGroup({
     userBank: new FormControl('', [Validators.required])
   });
+
   public showCode = true;
   public showLocation = false;
   public showNumber = false;
   public showEntities = false;
   public validData = true;
   public stepIndex = 0;
+  public formsData: any;
+  public visibleIndex: number;
+  public alert: boolean;
+  public startForm: boolean;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private verifyIndentityService: VerifyIdentityServiceService) {
+    this.formResults = [];
+    this.visibleIndex = 0;
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.buildForms();
+  }
 
   goToForm() {
     this.modalService.dismissAll();
     this.stepIndex = 1;
   }
 
-  onSubmit(event: Event,type: any): any {
-    event.preventDefault();
+  startQuestions() {
+    this.modalService.dismissAll();
+    this.showCode = false;
+    this.startForm = true;
+  }
 
-    switch(type) { 
-      case 'location': { 
-        this.modalService.dismissAll();
-        this.showLocation = true;
-        this.showCode = false;
-        this.showNumber = false;
-        this.showEntities = false;
-        break; 
-      }
-      
-      case 'number': { 
-        this.showLocation = false;
-        this.showCode = false;
-        this.showNumber = true;
-        this.showEntities = false;
-        break; 
-      }
-      
-      case 'entities': { 
-        this.showLocation = false;
-        this.showCode = false;
-        this.showNumber = false;
-        this.showEntities = true;
-        break; 
-      } 
-    } 
+  buildForms() {
+    this.formsData = this.verifyIndentityService.getMockQuestions()
+  }
+
+  saveResults(question: any) {
+    if(question == undefined) this.alert = true;
+    else {
+      this.visibleIndex++;
+      this.alert = false;
+      this.formResults.push({
+        respuesta: {
+          id: question[0],
+          texto: question[1]
+        }
+      });
+
+      console.log(this.formResults)
+      localStorage.setItem('questionsFormsResults', JSON.stringify(this.formResults))
+    }
   }
 
   open(content:any) {

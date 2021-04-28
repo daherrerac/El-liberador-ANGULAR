@@ -2,6 +2,13 @@
 @import "abstracts/mixins";
 @import "base/forms";
 
+.divider {
+  background: #DFDFDF;
+  height: 1px;
+  margin: 52px 0;
+  width: 100%;
+}
+
 a {
   color: $blue-color !important;
   text-decoration: underline;
@@ -133,7 +140,6 @@ input,select,.select{
 	width: 100%;
 }
 
-
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
   font-family: "Gotham-Book", Arial, Helvetica, sans-serif;
 	background: #ffffff  !important;
@@ -198,31 +204,6 @@ input,select,.select{
 	margin-top: 36px;
 	margin-left: -8px;
 }
-@media only screen and (max-width: 990px){
-  .autocomplete{
-    input{
-      max-width: 94%;
-    }
-  }
-}
-@media only screen and (max-width: 480px) {
-  .residencia{
-    display: block;
-    .group{
-      display: block;
-      width: 100%;
-    }
-    .ml-4.autocomplete{
-      margin-left: 0  !important;
-      margin-top: 1.5em;
-    }
-  }
-  .autocomplete{
-    input{
-      max-width: 95%;
-    }
-  }
-}
 
 .certificate {
   margin: 0 -30px;
@@ -258,6 +239,29 @@ input,select,.select{
 
     a {
       font: 500 17px "Gotham-Medium";
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 0 auto;
+    max-width: 86%;
+    
+    .text-dislcaimer {
+      font-size: 12px;
+  
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.buttonContainer {
+  .button {
+    &-primary {
+      @media screen and (max-width: 768px) {
+        margin: 0 auto 24px;
+      }
     }
   }
 }
@@ -334,6 +338,96 @@ input,select,.select{
     
     button {
       margin: 0 auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 990px){
+  .autocomplete{
+    input{
+      max-width: 94%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  ::ng-deep .mat-horizontal-stepper-header-container {
+    margin: 0 auto 19px;
+    max-width: 650px;
+  }
+
+  .divider {
+    margin: 0 auto 40px;
+  }
+
+  h4 {
+    margin: 0 0 5px;
+  }
+
+  .disclaimer {
+    margin: 0 0 24px;
+  }
+
+  .autocomplete{
+    input{
+      padding: 0 0 0 20px;
+    }
+  }
+
+  .summary {
+    .centerImg {
+      margin: 0 auto 27px;
+    }
+    
+    p {
+      &.text-center {
+        font-size: 16px;
+
+        strong {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .dataCosigner {
+      label {
+        font-size: 14px;
+      }
+    }
+
+    .title {
+      font-size: 11px;
+    }
+
+    .data {
+      font-size: 12px;
+    }
+  }
+
+  .buttonContainer {
+    .button {
+      &-primary {
+        margin: 0 auto 24px !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .residencia{
+    display: block;
+    .group{
+      display: block;
+      width: 100%;
+    }
+    .ml-4.autocomplete{
+      margin-left: 0  !important;
+      margin-top: 1.5em;
+    }
+  }
+  .autocomplete{
+    input{
+      max-width: 95%;
     }
   }
 }

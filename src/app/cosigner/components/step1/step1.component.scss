@@ -3,7 +3,14 @@
 @import "base/forms";
 @import "base/typography";
 
-.contentAll {  
+.divider {
+  background: #DFDFDF;
+  height: 1px;
+  margin: 0 auto 40px;
+  width: 100%;
+}
+
+.contentAll {
   h3 {
     text-align: center;
   }
@@ -34,6 +41,11 @@
   }
 
   @media(max-width:768px) {
+    ::ng-deep .mat-horizontal-stepper-header-container {
+      margin: 0 auto 19px;
+      max-width: 650px;
+    }
+    
     .banner_desktop {  
       background-image: url(../../../../assets/images/banner_mobile.jpg);
   

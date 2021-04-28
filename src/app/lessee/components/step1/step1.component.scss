@@ -193,6 +193,13 @@ input,select,.select{
     }
   }
 }
+@media screen and (max-width: 768px) {
+  .autocomplete{
+    input{
+      padding: 0 0 0 20px;
+    }
+  }
+}
 @media only screen and (max-width: 480px) {
   .residencia{
     display: block;
