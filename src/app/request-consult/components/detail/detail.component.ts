@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { RequestConsultServiceService } from '../../services/request-consult-service.service';
 
 @Component({
   selector: 'app-detail',
@@ -21,8 +22,9 @@ export class DetailComponent implements OnInit {
     text: new FormControl('', [Validators.required])
   })
   public alert: boolean;
+  public loading: boolean;
 
-  constructor(private route: ActivatedRoute, private router: Router, private modalService: NgbModal) {
+  constructor(private route: ActivatedRoute, private router: Router, private modalService: NgbModal, private requestConsultService: RequestConsultServiceService) {
     this.title = 'Detalle de tu solicitud';
     this.documentNumber = 0;
     this.requestNumber = 0;
@@ -33,7 +35,6 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
     this.consultForm = JSON.parse(localStorage.getItem('consultForm'))
 
-    console.log(this.consultForm['documentNumber'], this.consultForm['requestNumber'])
     if(this.consultForm == undefined || this.consultForm == '') this.router.navigate(['consultar-solicitud'])
     else {
       this.documentNumber = this.consultForm['documentNumber']

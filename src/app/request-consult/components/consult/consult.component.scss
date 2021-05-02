@@ -60,6 +60,32 @@
   }
 }
 
+.contentLoader {
+  background: #43598eba;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 98;
+  
+  .loader {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 10vh;
+    width: 352px;
+    z-index: 99;
+  
+    img {
+      width: 100%;
+    }
+  }
+}
+
 .formMobile {
   margin: 0 auto;
   max-width: 905px;

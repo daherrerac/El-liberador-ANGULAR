@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { RequestConsultServiceService } from '../../services/request-consult-service.service';
 
 @Component({
   selector: 'app-consult',
@@ -16,9 +17,10 @@ export class ConsultComponent implements OnInit {
     document: new FormControl('', [Validators.required]),
     documentNumber: new FormControl('', [Validators.required]),
     requestNumber: new FormControl('', [Validators.required])
-  })
+  });
+  public loading: boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private requestConsultService: RequestConsultServiceService) {
     this.title = 'Registrarme';
   }
 
@@ -30,9 +32,25 @@ export class ConsultComponent implements OnInit {
 
   onSubmit() {
     if (this.consultForm.valid) {
-      this.router.navigate(['consultar-solicitud/resultado'])
       let dataForm = this.consultForm.value;
       localStorage.setItem('consultForm', JSON.stringify(dataForm))
+      this.loadData(this.consultForm.controls.documentNumber.value, this.consultForm.controls.requestNumber.value)
     } else this.consultForm.markAllAsTouched();
+  }
+
+  loadData(documentNumber: number, requestNumber: number) {
+    this.loading = true;
+    
+    /** el set time out se usa para "falsear el tiempo de carga" quitarlo cuando se tenga el serivio real, se esta usando un servicio de pruebas */
+    
+    setTimeout(() => {
+      this.requestConsultService.getRequestStatus(documentNumber, requestNumber)
+      .then(response => {
+        this.loading = false;
+        this.router.navigate(['consultar-solicitud/resultado'])
+        console.log(response)
+      }
+      , error => console.log("Error obteniendo los datos: ", error))
+    }, 3000);
   }
 }
