@@ -66,6 +66,11 @@ export class LesseeComponent implements OnInit {
     localStorage.setItem('form2', JSON.stringify(this.form2));
   }
 
+  changeStep(event: any) {
+    if(event.selectedIndex == 2) this.encabezado = "Validación de identidad";
+    else if(event.selectedIndex == 3) this.encabezado = "Resultados solicitud"
+  }
+
   ngAfterViewInit(stepper:MatStepper) { 
        
     if(!(this.step1Component.firstFormGroup.touched)){

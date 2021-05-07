@@ -23,12 +23,24 @@ a {
   @include media(mobile) {
     display: block;
   }
+
+  &-large {
+    @media screen and (max-width: 768px) {
+      display: block !important;
+    }
+  }
 }
 
-.desktop {
+.desktop {  
   display: flex;
   @include media(mobile) {
     display: none !important;
+  }
+
+  &-large {
+    @media screen and (max-width: 768px) {
+      display: none !important;
+    }
   }
 }
 
@@ -230,6 +242,13 @@ input,select,.select{
     color: #706F6F;
     font: 400 12px "Gotham-Book" !important;
     height: 48px;
+
+    &.uploaded {
+      background: #bd0f14;
+      border: 3px solid #bd0f14;
+      box-shadow: 0px 1px 11px #848484b1;
+      color: #ffffff;
+    }
   }
 }
 
@@ -345,7 +364,7 @@ input,select,.select{
 @media only screen and (max-width: 990px){
   .autocomplete{
     input{
-      max-width: 94%;
+      max-width: 87%;
     }
   }
 }

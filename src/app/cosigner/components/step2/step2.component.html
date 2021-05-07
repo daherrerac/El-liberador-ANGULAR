@@ -12,12 +12,12 @@
       aria-label="Documento" #tt="ngbTooltip"  (click)="showTooltip()">
       <ng-template #tipContent>Si cuenta con otro tipo de documento de identidad, le invitamos a comunicarse al (1) <b>352 7070 en Bogotá</b> o a la Linea de <b>servicio nacional 323 599 6460</b> para brindarle la asesoría correspondiente</ng-template>    
     </label>
-    <mat-radio-group class="desktop d-flex" formControlName="typeId">
+    <mat-radio-group class="desktop desktop-large d-flex" formControlName="typeId">
       <mat-radio-button value="CC">Cédula de ciudadanía</mat-radio-button>
       <mat-radio-button value="CE">Cédula de extranjería</mat-radio-button>
     </mat-radio-group>
     <mat-error
-      class="desktop"
+      class="desktop desktop-large"
       *ngIf="
         cosignerDataForm.controls['typeId'].invalid &&
         (cosignerDataForm.controls['typeId'].dirty ||
@@ -29,7 +29,7 @@
       </mat-error>
     </mat-error>
 
-    <div class="select mobile">
+    <div class="select mobile mobile-large">
       <select formControlName="typeId">
         <option value="" [disabled]="true">--Seleccione una opción--</option>
         <option value="CC">Cédula de ciudadanía</option>
@@ -39,7 +39,7 @@
     </div>
 
     <mat-error
-      class="mobile"
+      class="mobile mobile-large"
       *ngIf="
         cosignerDataForm.controls['typeId'].invalid &&
         (cosignerDataForm.controls['typeId'].dirty ||
@@ -345,7 +345,7 @@
     <p class="title">Certificado de tradición y libertad</p>
     <p class="text">Es el documento que registra información relevante sobre el estado jurídico de la propiedad. Para descargarlo acceda a la <a href="#">página de notariado y registro.</a> Tenga en cuenta que debe tener una vigencia máxima de 3 meses.</p>
     <div class="form-group">
-      <button class="button" type="button" mat-raised-button (click)="fileInput.click()">Adjuntar archivo</button>
+      <button class="button" [ngClass]="{'uploaded' : fileLoaded}" type="button" mat-raised-button (click)="fileInput.click()">Adjuntar archivo</button>
       <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
     </div>
   </section>
@@ -403,7 +403,7 @@
       </div>
     </div>
   </section>
-  <div class="buttonContainer my-5 desktop">  
+  <div class="buttonContainer my-5 desktop desktop-large">  
     <button class="button button-secondary" matStepperPrevious>Volver</button>
     <button
       class="button button-primary mx-auto"
@@ -413,7 +413,7 @@
     </button>
   </div>
 
-  <div class="buttonContainer my-5 mobile">  
+  <div class="buttonContainer my-5 mobile mobile-large">  
     <button
       class="button button-primary mx-auto"
       (click)="onSubmit($event)"

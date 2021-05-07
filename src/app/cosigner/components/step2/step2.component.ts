@@ -38,6 +38,7 @@ export class Step2Component implements OnInit {
   public getDataFormCosigner: any;
   public showSumary = false;
   public srcResult: any;
+  public fileLoaded: boolean
 
   constructor() {}
 
@@ -74,6 +75,7 @@ export class Step2Component implements OnInit {
       };
   
       reader.readAsArrayBuffer(inputNode.files[0]);
+      this.fileLoaded = true;
     }
   }
 

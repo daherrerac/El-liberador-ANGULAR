@@ -10,9 +10,15 @@
   </div>
 </div>
 
-<div class="contentLoader" *ngIf="loading">
+<div class="contentLoader mobile mobile-large" *ngIf="!loading">
   <div class="loader">
-    <img src="assets/images/splash.gif" alt="Cargando">
+    <img src="assets/images/splash.gif" class="" alt="Cargando">
+  </div>
+</div>
+
+<div class="contentLoader desktop desktop-large" *ngIf="!loading">
+  <div class="loader">
+    <img src="assets/images/splash-desktop.gif" class="desktop desktop-large" alt="Cargando">
   </div>
 </div>
 

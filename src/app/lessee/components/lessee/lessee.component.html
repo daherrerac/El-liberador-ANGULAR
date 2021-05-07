@@ -10,7 +10,7 @@
   </div>
 </div>
 <div class="container formMobile">
-  <mat-horizontal-stepper [linear]="true" #stepper>
+  <mat-horizontal-stepper [linear]="true" (selectionChange)="changeStep($event)" #stepper>
     <mat-step [stepControl]="step1" >
       <ng-template matStepLabel>
         Datos <br />arrendatario

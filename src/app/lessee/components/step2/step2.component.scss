@@ -116,7 +116,15 @@ input,select,.select{
     .row{
       height: auto;
     }
-  } 
+  }
+  
+  .inmobiliaria {
+    p {
+      &.max-600 {
+        max-width: 600px;
+      }
+    }
+  }
 }
 
 
@@ -236,6 +244,12 @@ h4,P{
     width: auto;
     width: 100%;
     padding-top: 32px;
+
+    p {
+      &.max-600 {
+        max-width: 600px;
+      }
+    }
   }
 
   .autocomplete{

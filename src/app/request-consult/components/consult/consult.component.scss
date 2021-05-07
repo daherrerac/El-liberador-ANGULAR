@@ -8,12 +8,24 @@
   @include media(mobile) {
     display: block;
   }
+
+  &-large {
+    @media screen and (max-width: 768px) {
+      display: block !important;
+    }
+  }
 }
 
 .desktop {
   display: flex;
   @include media(mobile) {
     display: none !important;
+  }
+
+  &-large {
+    @media screen and (max-width: 768px) {
+      display: none !important;
+    }
   }
 }
 
@@ -77,11 +89,22 @@
     position: absolute;
     right: 0;
     top: 10vh;
-    width: 352px;
     z-index: 99;
   
     img {
       width: 100%;
+    }
+  }
+  
+  &.desktop {
+    .loader {
+      width: 80vw;
+    }
+  }
+
+  &.mobile {
+    .loader {
+      width: 352px;
     }
   }
 }
