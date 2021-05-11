@@ -67,16 +67,6 @@
   width: 30px !important;
 }
 
-::ng-deep{
-  #cdk-step-label-1-4, #cdk-step-label-0-4{
-    display: none;
-  }
-}
-
-::ng-deep .mat-stepper-horizontal-line:last-of-type{
-  display: none;
-}
-
 .banner_mobile {
   background-image: url(../../../../assets/images/banner_mobile.jpg);
   background-repeat: no-repeat;
